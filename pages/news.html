@@ -4,42 +4,50 @@
     </head>
 
     <body>
-        <header>Хэдер</header>
-
-        <main>
-            <div id="menu">
-                <ul>
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="news.html">О нас</a></li>
-                    <li><a href="practices.html">Практики</a></li>
-                    <li><a href="goods.html">Товары</a></li>
-                    <li><a href="contacts.html">Контакты</a></li>
-                </ul>
+        <div class = "page_container">
+            <div class = "header">
+                <header>Хэдер</header>
             </div>
 
-            <div>
-                <h1>Новость 1</h1>
-                <p><b>23.09.25 12:24 Фенечка М.С</b></p>
-                <p>съела огурчики</p>
-                <img src ="ogurets.jpg" width="250" height="250">
-            </div>
+            <main>
+                <div class="nav">
+                    <ul class = "nav_list">
+                        <li class = "nav-item"><a class = "nav_link" href="index.html">Главная</a></li>
+                        <li class = "nav-item"><a class = "nav_link" href="/pages/news.html">О нас</a></li>
+                        <li class = "nav-item"><a class = "nav_link" href="/pages/practices.html">Практики</a></li>
+                        <li class = "nav-item"><a class = "nav_link" href="/pages/goods.html">Товары</a></li>
+                        <li class = "nav-item"><a class = "nav_link" href="/pages/contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
 
-            <div>
-                <h1>Новость 2</h1>
-                <p><b>23.09.25 12:25 Фенечка М.С</b></p>
-                <p>съела морковочки</p>
-                <img src ="morkov.jpg" width="250" height="250">
-            </div>
-            
-            <div>
-                <h1>Новость 3</h1>
-                <p><b>23.09.25 14:38 Фенечка М.С</b></p>
-                <p>продала свою подругу аську за 300 рублей девушке с авито</p>
-                <img src ="asya.jpg" width="250" height="250">
-            </div>
-            
-        </main>
+                <div class = "content">
+                    <div class = news>
+                        <h1 class = "news_title">Новость 1</h1>
+                        <p class = "inf_news"><b>23.09.25 12:24 Фенечка М.С</b></p>
+                        <p class = "piece_of_news">съела огурчики</p>
+                        <img class = "news_photo" src ="/images/ogurets.jpg" width="250" height="250">
+                    </div>
 
-        <footer>Футер</footer>
+                    <div>
+                        <h1 class = "news_title">Новость 2</h1>
+                        <p class = "inf_news"><b>23.09.25 12:25 Фенечка М.С</b></p>
+                        <p class = "piece_of_news">съела морковочки</p>
+                        <img class = "news_photo" src ="/images/morkov.jpg" width="250" height="250">
+                    </div>
+                    
+                    <div>
+                        <h1 class = "news_title">Новость 3</h1>
+                        <p class = "inf_news"><b>23.09.25 14:38 Фенечка М.С</b></p>
+                        <p class = "piece_of_news">продала свою подругу аську за 300 рублей девушке с авито</p>
+                        <img class = "news_photo" src ="/images/asya.jpg" width="250" height="250">
+                    </div>
+                </div>
+                
+            </main>
+
+            <div class = "footer">
+                <footer>Футер</footer>
+            </div>
+        </div>
     </body>
 </html>
