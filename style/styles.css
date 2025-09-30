@@ -1,178 +1,239 @@
- /* ===== БАЗОВЫЕ СТИЛИ ===== */
- body { 
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Современный 
-шрифт для лучшей читаемости */ 
-margin: 0; /* Убираем стандартные отступы браузера */ 
-padding: 0; /* Убираем стандартные внутренние отступы */ 
+@font-face {
+  font-family: "Topor";
+  src: url("fonts/Topor-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
- background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Красивый 
-градиентный фон всей страницы */ 
-min-height: 100vh; /* Минимальная высота равна высоте окна браузера */ 
-} 
+@font-face {
+  font-family: "BrokgauzEfron";
+  src: url("fonts/brokgauzefron.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
- /* ===== КОНТЕЙНЕР СТРАНИЦЫ ===== */
- .page-container { 
-max-width: 1200px; /* Максимальная ширина контента */ 
-margin: 0 auto; /* Центрирование контейнера по горизонтали */ 
-background: white; /* Белый фон для основного содержимого */ 
-min-height: 100vh; /* Минимальная высота равна высоте окна браузера */ 
-box-shadow: 0 0 30px rgba(0,0,0,0.1); /* Легкая тень вокруг всего контента */ 
-} 
-/* ===== ШАПКА ===== */
- .header { 
-background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); /* Темный 
-градиентный фон */ 
-color: white; /* Белый цвет текста */ 
-text-align: center; /* Выравнивание текста по центру */ 
-padding: 30px; /* Внутренние отступы со всех сторон */ 
-font-size: 28px; /* Размер шрифта */ 
-font-weight: 300; /* Легкое начертание шрифта */ 
-letter-spacing: 2px; /* Расстояние между буквами */ 
-} 
-/* ===== НАВИГАЦИЯ ===== */
- .nav { 
-background: #2c3e50; /* Темно-синий фон навигации */ 
-padding: 20px 0; /* Вертикальные отступы */ 
-} 
-.nav-list { 
-list-style: none; /* Убираем маркеры списка */ 
-margin: 0; /* Убираем внешние отступы */ 
-padding: 0; /* Убираем внутренние отступы */ 
-display: flex; /* Горизонтальное расположение элементов */ 
-justify-content: center; /* Выравнивание по центру */ 
-gap: 25px; /* Расстояние между элементами навигации */ 
-} 
-.nav-item { 
-margin: 0; /* Убираем отступы у пунктов меню */ 
-} 
-.nav-link { 
-color: white; /* Белый цвет текста ссылок */ 
-text-decoration: none; /* Убираем подчеркивание ссылок */ 
-padding: 12px 25px; /* Отступы внутри ссылок */ 
-border-radius: 25px; /* Скругленные углы (капсульная форма) */ 
-transition: all 0.3s ease; /* Плавные анимации при изменении */ 
-font-weight: 500; /* Средняя жирность шрифта */ 
-} 
 
- .nav-link:hover { 
-background: rgba(255,255,255,0.1); /* Полупрозрачный белый фон при наведении 
-*/ 
-transform: translateY(-2px); /* Легкое поднятие элемента при наведении */ 
-} 
-/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
- .content { 
-padding: 40px; /* Внутренние отступы контента */ 
-max-width: 900px; /* Максимальная ширина контента */ 
-margin: 0 auto; /* Центрирование контента */ 
-} 
-/* ===== ГЛАВНАЯ СТРАНИЦА ===== */
- .profile-header { 
-text-align: center; /* Выравнивание по центру */ 
-margin-bottom: 40px; /* Отступ снизу */ 
-} 
-.profile-title { 
-font-size: 32px; /* Размер шрифта заголовка */ 
-color: #2c3e50; /* Темно-синий цвет текста */ 
-margin-bottom: 10px; /* Отступ снизу */ 
-font-weight: 300; /* Легкое начертание шрифта */ 
-} 
-.profile-photo { 
-width: 220px; /* Фиксированная ширина фото */ 
-height: 280px; /* Фиксированная высота фото */ 
-border-radius: 15px; /* Скругленные углы фото */ 
-object-fit: cover; /* Обрезка фото для сохранения пропорций */ 
-margin: 20px auto; /* Центрирование и отступы */ 
-border: 4px solid #667eea; /* Синяя рамка вокруг фото */ 
-box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3); /* Тень с синим оттенком */ 
-} 
-.profile-name { 
-font-size: 24px; /* Размер шрифта имени */ 
-color: #2c3e50; /* Темно-синий цвет текста */ 
-margin: 10px 0; /* Вертикальные отступы */ 
-font-weight: 500; /* Средняя жирность шрифта */ 
-} 
-.profile-group { 
-font-size: 18px; /* Размер шрифта группы */ 
-color: #7f8c8d; /* Серый цвет текста */ 
-margin: 5px 0; /* Вертикальные отступы */ 
-} 
-.about-me { 
-background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); /* Светлый 
-градиентный фон */ 
-padding: 25px; /* Внутренние отступы */ 
-border-radius: 15px; /* Скругленные углы */ 
+/* ====== Базовые настройки ====== */
+:root {
+  --bg: #0e0f10;        /* фон подвала */
+  --accent: #c24b2b;    /* ржавый акцент */
+  --green: #6b6f3f;     /* грязно-зелёный */
+  --muted: #8b8e92;     /* бетонно-серый */
+  --cream: #f5e8d8;     /* тёплый текст */
+  --card-bg: rgba(255,255,255,0.03);
+  --max-width: 1100px;
+}
 
- margin: 30px 0; /* Вертикальные отступы */ 
-border-left: 5px solid #667eea; /* Синяя полоса слева */ 
-font-size: 16px; /* Размер шрифта текста */ 
-line-height: 1.8; /* Межстрочный интервал */ 
-} 
-/* ===== НАВЫКИ ===== */
- .skills-container { 
-display: flex; /* Горизонтальное расположение навыков */ 
-justify-content: center; /* Выравнивание по центру */ 
-flex-wrap: wrap; /* Перенос на новую строку при необходимости */ 
-gap: 15px; /* Расстояние между навыками */ 
-margin: 30px 0; /* Вертикальные отступы */ 
-} 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
- .skill-tag { 
-background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); /* Голубой 
-градиентный фон */ 
-color: white; /* Белый цвет текста */ 
-padding: 12px 25px; /* Внутренние отступы */ 
-border-radius: 25px; /* Круглые углы (капсульная форма) */ 
-font-weight: 600; /* Жирный шрифт */ 
-font-size: 14px; /* Размер шрифта */ 
-box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3); /* Тень с голубым оттенком */ 
-transition: all 0.3s ease; /* Плавные анимации при изменении */ 
-} 
-.skill-tag:hover { 
-transform: translateY(-3px); /* Поднятие элемента при наведении */ 
-box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4); /* Увеличение тени при 
-наведении */ 
-} 
-/* ===== ОПЫТ РАБОТЫ ===== */
- .experience-section { 
-margin-top: 50px; /* Отступ сверху */ 
-} 
-.section-title { 
-font-size: 28px; /* Размер шрифта заголовка секции */ 
-color: #2c3e50; /* Темно-синий цвет текста */ 
-text-align: center; /* Выравнивание по центру */ 
-margin-bottom: 30px; /* Отступ снизу */ 
-font-weight: 300; /* Легкое начертание шрифта */ 
-} 
-.experience-card { 
-background: white; /* Белый фон карточки */ 
-padding: 25px; /* Внутренние отступы */ 
-margin: 20px 0; /* Вертикальные отступы */ 
-border-radius: 12px; /* Скругленные углы */ 
-box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* Легкая тень */ 
-border-left: 4px solid #667eea; /* Синяя полоса слева */ 
-transition: transform 0.3s ease; /* Плавная анимация трансформации */ 
+body {
+  font-family: "BrokgauzEfron", sans-serif;
+  background: var(--bg);
+  color: var(--cream);
+  line-height: 1.5;
+}
 
- } 
-.experience-card:hover { 
-transform: translateX(5px); /* Сдвиг вправо при наведении */ 
-} 
-.experience-title { 
-font-size: 20px; /* Размер шрифта заголовка опыта */ 
-color: #2c3e50; /* Темно-синий цвет текста */ 
-margin: 0 0 10px 0; /* Отступ снизу */ 
-font-weight: 600; /* Жирный шрифт */ 
-} 
-.experience-desc { 
-color: #7f8c8d; /* Серый цвет текста */ 
-line-height: 1.6; /* Межстрочный интервал */ 
-margin: 0; /* Убираем отступы */ 
-} 
-/* ===== ФУТЕР ===== */
- .footer { 
-background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); /* Темный 
-градиентный фон */ 
-color: white; /* Белый цвет текста */ 
-text-align: center; /* Выравнивание по центру */ 
-padding: 30px; /* Внутренние отступы */ 
-margin-top: 50px; /* Отступ сверху */ 
-} 
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: 0.3s;
+}
+a:hover {
+  color: var(--green);
+}
+
+/* ====== Контейнер ====== */
+.page_container {
+    flex-direction: column; /* элементы сверху вниз */
+    align-items: center;    /* по горизонтали по центру */
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ====== Хэдер ====== */
+.header {
+  font-family: "Rye", serif;
+  font-size: 28px;
+  color: var(--accent);
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  text-align: center;
+}
+
+h1, h2, h3, .header, .profile-title {
+  font-family: "Topor", sans-serif;
+  color: var(--accent);
+  margin: 0px 0px 6px;
+}
+
+/* ====== Навигация ====== */
+.nav {
+  margin: 20px 0;
+}
+.nav_list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.nav_link {
+  color: var(--muted);
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+.nav_link:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* ====== Контент ====== */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Профиль */
+.profile_header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.profile-title {
+  font-family: "Topor", sans-serif;
+  font-size: 32px;
+  color: var(--cream);
+  margin-bottom: 20px;
+}
+.profile-photo {
+  width: 400px;       /* новая ширина */
+  height: auto;       /* пропорционально */
+  border-radius: 12px;
+  /*display: block;*/     /* убираем лишние inline-отступы */
+  transition: transform 0.3s;
+  margin: 0px 0px 10px;
+  align-items: center;
+}
+
+.profile-photo:hover {
+  transform: scale(10.1);  /* немного увеличиваем при наведении */
+}
+
+.profile-name {
+  color: var(--accent);
+  margin-bottom: 5px;
+}
+.profile-group {
+  color: var(--muted);
+}
+
+/* Обо мне */
+.about_me {
+  /*background: var(--card-bg);*/
+  padding: 20px;
+  /*border-radius: 10px;*/
+  margin-bottom: 30px;
+}
+
+/* Навыки */
+.skills_container {
+  display: flex;
+  flex-wrap: wrap;           /* разрешаем перенос на новую строку */
+  justify-content: center;   /* центрируем карточки в ряду */
+  gap: 20px;                 /* расстояние между карточками */
+  margin-bottom: 40px;
+}
+
+.skill-title{
+    margin: 0px 0px 5px;
+}
+
+.skill-tag {
+  flex: 0 1 20%;
+  /*flex: 1 1 200px; /* 1 – растягивается, 1 – сжимается, 200px – базовая ширина */
+  background: var(--card-bg);
+  border: 1px solid rgba(255,255,255,0.05);
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-tag:hover {
+  background: var(--accent);
+  /*color: white;*/
+  transform: translateY(-4px);
+}
+
+/* Опыт */
+.experience-section {
+  margin-bottom: 50px;
+}
+.section-title{
+  font-family: "Topor", sans-serif;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--accent);
+  text-align: center;
+}
+.experience-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+.experience-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+}
+.experience-title, .skill-title {
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.experience-desc {
+  color: var(--cream);
+  font-size: 15px;
+}
+
+/* ====== Футер ====== */
+.footer {
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding: 20px 0;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ====== Анимации появления ====== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.7s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ====== Адаптив ====== */
+@media (max-width: 768px) {
+  .nav_list {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .profile-title {
+    font-size: 26px;
+  }
+}
