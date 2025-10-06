@@ -65,7 +65,7 @@ a:hover {
   text-align: center;
 }
 
-h1, h2, h3, .header, .profile-title {
+h1, h2, h3, .header, .profile-title, .price {
   font-family: "Topor", sans-serif;
   color: var(--accent);
   margin: 0px 0px 6px;
@@ -123,7 +123,7 @@ h1, h2, h3, .header, .profile-title {
 }
 
 .profile-photo:hover {
-  transform: scale(10.1);  /* немного увеличиваем при наведении */
+  transform: scale(1.1);  /* немного увеличиваем при наведении */
 }
 
 .profile-name {
@@ -236,4 +236,25 @@ h1, h2, h3, .header, .profile-title {
   .profile-title {
     font-size: 26px;
   }
+}
+
+.goods_container {
+  display: flex;
+  flex-wrap: wrap;           
+  justify-content: center;   
+  gap: 20px;                 
+  margin-bottom: 40px;
+}
+
+.image_goods {
+  border-radius: 8px;
+  margin: 10px;
+}
+
+.goods {
+  border-radius: 8px;
+  background-color:rgba(0, 0, 0, 0.2) ;
+  margin: 5px;
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,0.05);
 }
