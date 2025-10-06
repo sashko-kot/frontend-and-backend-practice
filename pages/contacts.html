@@ -1,39 +1,46 @@
 <!DOCTYPE HTML>
-<html lamg = "ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Семестровая работа</title>
-        <link rel="stylesheet" href="../style/styles.css">  
-    </head>
+<html lang="ru">
 
-    <body>
-        <div class ="page_container">
-            <header>
-                <div class = "header">Хэдер</div>
-            </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Семестровая работа</title>
+    <link rel="stylesheet" href="../style/styles.css">
+    <script src="../js/javascript.js" defer></script>
+</head>
 
-            <nav class="nav">
-                <ul class = "nav_list">
-                    <li class = "nav-item"><a class = "nav_link" href="../index.html">Главная</a></li>
-                    <li class = "nav-item"><a class = "nav_link" href="news.html">О нас</a></li>
-                    <li class = "nav-item"><a class = "nav_link" href="practices.html">Практики</a></li>
-                    <li class = "nav-item"><a class = "nav_link" href="goods.html">Товары</a></li>
-                    <li class = "nav-item"><a class = "nav_link" href="contacts.html">Контакты</a></li>
-                </ul>
-            </nav>
-            <main class = "content">
-                <section class = "inf">
-                    <p class = "addres">Адрес электронной почты: fenya_prodavets@mail.com</p>
-                    <p class = "addres">Адрес: г.Москва, улица, где находится самая большая клетка</p>
-                    <button class = "button_contacts">Купить друга</button>
-                </section>
-            
-            </main>
+<body data-theme="dark">
+    <div class="page">
 
-            <footer class = "footer">
-                <p>Футер</p>
-            </footer>
-        </div>
-    </body>
+        <header class="header">
+            <h1 class="header__title">Хэдер</h1>
+            <button id="theme-toggle">Сменить тему</button>
+        </header>
+
+
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
+                <li class="nav__item"><a class="nav__link" href="news.html">О нас</a></li>
+                <li class="nav__item"><a class="nav__link" href="practices.html">Практики</a></li>
+                <li class="nav__item"><a class="nav__link" href="goods.html">Товары</a></li>
+                <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <section class="contacts">
+                <p class="contacts__info">Адрес электронной почты: <a href="mailto:fenya_prodavets@mail.com">fenya_prodavets@mail.com</a></p>
+                <p class="contacts__info">Адрес: г. Москва, улица, где находится самая большая клетка</p>
+                <button class="contacts__button">Купить друга</button>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p class="footer__text">Футер</p>
+        </footer>
+
+    </div>
+</body>
+
 </html>

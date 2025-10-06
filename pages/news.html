@@ -1,57 +1,63 @@
 <!DOCTYPE HTML>
-<html lamg = "ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Семестровая работа</title>
-        <link rel="stylesheet" href="../style/styles.css">   
-    </head>
+<html lang="ru">
 
-    <body>
-        <div class = "page_container">
-            <header class = "header">
-                <h1>Хэдер</h1>
-            </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Семестровая работа</title>
+    <link rel="stylesheet" href="../style/styles.css">
+    <script src="../js/javascript.js" defer></script>
+</head>
 
-            <main>
-                <nav class="nav">
-                    <ul class = "nav_list">
-                        <li class = "nav-item"><a class = "nav_link" href="../index.html">Главная</a></li>
-                        <li class = "nav-item"><a class = "nav_link" href="news.html">О нас</a></li>
-                        <li class = "nav-item"><a class = "nav_link" href="practices.html">Практики</a></li>
-                        <li class = "nav-item"><a class = "nav_link" href="goods.html">Товары</a></li>
-                        <li class = "nav-item"><a class = "nav_link" href="contacts.html">Контакты</a></li>
-                    </ul>
-                </nav>
+<body data-theme="dark">
+    <div class="page">
 
-                <section class = "content">
-                    <article class = news>
-                        <h1 class = "news_title">Новость 1</h1>
-                        <p class = "inf_news"><b>23.09.25 12:24 Фенечка М.С</b></p>
-                        <p class = "piece_of_news">съела огурчики</p>
-                        <img class = "news_photo" src ="../images/ogurets.jpg" width="250" height="250">
-                    </article>
+        <header class="header">
+            <h1 class="header__title">Хэдер</h1>
+            <button id="theme-toggle">Сменить тему</button>
+        </header>
 
-                    <article>
-                        <h1 class = "news_title">Новость 2</h1>
-                        <p class = "inf_news"><b>23.09.25 12:25 Фенечка М.С</b></p>
-                        <p class = "piece_of_news">съела морковочки</p>
-                        <img class = "news_photo" src ="../images/morkov.jpg" width="250" height="250">
-                    </article>
-                    
-                    <article>
-                        <h1 class = "news_title">Новость 3</h1>
-                        <p class = "inf_news"><b>23.09.25 14:38 Фенечка М.С</b></p>
-                        <p class = "piece_of_news">продала свою подругу аську за 300 рублей девушке с авито</p>
-                        <img class = "news_photo" src ="../images/asya.jpg" width="250" height="250">
-                    </article>
-                </section>
-                
-            </main>
+        <main>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
+                    <li class="nav__item"><a class="nav__link" href="news.html">О нас</a></li>
+                    <li class="nav__item"><a class="nav__link" href="practices.html">Практики</a></li>
+                    <li class="nav__item"><a class="nav__link" href="goods.html">Товары</a></li>
+                    <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
 
-            <footer class = "footer">
-                <p>Футер</p>
-            </footer>
-        </div>
-    </body>
+            <section class="news-list">
+                <article class="news">
+                    <h2 class="news__title">Новость 1</h2>
+                    <p class="news__info">23.09.25 12:24 Фенечка М.С</p>
+                    <p class="news__text">Съела огурчики</p>
+                    <img class="news__image" src="../images/ogurets.jpg" width="250" height="250" alt="Огурчики">
+                </article>
+
+                <article class="news">
+                    <h2 class="news__title">Новость 2</h2>
+                    <p class="news__info">23.09.25 12:24 Фенечка М.С</p>
+                    <p class="news__text">Съела морковочки</p>
+                    <img class="news__image" src="../images/morkov.jpg" width="250" height="250" alt="Морковочки">
+                </article>
+
+                <article class="news">
+                    <h2 class="news__title">Новость 3</h2>
+                    <p class="news__info">23.09.25 12:24 Фенечка М.С</p>
+                    <p class="news__text">Продала свою подругу Аську за 300 рублей девушке с Авито</p>
+                    <img class="news__image" src="../images/asya.jpg" width="250" height="250" alt="Аська">
+                </article>
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <p class="footer__text">Футер</p>
+        </footer>
+
+    </div>
+</body>
+
 </html>

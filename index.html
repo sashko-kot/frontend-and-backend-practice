@@ -1,83 +1,99 @@
 <!DOCTYPE HTML>
-<html lamg = "ru">
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Семестровая работа</title>
+    <link rel="stylesheet" href="style/styles.css">
+    <script src="js/javascript.js" defer></script>
+</head>
+
+<body data-theme="dark">
     
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Семестровая работа</title>
-        <link rel="stylesheet" href="style/styles.css">
-    </head>
 
-    <body>
-        <div class ="page_container">
-            
-            <header>
-                <div class = "header">Хэдер</div>
-            </header>
+    <div class="page">
 
-            <nav class="nav">
-                <ul class = "nav_list">
-                    <li class = "nav-item"><a class = "nav_link" href="index.html">Главная</a></li>
-                    <li class = "nav-item"><a class = "nav_link" href="pages/news.html">О нас</a></li>
-                    <li class = "nav-item"><a class = "nav_link" href="practices.html">Практики</a></li>
-                    <li class = "nav-item"><a class = "nav_link" href="pages/goods.html">Товары</a></li>
-                    <li class = "nav-item"><a class = "nav_link" href="pages/contacts.html">Контакты</a></li>
-                </ul>
-            </nav>
+        <header class="header">
+            <h1 class="header__title">Хэдер</h1>
+            <button id="theme-toggle">Сменить тему</button>
+        </header>
 
-            <main class="content">
-                
-                <article class = "profile_header">
-                    <h1 class="profile-title" >морская свинка нафаня ищет легких денег и продает своих друзей</h1>
-                    <img  class="profile-photo" src="images/photo.jpg" alt="Фото автора">
-                    <h2 class="profile-name">настоящий автор, к сожалению, Васюкова Александра Ивановна</h2>
-                    <p class="profile-group">ЭФБО-08-24</p>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="index.html">Главная</a></li>
+                <li class="nav__item"><a class="nav__link" href="pages/news.html">О нас</a></li>
+                <li class="nav__item"><a class="nav__link" href="practices.html">Практики</a></li>
+                <li class="nav__item"><a class="nav__link" href="pages/goods.html">Товары</a></li>
+                <li class="nav__item"><a class="nav__link" href="pages/contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+
+            <section class="profile">
+                <h1 class="profile__title">
+                    Морская свинка Нафаня ищет легких денег и продает своих друзей
+                </h1>
+                <img class="profile__photo" src="images/photo.jpg" alt="Фото автора">
+                <h2 class="profile__name">Настоящий автор: Васюкова Александра Ивановна</h2>
+                <p class="profile__group">ЭФБО-08-24</p>
+            </section>
+
+            <section class="about">
+                <p class="about__text">Обо мне: глупый пушистый аутичный. Ищу работу (деньги).</p>
+            </section>
+
+            <section class="skills">
+                <div class="skills__item">
+                    <h3 class="skills__title">Навык 1</h3>
+                    <p>Звонко свистеть, когда хочу огурчик</p>
+                </div>
+                <div class="skills__item">
+                    <h3 class="skills__title">Навык 2</h3>
+                    <p>Жевать пеленку</p>
+                </div>
+                <div class="skills__item">
+                    <h3 class="skills__title">Навык 3</h3>
+                    <p>Дружить</p>
+                </div>
+                <div class="skills__item">
+                    <h3 class="skills__title">Навык 4</h3>
+                    <p>У меня даже нет извилин, по-научному это называется неровностью, поэтому навыков больше нет</p>
+                </div>
+            </section>
+
+            <section class="experience">
+                <h2 class="experience__title">Мой опыт работы</h2>
+
+                <article class="experience__card">
+                    <h3 class="experience__card-title">Опыт 1</h3>
+                    <p class="experience__card-desc">
+                        Крутая веб-страничка про морских свинок. Кстати, вот <a href="https://sashokot.github.io/lisiesvinki/">она</a>
+                    </p>
                 </article>
 
-                <section class = "about_me">
-                    <p>Обо мне: глупый пушистый аутичный. ищу работу(деньги).</p>
-                </section>
+                <article class="experience__card">
+                    <h3 class="experience__card-title">Опыт 2</h3>
+                    <p class="experience__card-desc">Ела морковь в вольере</p>
+                </article>
 
-                <section class = "skills_container">
-                    <div class="skill-tag">
-                        <h3 class = "skill_title">Навык 1</h3>
-                        звонко свистеть когда хочу огурчик
-                    </div>
-                    <div class="skill-tag">
-                        <h3 class = "skill_title">Навык 2</h3>
-                        жевать пеленку
-                    </div>
-                    <div class="skill-tag">
-                        <h3 class = "skill_title">Навык 3</h3>
-                        дружить
-                    </div>
-                    <div class="skill-tag">
-                        <h3 class = "skill_title">Навык 4</h3>
-                        у меня даже нет извилин, по-научному это называется неровностью, поэтому навыков у меня больше нет
-                    </div>
-                </section>
+                <article class="experience__card">
+                    <h3 class="experience__card-title">Опыт 3</h3>
+                    <p class="experience__card-desc">
+                        Написание битов в онлайн-секвенсере. Если захочется потыкать, вот <a href="https://onlinesequencer.net/">ссылка</a>
+                    </p>
+                </article>
 
-                <section class="experience-section">
-                    <h2 class="section-title">Мой опыт работы</h2>
-                        <article  class="experience-card">
-                            <h3 class="experience-title">Опыт 1</h3>
-                            <p class="experience-desc">крутая веб-страничка про морских свинок. кстати, вот <a href = "https://sashokot.github.io/lisiesvinki/">она</a></p>
-                        </article>
-                        <article class="experience-card">
-                            <h3 class="experience-title">Опыт 2</h3>
-                            <p class="experience-desc">ела морковь в вольере</p>
-                        </article>
-                        <article class="experience-card">
-                            <h3 class="experience-title">Опыт 3</h3>
-                            <p class="experience-desc">написание битов в онлайн сиквенсере. если захочется потыкать, то <a href = "https://onlinesequencer.net/">вот оно</a></p>
-                        </article>
-                    </section>
-            </main>
-            <footer class = "footer">
-                <p>Футер</p>
-            </footer>
-        </div>
-    </body>
+            </section>
 
- 
+        </main>
+
+        <footer class="footer">
+            <p class="footer__text">Футер</p>
+        </footer>
+
+    </div>
+</body>
+
 </html>

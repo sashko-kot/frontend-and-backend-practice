@@ -1,58 +1,60 @@
 <!DOCTYPE HTML>
-<html lamg = "ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Семестровая работа</title>
-        <link rel="stylesheet" href="../style/styles.css">    
-    </head>
+<html lang="ru">
 
-    <body>
-        <div class ="page_container">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Семестровая работа</title>
+    <link rel="stylesheet" href="../style/styles.css">
+    <script src="../js/javascript.js" defer></script>
+</head>
 
-            </div><div class = "header">
-                <header>Хэдер</header>
-            </div>
+<body data-theme="dark">
+    <div class="page">
 
-            
-                
-            <nav class="nav">
-                <ul class = "nav_list">
-                    <li class = "nav-item"><a class = "nav_link" href="../index.html">Главная</a></li>
-                    <li class = "nav-item"><a class = "nav_link" href="news.html">О нас</a></li>
-                    <li class = "nav-item"><a class = "nav_link" href="practices.html">Практики</a></li>
-                    <li class = "nav-item"><a class = "nav_link" href="goods.html">Товары</a></li>
-                    <li class = "nav-item"><a class = "nav_link" href="contacts.html">Контакты</a></li>
-                </ul>
-            </nav>
-            
-            <main class="content">
-                <section class ="goods_container">
-                    <article class =  "goods">
-                        <img class = "image_goods" src ="../images/nastya.jpg" width="250" height="250">
-                        <p class = "name_of_goods">настюха</p>
-                        <p class = "price" ><b>250 рублей</b></p>
-                        
-                    </article>
-                    
-                    <article class =  "goods">
-                        <img class = "image_goods" src ="../images/kent.jpg" width="250" height="250">
-                        <p class = "name_of_goods">друг по имени Кент</p>
-                        <p class = "price"><b>Бесценно</b></p>
-                        
-                    </article>
+        <header class="header">
+            <h1 class="header__title">Хэдер</h1>
+            <button id="theme-toggle">Сменить тему</button>
+        </header>
 
-                    <article class =  "goods">
-                        <img class = "image_goods" src ="../images/liza.jpg" width="250" height="250">
-                        <p class = "name_of_goods">лизка</p>
-                        <p class = "price"><b>249 рублей</b></p>
-                    </article>
-                </section>
-            </main>
 
-            <footer class = "footer">
-                <p>Футер</p>
-            </footer>
-        </div>
-    </body>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
+                <li class="nav__item"><a class="nav__link" href="news.html">О нас</a></li>
+                <li class="nav__item"><a class="nav__link" href="practices.html">Практики</a></li>
+                <li class="nav__item"><a class="nav__link" href="goods.html">Товары</a></li>
+                <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <section class="goods-container">
+                <article class="goods">
+                    <img class="goods__image" src="../images/nastya.jpg" width="250" height="250" alt="Настюха">
+                    <h2 class="goods__name">Настюха</h2>
+                    <p class="goods__price"><b>250 рублей</b></p>
+                </article>
+
+                <article class="goods">
+                    <img class="goods__image" src="../images/kent.jpg" width="250" height="250" alt="Кент">
+                    <h2 class="goods__name">Друг по имени Кент</h2>
+                    <p class="goods__price"><b>Бесценно</b></p>
+                </article>
+
+                <article class="goods">
+                    <img class="goods__image" src="../images/liza.jpg" width="250" height="250" alt="Лизка">
+                    <h2 class="goods__name">Лизка</h2>
+                    <p class="goods__price"><b>249 рублей</b></p>
+                </article>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p class="footer__text">Футер</p>
+        </footer>
+
+    </div>
+</body>
+
 </html>
