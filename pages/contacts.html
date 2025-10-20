@@ -1,93 +1,72 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Контакты — Портфолио</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../styles/styles.css">
+  <link rel="stylesheet" href="../style/styles.css">
 </head>
-<body data-bs-theme="dark">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <img src="../images/icons/logo-32.png" alt="logo" width="36" height="36" class="me-2">
-      <a class="navbar-brand" href="../index.html">coolsite</a>
-      <div class="d-flex align-items-center">
-        <button id="theme-toggle" class="btn btn-outline-light me-2">Светлая тема</button>
-        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenuC"><span class="navbar-toggler-icon"></span></button>
+<body class="page page--dark">
+
+  <header class="header">
+    <div class="header__container">
+      <div class="header__logo-block">
+        <img src="../images/icons/logo-32.png" alt="Логотип" class="header__logo" width="36" height="36">
+        <a href="../index.html" class="header__brand">coolsite</a>
       </div>
-      <div class="collapse navbar-collapse" id="navMenuC">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects.html">Проекты</a></li>
-          <li class="nav-item"><a class="nav-link" href="diary.html">Дневник</a></li>
-          <li class="nav-item"><a class="nav-link active" href="contacts.html">Контакты</a></li>
+
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="../index.html" class="nav__link">Главная</a></li>
+          <li class="nav__item"><a href="projects.html" class="nav__link">Проекты</a></li>
+          <li class="nav__item"><a href="diary.html" class="nav__link">Дневник</a></li>
+          <li class="nav__item"><a href="contacts.html" class="nav__link nav__link--active">Контакты</a></li>
         </ul>
-      </div>
+      </nav>
+
+      <button class="theme-toggle" id="theme-toggle">Светлая тема</button>
     </div>
-  </nav>
+  </header>
 
-  <main class="container py-5">
-    <h1 class="h4 mb-4">Свяжитесь со мной</h1>
+  <main class="main">
+    <section class="contacts">
+      <h1 class="contacts__title">Свяжитесь со мной</h1>
 
-    <div class="row g-4">
-      <div class="col-md-7">
-        <form id="contactForm" class="needs-validation" novalidate>
-          <div class="mb-3">
-            <label for="contactName" class="form-label">Имя</label>
-            <input type="text" class="form-control" id="contactName" required>
-            <div class="invalid-feedback">Введите ваше имя.</div>
+      <div class="contacts__content">
+        <form class="form contacts__form" id="contactForm">
+          <div class="form__group">
+            <label for="contactName" class="form__label">Имя</label>
+            <input type="text" id="contactName" name="contactName" class="form__input" required>
           </div>
 
-          <div class="mb-3">
-            <label for="contactEmail" class="form-label">Email</label>
-            <input type="email" class="form-control" id="contactEmail" required>
-            <div class="invalid-feedback">Введите корректный email.</div>
+          <div class="form__group">
+            <label for="contactEmail" class="form__label">Email</label>
+            <input type="email" id="contactEmail" name="contactEmail" class="form__input" required>
           </div>
 
-          <div class="mb-3">
-            <label for="contactMessage" class="form-label">Сообщение</label>
-            <textarea id="contactMessage" class="form-control" rows="5" required></textarea>
-            <div class="invalid-feedback">Напишите сообщение.</div>
+          <div class="form__group">
+            <label for="contactMessage" class="form__label">Сообщение</label>
+            <textarea id="contactMessage" name="contactMessage" class="form__textarea" rows="5" required></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary">Отправить сообщение</button>
+          <button type="submit" class="form__button">Отправить сообщение</button>
         </form>
-      </div>
 
-      <div class="col-md-5">
-        <h5>Контакты</h5>
-        <p>📧 <a href="mailto:student@edu.ru">vasyukova.a.i@edu.mirea.ru</a></p>
-        <p>📱 GitHub: <a href="https://github.com/sashko-kot" target="_blank">sashko-kot</a></p>
-        <p>📍 Amsterdam, Netherlands</p>
+        <div class="contacts__info">
+          <h2 class="contacts__subtitle">Контакты</h2>
+          <p class="contacts__item">📧 <a href="mailto:vasyukova.a.i@edu.mirea.ru" class="contacts__link">vasyukova.a.i@edu.mirea.ru</a></p>
+          <p class="contacts__item">📱 GitHub: <a href="https://github.com/sashko-kot" target="_blank" class="contacts__link">sashko-kot</a></p>
+          <p class="contacts__item">📍 Amsterdam, Netherlands</p>
+        </div>
       </div>
-    </div>
+    </section>
   </main>
 
-  <footer class="bg-dark text-light py-3">
-    <div class="container d-flex justify-content-between">
-      <small>© 2025 привет а чего вниз смотришь</small>
+  <footer class="footer">
+    <div class="footer__container">
+      <small class="footer__copy">© 2025 привет а чего вниз смотришь</small>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../scripts/javascript.js" defer></script>
-  <script>
-    // Bootstrap валидация формы (front-end)
-    (function () {
-      const form = document.getElementById('contactForm');
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        if (!form.checkValidity()) {
-          form.classList.add('was-validated');
-          return;
-        }
-        // Здесь — логика отправки: fetch к серверу или email provider.
-        alert('Спасибо! Сообщение отправлено (симуляция).');
-        form.reset();
-        form.classList.remove('was-validated');
-      });
-    })();
-  </script>
 </body>
 </html>

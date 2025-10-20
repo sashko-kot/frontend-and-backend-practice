@@ -1,142 +1,83 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Проекты — Портфолио</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../styles/styles.css">
+  <link rel="stylesheet" href="../style/styles.css">
 </head>
-<body data-bs-theme="dark">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <img src="../images/icons/logo-32.png" alt="logo" width="36" height="36" class="me-2">
-      <a class="navbar-brand" href="../index.html">coolsite</a>
-      <div class="d-flex align-items-center">
-        <button id="theme-toggle" class="btn btn-outline-light me-2">Светлая тема</button>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenuP">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+<body class="page page--dark">
+  <header class="header">
+    <div class="header__container">
+      <div class="header__logo-block">
+        <img src="../images/icons/logo-32.png" alt="Логотип" class="header__logo" width="36" height="36">
+        <a href="../index.html" class="header__brand">coolsite</a>
       </div>
-      <div class="collapse navbar-collapse" id="navMenuP">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-          <li class="nav-item"><a class="nav-link active" href="projects.html">Проекты</a></li>
-          <li class="nav-item"><a class="nav-link" href="diary.html">Дневник</a></li>
-          <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="../index.html" class="nav__link">Главная</a></li>
+          <li class="nav__item"><a href="projects.html" class="nav__link nav__link--active">Проекты</a></li>
+          <li class="nav__item"><a href="diary.html" class="nav__link">Дневник</a></li>
+          <li class="nav__item"><a href="contacts.html" class="nav__link">Контакты</a></li>
         </ul>
-      </div>
+      </nav>
+
+      <button class="theme-toggle" id="theme-toggle">Светлая тема</button>
     </div>
-  </nav>
+  </header>
 
-  <main class="container py-5">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-      <h1 class="h4 mb-0">Мои проекты</h1>
-      <div>
-        <div class="btn-group" role="group" aria-label="фильтр">
-          <button class="btn btn-outline-secondary btn-sm active" data-filter="all">Все</button>
-          <button class="btn btn-outline-secondary btn-sm" data-filter="html">HTML</button>
-          <button class="btn btn-outline-secondary btn-sm" data-filter="js">JavaScript</button>
-          <button class="btn btn-outline-secondary btn-sm" data-filter="react">React</button>
+  <main class="main">
+    <section class="projects">
+      <div class="projects__header">
+        <h1 class="projects__title">Мои проекты</h1>
+        <div class="projects__filters">
+          <button class="projects__filter projects__filter--active" data-filter="all">Все</button>
+          <button class="projects__filter" data-filter="html">HTML</button>
+          <button class="projects__filter" data-filter="js">JavaScript</button>
+          <button class="projects__filter" data-filter="react">React</button>
         </div>
       </div>
-    </div>
 
-    <div id="projectsGrid" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-      <!-- Пример карточки с data-атрибутами для фильтра -->
-      <div class="col" data-tags="html">
-        <div class="card h-100">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Личный сайт</h5>
-            <p class="card-text">HTML, CSS — адаптивный шаблон.</p>
-            <div class="mt-auto d-flex gap-2">
-              <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Личный сайт" data-desc="Подробное описание личного сайта." data-img="../images/projects/p1-1.jpg">Подробнее</button>
-              <a href="#" class="btn btn-sm btn-outline-secondary">Ссылка</a>
-            </div>
+      <div class="projects__grid">
+        <article class="project-card" data-tags="html">
+          <h2 class="project-card__title">Личный сайт</h2>
+          <p class="project-card__text">HTML, CSS — адаптивный шаблон.</p>
+          <div class="project-card__actions">
+            <button class="project-card__btn">Подробнее</button>
+            <a href="#" class="project-card__link">Ссылка</a>
           </div>
-        </div>
-      </div>
+        </article>
 
-      <div class="col" data-tags="js">
-        <div class="card h-100">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Todo-приложение</h5>
-            <p class="card-text">Vanilla JS — сохранение задач, фильтры.</p>
-            <div class="mt-auto d-flex gap-2">
-              <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Todo-приложение" data-desc="Описание Todo-приложения" data-img="../images/projects/p2-1.jpg">Подробнее</button>
-              <a href="#" class="btn btn-sm btn-outline-secondary">Исходники</a>
-            </div>
+        <article class="project-card" data-tags="js">
+          <h2 class="project-card__title">Todo-приложение</h2>
+          <p class="project-card__text">Vanilla JS — сохранение задач, фильтры.</p>
+          <div class="project-card__actions">
+            <button class="project-card__btn">Подробнее</button>
+            <a href="#" class="project-card__link">Исходники</a>
           </div>
-        </div>
-      </div>
+        </article>
 
-      <div class="col" data-tags="react">
-        <div class="card h-100">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Портфолио (React)</h5>
-            <p class="card-text">React + Bootstrap — SPA.</p>
-            <div class="mt-auto d-flex gap-2">
-              <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Портфолио React" data-desc="Описание React-проекта" data-img="../images/projects/p3-1.jpg">Подробнее</button>
-              <a href="#" class="btn btn-sm btn-outline-secondary">Живая</a>
-            </div>
+        <article class="project-card" data-tags="react">
+          <h2 class="project-card__title">Портфолио (React)</h2>
+          <p class="project-card__text">React + Bootstrap — SPA.</p>
+          <div class="project-card__actions">
+            <button class="project-card__btn">Подробнее</button>
+            <a href="#" class="project-card__link">Живая</a>
           </div>
-        </div>
+        </article>
       </div>
-
-      <!-- Добавляйте карточки аналогично -->
-    </div>
+    </section>
   </main>
 
-  <!-- Повторное модальное окно (тот же ID, что и в index) -->
-  <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 id="projectModalLabel" class="modal-title">Проект</h5>
-          <button class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-        </div>
-        <div class="modal-body">
-          <img id="projectModalImg" src="" alt="" class="img-fluid mb-3">
-          <p id="projectModalDesc"></p>
-          <div class="d-flex gap-2">
-            <a id="projectLiveLink" class="btn btn-outline-primary btn-sm" href="#" target="_blank">Живая версия</a>
-            <a id="projectCodeLink" class="btn btn-outline-secondary btn-sm" href="#" target="_blank">Исходный код</a>
-          </div>
-        </div>
+  <footer class="footer">
+    <div class="footer__container">
+      <small class="footer__copy">© 2025 Имя Студента</small>
+      <div class="footer__contacts">
+        Контакты:
+        <a href="mailto:student@edu.ru" class="footer__email">student@edu.ru</a>
       </div>
     </div>
-  </div>
-
-  <footer class="bg-dark text-light py-3">
-    <div class="container d-flex justify-content-between">
-      <small>© 2025 Имя Студента</small>
-      <div>Контакты: <a href="mailto:student@edu.ru" class="link-light">student@edu.ru</a></div>
-    </div>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../scripts/javascript.js" defer></script>
-  <script>
-    // Лёгкий фильтр по тегам (на клиенте)
-    document.addEventListener('DOMContentLoaded', () => {
-      const grid = document.getElementById('projectsGrid');
-      const buttons = document.querySelectorAll('[data-filter]');
-      buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          buttons.forEach(b=>b.classList.remove('active'));
-          btn.classList.add('active');
-          const filter = btn.getAttribute('data-filter');
-          Array.from(grid.children).forEach(col => {
-            if (filter === 'all') {
-              col.style.display = '';
-            } else {
-              const tags = col.getAttribute('data-tags') || '';
-              col.style.display = tags.split(',').includes(filter) ? '' : 'none';
-            }
-          });
-        });
-      });
-    });
-  </script>
 </body>
 </html>
