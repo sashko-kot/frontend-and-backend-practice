@@ -1,72 +1,165 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Контакты — Портфолио</title>
   <link rel="stylesheet" href="../style/styles.css">
 </head>
-<body class="page page--dark">
-
-  <header class="header">
-    <div class="header__container">
-      <div class="header__logo-block">
-        <img src="../images/icons/logo-32.png" alt="Логотип" class="header__logo" width="36" height="36">
-        <a href="../index.html" class="header__brand">coolsite</a>
-      </div>
-
-      <nav class="nav">
-        <ul class="nav__list">
-          <li class="nav__item"><a href="../index.html" class="nav__link">Главная</a></li>
-          <li class="nav__item"><a href="projects.html" class="nav__link">Проекты</a></li>
-          <li class="nav__item"><a href="diary.html" class="nav__link">Дневник</a></li>
-          <li class="nav__item"><a href="contacts.html" class="nav__link nav__link--active">Контакты</a></li>
-        </ul>
-      </nav>
-
-      <button class="theme-toggle" id="theme-toggle">Светлая тема</button>
-    </div>
-  </header>
-
-  <main class="main">
-    <section class="contacts">
-      <h1 class="contacts__title">Свяжитесь со мной</h1>
-
-      <div class="contacts__content">
-        <form class="form contacts__form" id="contactForm">
-          <div class="form__group">
-            <label for="contactName" class="form__label">Имя</label>
-            <input type="text" id="contactName" name="contactName" class="form__input" required>
+<body>
+  <div class="page">
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header__content">
+          <div class="header__logo">
+            <img src="../images/icons/logo-32.png" alt="logo" class="header__logo-image">
+            <span class="header__brand">coolsite</span>
           </div>
-
-          <div class="form__group">
-            <label for="contactEmail" class="form__label">Email</label>
-            <input type="email" id="contactEmail" name="contactEmail" class="form__input" required>
-          </div>
-
-          <div class="form__group">
-            <label for="contactMessage" class="form__label">Сообщение</label>
-            <textarea id="contactMessage" name="contactMessage" class="form__textarea" rows="5" required></textarea>
-          </div>
-
-          <button type="submit" class="form__button">Отправить сообщение</button>
-        </form>
-
-        <div class="contacts__info">
-          <h2 class="contacts__subtitle">Контакты</h2>
-          <p class="contacts__item">📧 <a href="mailto:vasyukova.a.i@edu.mirea.ru" class="contacts__link">vasyukova.a.i@edu.mirea.ru</a></p>
-          <p class="contacts__item">📱 GitHub: <a href="https://github.com/sashko-kot" target="_blank" class="contacts__link">sashko-kot</a></p>
-          <p class="contacts__item">📍 Amsterdam, Netherlands</p>
+          <button id="theme-toggle" class="button button--secondary">Светлая тема</button>
         </div>
       </div>
-    </section>
-  </main>
+    </header>
 
-  <footer class="footer">
-    <div class="footer__container">
-      <small class="footer__copy">© 2025 привет а чего вниз смотришь</small>
-    </div>
-  </footer>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="container">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="../index.html" class="nav__link">Главная</a>
+          </li>
+          <li class="nav__item">
+            <a href="projects.html" class="nav__link">Проекты</a>
+          </li>
+          <li class="nav__item">
+            <a href="diary.html" class="nav__link">Дневник</a>
+          </li>
+          <li class="nav__item nav__item--active">
+            <a href="contacts.html" class="nav__link">Контакты</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+        <!-- Contacts Section -->
+        <section class="contacts">
+          <h1 class="section-title">Свяжитесь со мной</h1>
+
+          <div class="contacts__content">
+            <!-- Contact Form -->
+            <div class="contact-form">
+              <h2 class="contact-form__title">Написать сообщение</h2>
+              <form class="form" id="contactForm">
+                <div class="form__group">
+                  <label for="contactName" class="form__label">Имя</label>
+                  <input type="text" id="contactName" name="contactName" class="form__input" required>
+                </div>
+
+                <div class="form__group">
+                  <label for="contactEmail" class="form__label">Email</label>
+                  <input type="email" id="contactEmail" name="contactEmail" class="form__input" required>
+                </div>
+
+                <div class="form__group">
+                  <label for="contactMessage" class="form__label">Сообщение</label>
+                  <textarea id="contactMessage" name="contactMessage" class="form__textarea" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="button button--primary form__button">Отправить сообщение</button>
+              </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="contacts__info">
+              <h2 class="contacts__subtitle">Мои контакты</h2>
+              <div class="contact-info__items">
+                <div class="contact-item">
+                  <div class="contact-item__icon">📧</div>
+                  <div class="contact-item__content">
+                    <h3 class="contact-item__title">Email</h3>
+                    <p class="contact-item__value">
+                      <a href="mailto:vasyukova.a.i@edu.mirea.ru" class="contacts__link">vasyukova.a.i@edu.mirea.ru</a>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-item__icon">💻</div>
+                  <div class="contact-item__content">
+                    <h3 class="contact-item__title">GitHub</h3>
+                    <p class="contact-item__value">
+                      <a href="https://github.com/sashko-kot" target="_blank" class="contacts__link">github.com/sashko-kot</a>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-item__icon">📍</div>
+                  <div class="contact-item__content">
+                    <h3 class="contact-item__title">Локация</h3>
+                    <p class="contact-item__value">Amsterdam, Netherlands</p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-item__icon">🎓</div>
+                  <div class="contact-item__content">
+                    <h3 class="contact-item__title">Образование</h3>
+                    <p class="contact-item__value">Московский радиотехнический институт</p>
+                    <p class="contact-item__value">Группа: ЭФБО-08-24</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Additional Info -->
+        <section class="additional-info">
+          <div class="additional-info__content">
+            <h2 class="additional-info__title">Когда связываться</h2>
+            <div class="additional-info__grid">
+              <div class="info-card">
+                <h3 class="info-card__title">📅 Лучшее время</h3>
+                <p class="info-card__text">Пн-Пт: 10:00 - 18:00</p>
+                <p class="info-card__text">Суббота: 12:00 - 16:00</p>
+                <p class="info-card__text">Воскресенье: выходной</p>
+              </div>
+              <div class="info-card">
+                <h3 class="info-card__title">⚡ Скорость ответа</h3>
+                <p class="info-card__text">Обычно отвечаю в течение 24 часов</p>
+                <p class="info-card__text">Срочные вопросы: отмечайте в теме письма</p>
+              </div>
+              <div class="info-card">
+                <h3 class="info-card__title">💬 Предпочтения</h3>
+                <p class="info-card__text">Лучше всего по email</p>
+                <p class="info-card__text">Для проектов — приложите ТЗ</p>
+                <p class="info-card__text">Люблю конкретные задачи</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <p class="footer__copyright">© 2025 Васюкова А.И — привет а чего вниз смотришь</p>
+          <div class="footer__links">
+            <a href="mailto:vasyukova.a.i@edu.mirea.ru" class="footer__link">vasyukova.a.i@edu.mirea.ru</a>
+            <span class="footer__separator">•</span>
+            <a href="https://github.com/sashko-kot" target="_blank" class="footer__link">GitHub: sashko-kot</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../scripts/javascript.js" defer></script>
 </body>
 </html>

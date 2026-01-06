@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewportfit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Главная — Портфолио студента</title>
   <link rel="stylesheet" href="style/styles.css">
 </head>
@@ -23,15 +23,25 @@
 
     <!-- Navigation -->
     <nav class="nav">
+      <div class="container">
         <ul class="nav__list">
-          <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
-          <li class="nav__item"><a href="pages/projects.html" class="nav__link nav__link--active">Проекты</a></li>
-          <li class="nav__item"><a href="pages/diary.html" class="nav__link">Дневник</a></li>
-          <li class="nav__item"><a href="pages/contacts.html" class="nav__link">Контакты</a></li>
+          <li class="nav__item nav__item--active">
+            <a href="index.html" class="nav__link">Главная</a>
+          </li>
+          <li class="nav__item">
+            <a href="pages/projects.html" class="nav__link">Проекты</a>
+          </li>
+          <li class="nav__item">
+            <a href="pages/diary.html" class="nav__link">Дневник</a>
+          </li>
+          <li class="nav__item">
+            <a href="pages/contacts.html" class="nav__link">Контакты</a>
+          </li>
         </ul>
-      </nav>
+      </div>
+    </nav>
 
-    <!-- Main -->
+    <!-- Main Content -->
     <main class="main">
       <div class="container">
         <!-- Hero Section -->
@@ -41,7 +51,7 @@
               <img src="images/photo.jpg" alt="Фото студента" class="hero__photo">
             </div>
             <div class="hero__info">
-              <h1 class="hero__title">Привет! Я — <strong>Васюкова А.И</strong></h1>
+              <h2 class="hero__greeting">Привет! Я — <strong>Васюкова А.И</strong></h2>
               <p class="hero__description">
                 Студент, группа <strong>ЭФБО-08-24</strong>.<br>
                 Увлекаюсь веб-разработкой, создаю БИТЫ, чищу клетку своих морских свинок ёу.
@@ -97,14 +107,23 @@
           </div>
         </section>
 
-        <!-- Projects Section -->
-        <section class="projects">
+        <!-- Projects Preview -->
+        <section class="projects-preview">
           <h2 class="section-title">Лучшие проекты</h2>
-          <div class="projects__grid">
+          <div class="projects-preview__grid">
             <article class="project-card">
+              <div class="project-card__image">
+                <img src="images/projects/p1-1.jpg" alt="Проект 1">
+              </div>
               <div class="project-card__content">
                 <h3 class="project-card__title">Проект 1</h3>
-                <p class="project-card__description">Короткое описание проекта.</p>
+                <p class="project-card__description">
+                  Короткое описание проекта.
+                </p>
+                <div class="project-card__tags">
+                  <span class="tag">HTML</span>
+                  <span class="tag">CSS</span>
+                </div>
                 <button class="button button--small button--primary project-card__button"
                   data-title="Проект 1"
                   data-desc="Полное описание Проекта 1"
@@ -115,9 +134,17 @@
             </article>
 
             <article class="project-card">
+              <div class="project-card__image">
+                <img src="images/projects/p2-1.jpg" alt="Проект 2">
+              </div>
               <div class="project-card__content">
                 <h3 class="project-card__title">Проект 2</h3>
-                <p class="project-card__description">Короткое описание проекта.</p>
+                <p class="project-card__description">
+                  Короткое описание проекта.
+                </p>
+                <div class="project-card__tags">
+                  <span class="tag">JavaScript</span>
+                </div>
                 <button class="button button--small button--primary project-card__button"
                   data-title="Проект 2"
                   data-desc="Полное описание Проекта 2"
@@ -128,9 +155,18 @@
             </article>
 
             <article class="project-card">
+              <div class="project-card__image">
+                <img src="images/projects/p3-1.jpg" alt="Проект 3">
+              </div>
               <div class="project-card__content">
                 <h3 class="project-card__title">Проект 3</h3>
-                <p class="project-card__description">Короткое описание проекта.</p>
+                <p class="project-card__description">
+                  Короткое описание проекта.
+                </p>
+                <div class="project-card__tags">
+                  <span class="tag">Bootstrap</span>
+                  <span class="tag">CSS</span>
+                </div>
                 <button class="button button--small button--primary project-card__button"
                   data-title="Проект 3"
                   data-desc="Полное описание Проекта 3"
@@ -148,7 +184,7 @@
     <footer class="footer">
       <div class="container">
         <div class="footer__content">
-          <p class="footer__text">© 2025 Имя Студента</p>
+          <p class="footer__copyright">© 2025 Васюкова А.И</p>
           <div class="footer__links">
             <a href="mailto:student@edu.ru" class="footer__link">student@edu.ru</a>
             <span class="footer__separator">•</span>

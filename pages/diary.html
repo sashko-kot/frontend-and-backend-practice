@@ -1,122 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Дневник — Портфолио</title>
   <link rel="stylesheet" href="../style/styles.css">
 </head>
-<body class="page page--dark">
-
-  <header class="header">
-    <div class="header__container">
-      <div class="header__logo-block">
-        <img src="../images/icons/logo-32.png" alt="Логотип" class="header__logo" width="36" height="36">
-        <a href="../index.html" class="header__brand">coolsite</a>
+<body>
+  <div class="page">
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header__content">
+          <div class="header__logo">
+            <img src="../images/icons/logo-32.png" alt="logo" class="header__logo-image">
+            <span class="header__brand">coolsite</span>
+          </div>
+          <button id="theme-toggle" class="button button--secondary">Светлая тема</button>
+        </div>
       </div>
+    </header>
 
-      <nav class="nav">
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="container">
         <ul class="nav__list">
-          <li class="nav__item"><a href="../index.html" class="nav__link">Главная</a></li>
-          <li class="nav__item"><a href="projects.html" class="nav__link">Проекты</a></li>
-          <li class="nav__item"><a href="diary.html" class="nav__link nav__link--active">Дневник</a></li>
-          <li class="nav__item"><a href="contacts.html" class="nav__link">Контакты</a></li>
+          <li class="nav__item">
+            <a href="../index.html" class="nav__link">Главная</a>
+          </li>
+          <li class="nav__item">
+            <a href="projects.html" class="nav__link">Проекты</a>
+          </li>
+          <li class="nav__item nav__item--active">
+            <a href="diary.html" class="nav__link">Дневник</a>
+          </li>
+          <li class="nav__item">
+            <a href="contacts.html" class="nav__link">Контакты</a>
+          </li>
         </ul>
-      </nav>
-
-      <button class="theme-toggle" id="theme-toggle">Светлая тема</button>
-    </div>
-  </header>
-
-  <main class="main">
-    <section class="diary">
-      <h1 class="diary__title">Мой учебный прогресс</h1>
-
-      <div class="diary__log">
-        <article class="diary-entry">
-          <p class="diary-entry__text">13 окт — Проснуться</p>
-          <span class="diary-entry__status diary-entry__status--done">✓</span>
-        </article>
-
-        <article class="diary-entry">
-          <p class="diary-entry__text">13 окт — Встать с кровати</p>
-          <span class="diary-entry__status diary-entry__status--done">✓</span>
-        </article>
-
-        <article class="diary-entry">
-          <p class="diary-entry__text">13 окт — Сказать привет подкроватному гномику</p>
-          <span class="diary-entry__status diary-entry__status--progress">in progress</span>
-        </article>
-
-        <article class="diary-entry">
-          <p class="diary-entry__text">13 окт — опа опа опапа сальтуха)</p>
-          <span class="diary-entry__status diary-entry__status--progress">in progress</span>
-        </article>
       </div>
-    </section>
+    </nav>
 
-    <section class="courses">
-      <h2 class="courses__title">Текущие курсы</h2>
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+        <!-- Diary Section -->
+        <section class="diary">
+          <h1 class="section-title">Мой учебный прогресс</h1>
 
-      <div class="course">
-        <div class="course__header">
-          <span class="course__name">Веб-разработка</span>
-          <span class="course__percent">20%</span>
-        </div>
-        <div class="course__progress">
-          <div class="course__bar" style="width: 20%"></div>
-        </div>
-      </div>
+          <div class="timeline">
+            <!-- Entry 1 -->
+            <article class="timeline__item">
+              <div class="timeline__date">13 окт 2024</div>
+              <div class="timeline__content">
+                <h3 class="timeline__title">Проснуться</h3>
+                <p class="timeline__description">Первая и самая важная задача дня. Кофе обязателен.</p>
+              </div>
+              <span class="timeline__status timeline__status--completed">Выполнено</span>
+            </article>
 
-      <div class="course">
-        <div class="course__header">
-          <span class="course__name">JavaScript</span>
-          <span class="course__percent">10%</span>
-        </div>
-        <div class="course__progress">
-          <div class="course__bar" style="width: 10%"></div>
-        </div>
-      </div>
-
-      <div class="course">
-        <div class="course__header">
-          <span class="course__name">React</span>
-          <span class="course__percent">0%</span>
-        </div>
-        <div class="course__progress">
-          <div class="course__bar" style="width: 0%"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="form-section">
-      <h2 class="form-section__title">Добавить запись</h2>
-
-      <form class="form" id="diaryForm">
-        <div class="form__group">
-          <label for="entryTitle" class="form__label">Заголовок</label>
-          <input type="text" id="entryTitle" name="entryTitle" class="form__input" required>
-        </div>
-
-        <div class="form__group">
-          <label for="entryText" class="form__label">Текст</label>
-          <textarea id="entryText" name="entryText" class="form__textarea" rows="3" required></textarea>
-        </div>
-
-        <button type="submit" class="form__button">Добавить</button>
-      </form>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="footer__container">
-      <small class="footer__copy">© 2025 в глаза мне смотри</small>
-      <div class="footer__contacts">
-        Контакты:
-        <a href="mailto:student@edu.ru" class="footer__email">student@edu.ru</a>
-      </div>
-    </div>
-  </footer>
-
-</body>
-</html>
+            <!-- Entry 2 -->
+            <article class="timeline__item">
+              <div class="timeline__

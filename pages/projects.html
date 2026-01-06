@@ -1,83 +1,140 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Проекты — Портфолио</title>
   <link rel="stylesheet" href="../style/styles.css">
 </head>
-<body class="page page--dark">
-  <header class="header">
-    <div class="header__container">
-      <div class="header__logo-block">
-        <img src="../images/icons/logo-32.png" alt="Логотип" class="header__logo" width="36" height="36">
-        <a href="../index.html" class="header__brand">coolsite</a>
-      </div>
-
-      <nav class="nav">
-        <ul class="nav__list">
-          <li class="nav__item"><a href="../index.html" class="nav__link">Главная</a></li>
-          <li class="nav__item"><a href="projects.html" class="nav__link nav__link--active">Проекты</a></li>
-          <li class="nav__item"><a href="diary.html" class="nav__link">Дневник</a></li>
-          <li class="nav__item"><a href="contacts.html" class="nav__link">Контакты</a></li>
-        </ul>
-      </nav>
-
-      <button class="theme-toggle" id="theme-toggle">Светлая тема</button>
-    </div>
-  </header>
-
-  <main class="main">
-    <section class="projects">
-      <div class="projects__header">
-        <h1 class="projects__title">Мои проекты</h1>
-        <div class="projects__filters">
-          <button class="projects__filter projects__filter--active" data-filter="all">Все</button>
-          <button class="projects__filter" data-filter="html">HTML</button>
-          <button class="projects__filter" data-filter="js">JavaScript</button>
-          <button class="projects__filter" data-filter="react">React</button>
+<body>
+  <div class="page">
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header__content">
+          <div class="header__logo">
+            <img src="../images/icons/logo-32.png" alt="logo" class="header__logo-image">
+            <span class="header__brand">coolsite</span>
+          </div>
+          <button id="theme-toggle" class="button button--secondary">Светлая тема</button>
         </div>
       </div>
+    </header>
 
-      <div class="projects__grid">
-        <article class="project-card" data-tags="html">
-          <h2 class="project-card__title">Личный сайт</h2>
-          <p class="project-card__text">HTML, CSS — адаптивный шаблон.</p>
-          <div class="project-card__actions">
-            <button class="project-card__btn">Подробнее</button>
-            <a href="#" class="project-card__link">Ссылка</a>
-          </div>
-        </article>
-
-        <article class="project-card" data-tags="js">
-          <h2 class="project-card__title">Todo-приложение</h2>
-          <p class="project-card__text">Vanilla JS — сохранение задач, фильтры.</p>
-          <div class="project-card__actions">
-            <button class="project-card__btn">Подробнее</button>
-            <a href="#" class="project-card__link">Исходники</a>
-          </div>
-        </article>
-
-        <article class="project-card" data-tags="react">
-          <h2 class="project-card__title">Портфолио (React)</h2>
-          <p class="project-card__text">React + Bootstrap — SPA.</p>
-          <div class="project-card__actions">
-            <button class="project-card__btn">Подробнее</button>
-            <a href="#" class="project-card__link">Живая</a>
-          </div>
-        </article>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="container">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="../index.html" class="nav__link">Главная</a>
+          </li>
+          <li class="nav__item nav__item--active">
+            <a href="projects.html" class="nav__link">Проекты</a>
+          </li>
+          <li class="nav__item">
+            <a href="diary.html" class="nav__link">Дневник</a>
+          </li>
+          <li class="nav__item">
+            <a href="contacts.html" class="nav__link">Контакты</a>
+          </li>
+        </ul>
       </div>
-    </section>
-  </main>
+    </nav>
 
-  <footer class="footer">
-    <div class="footer__container">
-      <small class="footer__copy">© 2025 Имя Студента</small>
-      <div class="footer__contacts">
-        Контакты:
-        <a href="mailto:student@edu.ru" class="footer__email">student@edu.ru</a>
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+        <!-- Projects Header -->
+        <div class="projects__header">
+          <h1 class="section-title">Мои проекты</h1>
+          <div class="projects__filters">
+            <button class="projects__filter projects__filter--active" data-filter="all">Все</button>
+            <button class="projects__filter" data-filter="html">HTML</button>
+            <button class="projects__filter" data-filter="js">JavaScript</button>
+            <button class="projects__filter" data-filter="react">React</button>
+          </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects__grid">
+          <!-- Project 1 -->
+          <article class="project-card" data-tags="html">
+            <div class="project-card__image">
+              <img src="../images/projects/p1-1.jpg" alt="Личный сайт">
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">Личный сайт</h3>
+              <p class="project-card__text">HTML, CSS — адаптивный шаблон с использованием современных технологий веб-разработки.</p>
+              <div class="project-card__tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Адаптивность</span>
+              </div>
+              <div class="project-card__actions">
+                <button class="button button--primary project-card__btn">Подробнее</button>
+                <a href="#" class="button button--outline project-card__link">Исходники</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card" data-tags="js">
+            <div class="project-card__image">
+              <img src="../images/projects/p2-1.jpg" alt="Todo приложение">
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">Todo приложение</h3>
+              <p class="project-card__text">Vanilla JS — приложение для управления задачами с сохранением в LocalStorage.</p>
+              <div class="project-card__tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">LocalStorage</span>
+                <span class="tag">UI/UX</span>
+              </div>
+              <div class="project-card__actions">
+                <button class="button button--primary project-card__btn">Подробнее</button>
+                <a href="#" class="button button--outline project-card__link">Демо</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card" data-tags="react">
+            <div class="project-card__image">
+              <img src="../images/projects/p3-1.jpg" alt="React Портфолио">
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">Портфолио (React)</h3>
+              <p class="project-card__text">React + Bootstrap — одностраничное приложение с анимациями и адаптивным дизайном.</p>
+              <div class="project-card__tags">
+                <span class="tag">React</span>
+                <span class="tag">Bootstrap</span>
+                <span class="tag">SPA</span>
+              </div>
+              <div class="project-card__actions">
+                <button class="button button--primary project-card__btn">Подробнее</button>
+                <a href="#" class="button button--outline project-card__link">Живая версия</a>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
-    </div>
-  </footer>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <p class="footer__copyright">© 2025 Васюкова А.И</p>
+          <div class="footer__links">
+            <a href="mailto:student@edu.ru" class="footer__link">student@edu.ru</a>
+            <span class="footer__separator">•</span>
+            <a href="https://github.com/username" target="_blank" class="footer__link">GitHub: username</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../scripts/javascript.js" defer></script>
 </body>
 </html>
