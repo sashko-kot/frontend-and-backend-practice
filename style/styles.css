@@ -1140,3 +1140,620 @@ body {
     padding: var(--space-md);
   }
 }
+
+/* ====== АДАПТИВНЫЕ ИЗОБРАЖЕНИЯ ====== */
+
+/* Базовое адаптивное изображение */
+.responsive-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 100%;
+}
+
+/* Object-fit варианты */
+.img-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.img-contain {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.img-fill {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+/* Ленивая загрузка */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* Адаптивная галерея для проектов */
+.projects-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
+}
+
+.project-gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    aspect-ratio: 16/9;
+}
+
+.project-gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-gallery-item:hover .project-gallery-image {
+    transform: scale(1.1);
+}
+
+.project-gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(26, 4, 4, 0.9));
+    color: var(--text-light);
+    padding: var(--space-md);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.project-gallery-item:hover .project-gallery-caption {
+    transform: translateY(0);
+}
+
+/* Адаптивные иконки */
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+.icon--small {
+    width: 16px;
+    height: 16px;
+}
+
+.icon--large {
+    width: 32px;
+    height: 32px;
+}
+
+.icon--retina {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Адаптивные аватарки */
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+}
+
+.avatar--small {
+    width: 50px;
+    height: 50px;
+}
+
+.avatar--medium {
+    width: 100px;
+    height: 100px;
+}
+
+/* Сетка изображений в дневнике */
+.diary-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+}
+
+.diary-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+}
+
+.diary-image:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-md);
+}
+
+/* Адаптивные изображения в проектах */
+.project-screenshots {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-md);
+    margin: var(--space-lg) 0;
+}
+
+.screenshot {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(194, 44, 29, 0.3);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Фоновые изображения с адаптивностью */
+.bg-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.bg-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 4, 4, 0.7);
+}
+
+.bg-image-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Логотипы и брендинг */
+.logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.logo--header {
+    width: 32px;
+    height: 32px;
+}
+
+.logo--footer {
+    width: 48px;
+    height: 48px;
+}
+
+/* ====== АДАПТИВНЫЕ ФОРМЫ ====== */
+.form-adaptive {
+    display: grid;
+    gap: var(--space-md);
+}
+
+.form-adaptive__group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-adaptive__label {
+    margin-bottom: var(--space-xs);
+    font-weight: 600;
+}
+
+.form-adaptive__input,
+.form-adaptive__textarea,
+.form-adaptive__select {
+    width: 100%;
+    padding: var(--space-sm);
+    border: 1px solid rgba(194, 44, 29, 0.3);
+    border-radius: var(--radius-md);
+    background-color: var(--bg-input);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-adaptive__textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-adaptive__input:focus,
+.form-adaptive__textarea:focus,
+.form-adaptive__select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(194, 44, 29, 0.2);
+}
+
+/* Адаптивная кнопка отправки */
+.form-adaptive__submit {
+    width: 100%;
+    padding: var(--space-md);
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.form-adaptive__submit:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* ====== АДАПТИВНЫЕ ТАБЛИЦЫ ====== */
+.table-responsive {
+    overflow-x: auto;
+    margin: var(--space-lg) 0;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+.adaptive-table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    background-color: var(--bg-card);
+}
+
+.adaptive-table th,
+.adaptive-table td {
+    padding: var(--space-md);
+    text-align: left;
+    border-bottom: 1px solid rgba(194, 44, 29, 0.2);
+}
+
+.adaptive-table th {
+    background-color: rgba(194, 44, 29, 0.1);
+    color: var(--primary-light);
+    font-weight: 600;
+}
+
+.adaptive-table tr:hover {
+    background-color: rgba(194, 44, 29, 0.05);
+}
+
+.adaptive-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* ====== АДАПТИВНОЕ МАСШТАБИРОВАНИЕ ЭЛЕМЕНТОВ ====== */
+.scalable-element {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scalable-element:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-lg);
+}
+
+.scalable-button {
+    transition: transform 0.2s ease;
+}
+
+.scalable-button:hover {
+    transform: scale(1.05);
+}
+
+.scalable-button:active {
+    transform: scale(0.95);
+}
+
+/* Адаптивные карточки */
+.card-scalable {
+    transition: all 0.3s ease;
+}
+
+.card-scalable:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ====== МЕДИАЗАПРОСЫ ДЛЯ ИЗОБРАЖЕНИЙ ====== */
+@media (max-width: 768px) {
+    .projects-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--space-md);
+    }
+    
+    .project-gallery-item {
+        aspect-ratio: 4/3;
+    }
+    
+    .diary-images {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .project-screenshots {
+        grid-template-columns: 1fr;
+    }
+    
+    .avatar {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .avatar--medium {
+        width: 80px;
+        height: 80px;
+    }
+    
+    /* Адаптивные формы на мобильных */
+    .form-adaptive__group {
+        margin-bottom: var(--space-sm);
+    }
+    
+    /* Таблицы на мобильных */
+    .adaptive-table th,
+    .adaptive-table td {
+        padding: var(--space-sm);
+        font-size: 0.9rem;
+    }
+    
+    /* Уменьшаем масштабирование на мобильных */
+    .scalable-element:hover {
+        transform: scale(1.01);
+    }
+    
+    .card-scalable:hover {
+        transform: translateY(-5px) scale(1.01);
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .diary-images {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-gallery-caption {
+        font-size: 0.9rem;
+        padding: var(--space-sm);
+    }
+    
+    .avatar {
+        width: 100px;
+        height: 100px;
+    }
+    
+    /* Формы на очень маленьких экранах */
+    .form-adaptive__input,
+    .form-adaptive__textarea,
+    .form-adaptive__select {
+        font-size: 16px; /* Предотвращает zoom в iOS */
+    }
+    
+    /* Таблицы превращаем в карточки на очень маленьких экранах */
+    .table-responsive {
+        border: 1px solid rgba(194, 44, 29, 0.2);
+    }
+    
+    .adaptive-table {
+        display: block;
+    }
+    
+    .adaptive-table thead {
+        display: none;
+    }
+    
+    .adaptive-table tbody {
+        display: block;
+    }
+    
+    .adaptive-table tr {
+        display: block;
+        margin-bottom: var(--space-md);
+        border: 1px solid rgba(194, 44, 29, 0.2);
+        border-radius: var(--radius-md);
+        padding: var(--space-sm);
+        background-color: var(--bg-card);
+    }
+    
+    .adaptive-table td {
+        display: block;
+        text-align: right;
+        padding: var(--space-xs) var(--space-sm);
+        border-bottom: none;
+        position: relative;
+    }
+    
+    .adaptive-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: var(--space-sm);
+        top: var(--space-xs);
+        font-weight: 600;
+        color: var(--primary-light);
+    }
+}
+
+/* Поддержка темной темы для изображений */
+@media (prefers-color-scheme: dark) {
+    .screenshot {
+        border-color: rgba(213, 141, 59, 0.3);
+    }
+    
+    .project-gallery-caption {
+        background: linear-gradient(transparent, rgba(26, 4, 4, 0.95));
+    }
+}
+
+/* Оптимизация для печати */
+@media print {
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+    
+    .project-gallery-item,
+    .diary-image {
+        page-break-inside: avoid;
+    }
+    
+    .bg-image::before {
+        background: rgba(26, 4, 4, 0.3);
+    }
+}
+
+/* ====== ПОДДЕРЖКА RETINA ДИСПЛЕЕВ ====== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .icon--retina,
+    .logo,
+    .avatar {
+        image-rendering: crisp-edges;
+    }
+    
+    /* Для фоновых изображений можно использовать медиа-запросы */
+    .header {
+        background-image: 
+            linear-gradient(rgba(26, 4, 4, 0.8), rgba(26, 4, 4, 0.8)),
+            url('../images/eyes@2x.jpg');
+    }
+}
+
+/* ====== АДАПТИВНЫЕ ИЗОБРАЖЕНИЯ С ПОДДЕРЖКОЙ WEBP ====== */
+picture source {
+    display: none; /* Скрываем source элементы */
+}
+
+/* ====== ОПТИМИЗАЦИЯ ДЛЯ МЕДЛЕННЫХ СОЕДИНЕНИЙ ====== */
+@media (prefers-reduced-data: reduce) {
+    .bg-image,
+    .project-gallery-image,
+    .diary-image {
+        background-image: none !important;
+    }
+    
+    img[loading="lazy"] {
+        display: none;
+    }
+    
+    /* Показываем альтернативный текст */
+    .no-image-fallback::after {
+        content: attr(data-alt);
+        display: block;
+        padding: var(--space-md);
+        background-color: var(--bg-card);
+        border: 1px dashed var(--primary-color);
+        border-radius: var(--radius-md);
+        text-align: center;
+        color: var(--text-secondary);
+    }
+}
+
+/* Добавить в конец styles.css */
+
+/* Светлая тема */
+.theme-light {
+    --text-primary: #1a0404;
+    --text-secondary: #5b4444;
+    --text-light: #1a0404;
+    --bg-body: #f8f2ec;
+    --bg-card: rgba(255, 255, 255, 0.9);
+    --bg-header: rgba(248, 242, 236, 0.95);
+    --bg-footer: #e8dcd4;
+    --bg-input: rgba(255, 255, 255, 0.8);
+    --border-color: rgba(194, 44, 29, 0.2);
+}
+
+.theme-light .header,
+.theme-light .nav,
+.theme-light .section,
+.theme-light .footer,
+.theme-light .card,
+.theme-light .contact-form,
+.theme-light .contact-info,
+.theme-light .additional-info {
+    background-color: var(--bg-card);
+}
+
+.theme-light .bg-image::before {
+    background: rgba(248, 242, 236, 0.8);
+}
+
+.theme-light .project-gallery-caption {
+    background: linear-gradient(transparent, rgba(255, 255, 255, 0.9));
+    color: var(--text-dark);
+}
+
+.theme-light .contact-item {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.theme-light .form__input,
+.theme-light .form__textarea {
+    background-color: var(--bg-input);
+    border-color: var(--border-color);
+}
+
+/* Ошибки валидации форм */
+.form-error {
+    border-color: var(--error-color) !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2) !important;
+}
+
+.form-error:focus {
+    border-color: var(--error-color) !important;
+}
+
+/* Сообщения об ошибках */
+.error-message {
+    color: var(--error-color);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+.form-error + .error-message {
+    display: block;
+}
+
+/* Состояния для медленного соединения */
+.save-data .bg-image,
+.save-data .project-gallery-image {
+    background-image: none !important;
+}
+
+.save-data img {
+    min-height: 100px;
+    background-color: var(--bg-card);
+}
+
+.save-data .no-image-fallback::after {
+    display: block !important;
+}
+
+/* Ретина дисплеи */
+.retina-display .icon,
+.retina-display .logo {
+    image-rendering: crisp-edges;
+}
+
+/* Мобильная оптимизация */
+.is-mobile .scalable-element:hover {
+    transform: none !important;
+}
+
