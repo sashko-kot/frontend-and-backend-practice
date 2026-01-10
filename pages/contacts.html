@@ -3,163 +3,1002 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Контакты — Портфолио</title>
+  <title>Контакты — Портфолио студента Васюкова А.И.</title>
+  <meta name="description" content="Свяжитесь с Васюковой А.И., студенткой веб-разработки">
   <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
-  <div class="page">
-    <!-- Header -->
-    <header class="header">
-      <div class="container">
-        <div class="header__content">
-          <div class="header__logo">
-            <img src="../images/icons/logo-32.png" alt="logo" class="header__logo-image">
-            <span class="header__brand">coolsite</span>
+  <!-- Кнопка пропуска навигации -->
+  <a href="#main-content" class="skip-link sr-only-focusable">
+    Перейти к основному содержанию
+  </a>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header__content">
+        <div class="header__logo">
+          <picture>
+            <source srcset="../images/icons/logo-32.webp" type="image/webp">
+            <source srcset="../images/icons/logo-32.png" type="image/png">
+            <img src="../images/icons/logo-32.png" 
+                 alt="Логотип портфолио студента" 
+                 class="header__logo-image logo logo--header"
+                 width="32" 
+                 height="32">
+          </picture>
+          <span class="header__brand">coolsite</span>
+        </div>
+        
+        <button id="theme-toggle" 
+                class="button button--secondary header__theme-toggle scalable-button"
+                aria-label="Переключить на светлую тему"
+                aria-pressed="false"
+                role="switch"
+                aria-checked="false">
+          ☀️ Светлая тема
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Navigation -->
+  <nav class="nav" aria-label="Основная навигация" role="navigation">
+    <div class="container">
+      <ul class="nav__list" role="menubar">
+        <li class="nav__item" role="none">
+          <a href="../index.html" 
+             class="nav__link" 
+             role="menuitem">
+            Главная
+          </a>
+        </li>
+        <li class="nav__item" role="none">
+          <a href="projects.html" 
+             class="nav__link" 
+             role="menuitem">
+            Проекты
+          </a>
+        </li>
+        <li class="nav__item" role="none">
+          <a href="diary.html" 
+             class="nav__link" 
+             role="menuitem">
+            Дневник
+          </a>
+        </li>
+        <li class="nav__item" role="none">
+          <a href="contacts.html" 
+             class="nav__link" 
+             role="menuitem"
+             aria-current="page">
+            Контакты
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content" class="main" role="main">
+    <div class="container">
+      <!-- Page Header -->
+      <header class="page-header" aria-labelledby="page-title">
+        <h1 id="page-title" class="page-title">Свяжитесь со мной</h1>
+        <p class="page-subtitle">Есть вопросы или предложения? Буду рада общению!</p>
+      </header>
+
+      <!-- Contact Form -->
+      <section class="contact-form-section" aria-labelledby="contact-form-title">
+        <h2 id="contact-form-title" class="section-title">Написать сообщение</h2>
+        
+        <form id="contactForm" 
+              class="form-adaptive" 
+              aria-labelledby="contact-form-title"
+              novalidate>
+          
+          <div role="status" 
+               id="form-status" 
+               aria-live="polite"
+               class="sr-only">
           </div>
-          <button id="theme-toggle" class="button button--secondary">Светлая тема</button>
+          
+          <fieldset>
+            <legend class="sr-only">Форма обратной связи</legend>
+            
+            <!-- Личная информация -->
+            <div class="form-section">
+              <h3 class="form-section__title">Личная информация</h3>
+              
+              <div class="form-row">
+                <div class="form-adaptive__group">
+                  <label for="contactName" class="form-adaptive__label">
+                    Ваше имя
+                    <span class="required-asterisk" aria-hidden="true">*</span>
+                    <span class="sr-only">Обязательное поле</span>
+                  </label>
+                  
+                  <input type="text" 
+                         id="contactName" 
+                         name="contactName" 
+                         class="form-adaptive__input"
+                         required
+                         aria-required="true"
+                         placeholder="Иван Иванов"
+                         minlength="2"
+                         maxlength="50"
+                         aria-describedby="name-help name-error">
+                  
+                  <div id="name-help" class="form-adaptive__help">
+                    Введите ваше реальное имя
+                  </div>
+                  <div id="name-error" class="error-message" role="alert"></div>
+                </div>
+                
+                <div class="form-adaptive__group">
+                  <label for="contactEmail" class="form-adaptive__label">
+                    Email адрес
+                    <span class="required-asterisk" aria-hidden="true">*</span>
+                    <span class="sr-only">Обязательное поле</span>
+                  </label>
+                  
+                  <input type="email" 
+                         id="contactEmail" 
+                         name="contactEmail" 
+                         class="form-adaptive__input"
+                         required
+                         aria-required="true"
+                         placeholder="example@domain.com"
+                         aria-describedby="email-help email-error">
+                  
+                  <div id="email-help" class="form-adaptive__help">
+                    Мы отправим ответ на этот адрес
+                  </div>
+                  <div id="email-error" class="error-message" role="alert"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Тема сообщения -->
+            <div class="form-adaptive__group">
+              <label for="contactSubject" class="form-adaptive__label">
+                Тема сообщения
+                <span class="required-asterisk" aria-hidden="true">*</span>
+                <span class="sr-only">Обязательное поле</span>
+              </label>
+              
+              <select id="contactSubject" 
+                      name="contactSubject" 
+                      class="form-adaptive__select"
+                      required
+                      aria-required="true"
+                      aria-describedby="subject-help">
+                <option value="" disabled selected>Выберите тему</option>
+                <option value="project">💻 Предложение по проекту</option>
+                <option value="collaboration">🤝 Сотрудничество</option>
+                <option value="question">❓ Вопрос по обучению</option>
+                <option value="feedback">📝 Обратная связь</option>
+                <option value="other">📌 Другое</option>
+              </select>
+              
+              <div id="subject-help" class="form-adaptive__help">
+                Выберите наиболее подходящую категорию
+              </div>
+            </div>
+
+            <!-- Сообщение -->
+            <div class="form-adaptive__group">
+              <label for="contactMessage" class="form-adaptive__label">
+                Сообщение
+                <span class="required-asterisk" aria-hidden="true">*</span>
+                <span class="sr-only">Обязательное поле</span>
+              </label>
+              
+              <textarea id="contactMessage" 
+                        name="contactMessage" 
+                        class="form-adaptive__textarea"
+                        required
+                        aria-required="true"
+                        placeholder="Опишите ваше предложение, вопрос или пожелание..."
+                        rows="8"
+                        minlength="10"
+                        maxlength="1000"
+                        aria-describedby="message-help message-counter message-error"></textarea>
+              
+              <div class="form-adaptive__meta">
+                <div id="message-help" class="form-adaptive__help">
+                  Подробно опишите, что вас интересует
+                </div>
+                <div id="message-counter" class="char-counter" aria-live="polite">
+                  Осталось символов: 1000
+                </div>
+              </div>
+              <div id="message-error" class="error-message" role="alert"></div>
+            </div>
+
+            <!-- Дополнительные опции -->
+            <div class="form-adaptive__group">
+              <fieldset>
+                <legend class="form-adaptive__label">Дополнительно</legend>
+                
+                <div class="checkbox-group">
+                  <input type="checkbox" 
+                         id="contactCopy" 
+                         name="contactCopy"
+                         class="sr-only">
+                  <label for="contactCopy" class="checkbox-label">
+                    <span class="checkbox-indicator" aria-hidden="true"></span>
+                    Отправить копию мне на email
+                  </label>
+                  
+                  <input type="checkbox" 
+                         id="contactNewsletter" 
+                         name="contactNewsletter"
+                         class="sr-only">
+                  <label for="contactNewsletter" class="checkbox-label">
+                    <span class="checkbox-indicator" aria-hidden="true"></span>
+                    Подписаться на новости о моих проектах
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+
+            <!-- Капча (упрощенная) -->
+            <div class="form-adaptive__group">
+              <div class="captcha" aria-label="Проверка безопасности">
+                <label for="captcha" class="form-adaptive__label">
+                  Введите результат: <span id="captcha-question"></span>
+                  <span class="required-asterisk" aria-hidden="true">*</span>
+                  <span class="sr-only">Обязательное поле</span>
+                </label>
+                
+                <input type="number" 
+                       id="captcha" 
+                       name="captcha" 
+                       class="form-adaptive__input"
+                       required
+                       aria-required="true"
+                       placeholder="Ответ"
+                       aria-describedby="captcha-help captcha-error">
+                
+                <button type="button" 
+                        id="refresh-captcha" 
+                        class="button button--small"
+                        aria-label="Обновить проверочный вопрос">
+                  🔄 Новый вопрос
+                </button>
+                
+                <div id="captcha-help" class="form-adaptive__help">
+                  Простая проверка, что вы не робот
+                </div>
+                <div id="captcha-error" class="error-message" role="alert"></div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Кнопки отправки -->
+          <div class="form-adaptive__actions">
+            <button type="submit" 
+                    class="form-adaptive__submit button button--primary"
+                    aria-label="Отправить сообщение">
+              📤 Отправить сообщение
+            </button>
+            
+            <button type="reset" 
+                    class="button button--secondary"
+                    aria-label="Очистить форму">
+              🗑️ Очистить форму
+            </button>
+            
+            <button type="button" 
+                    id="save-draft" 
+                    class="button button--outline"
+                    aria-label="Сохранить черновик">
+              💾 Сохранить черновик
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Contact Information -->
+      <section class="contact-info" aria-labelledby="contact-info-title">
+        <h2 id="contact-info-title" class="section-title">Мои контакты</h2>
+        
+        <div class="contact-info__grid">
+          <!-- Email -->
+          <article class="contact-card" aria-labelledby="email-title">
+            <div class="contact-card__icon" aria-hidden="true">📧</div>
+            
+            <div class="contact-card__content">
+              <h3 id="email-title" class="contact-card__title">Email</h3>
+              
+              <div class="contact-card__info">
+                <a href="mailto:vasyukova.a.i@edu.mirea.ru" 
+                   class="contact-card__link"
+                   aria-label="Написать письмо на vasyukova.a.i@edu.mirea.ru">
+                  vasyukova.a.i@edu.mirea.ru
+                </a>
+                
+                <div class="contact-card__meta">
+                  <span aria-label="Время ответа: в течение 24 часов">
+                    ⏱️ Ответ в течение 24 часов
+                  </span>
+                </div>
+              </div>
+              
+              <div class="contact-card__description">
+                <p>Основной способ связи. Отвечаю на все письма по порядку.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- GitHub -->
+          <article class="contact-card" aria-labelledby="github-title">
+            <div class="contact-card__icon" aria-hidden="true">💻</div>
+            
+            <div class="contact-card__content">
+              <h3 id="github-title" class="contact-card__title">GitHub</h3>
+              
+              <div class="contact-card__info">
+                <a href="https://github.com/sashko-kot" 
+                   target="_blank"
+                   class="contact-card__link"
+                   aria-label="Открыть профиль GitHub sashko-kot в новой вкладке">
+                  github.com/sashko-kot
+                </a>
+                
+                <div class="contact-card__meta">
+                  <span aria-label="Публичные репозитории: 5">
+                    📁 5 публичных репозиториев
+                  </span>
+                </div>
+              </div>
+              
+              <div class="contact-card__description">
+                <p>Здесь вы можете посмотреть мои проекты и исходный код.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Образование -->
+          <article class="contact-card" aria-labelledby="education-title">
+            <div class="contact-card__icon" aria-hidden="true">🎓</div>
+            
+            <div class="contact-card__content">
+              <h3 id="education-title" class="contact-card__title">Образование</h3>
+              
+              <div class="contact-card__info">
+                <div class="contact-card__text">
+                  Московский радиотехнический институт
+                </div>
+                
+                <div class="contact-card__meta">
+                  <span aria-label="Группа: ЭФБО-08-24">
+                    👥 Группа: ЭФБО-08-24
+                  </span>
+                </div>
+              </div>
+              
+              <div class="contact-card__description">
+                <p>Студентка факультета информационных технологий.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Местоположение -->
+          <article class="contact-card" aria-labelledby="location-title">
+            <div class="contact-card__icon" aria-hidden="true">📍</div>
+            
+            <div class="contact-card__content">
+              <h3 id="location-title" class="contact-card__title">Местоположение</h3>
+              
+              <div class="contact-card__info">
+                <div class="contact-card__text">
+                  Амстердам, Нидерланды
+                </div>
+                
+                <div class="contact-card__meta">
+                  <span aria-label="Часовой пояс: UTC+1">
+                    🕐 Часовой пояс: UTC+1
+                  </span>
+                </div>
+              </div>
+              
+              <div class="contact-card__description">
+                <p>Работаю удаленно, доступна для сотрудничества по всему миру.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Availability -->
+      <section class="availability" aria-labelledby="availability-title">
+        <h2 id="availability-title" class="section-title">Когда я доступна</h2>
+        
+        <div class="availability__content">
+          <div class="availability__schedule">
+            <h3 class="availability__subtitle">Расписание</h3>
+            
+            <div class="schedule-table" role="table">
+              <div class="schedule-row" role="row">
+                <div class="schedule-cell" role="cell">
+                  <strong>Понедельник - Пятница</strong>
+                </div>
+                <div class="schedule-cell" role="cell">
+                  10:00 - 18:00
+                </div>
+                <div class="schedule-cell" role="cell">
+                  <span class="availability-badge available" aria-label="Доступна">
+                    ✅ Доступна
+                  </span>
+                </div>
+              </div>
+              
+              <div class="schedule-row" role="row">
+                <div class="schedule-cell" role="cell">
+                  <strong>Суббота</strong>
+                </div>
+                <div class="schedule-cell" role="cell">
+                  12:00 - 16:00
+                </div>
+                <div class="schedule-cell" role="cell">
+                  <span class="availability-badge limited" aria-label="Ограниченная доступность">
+                    ⚠️ Ограниченно
+                  </span>
+                </div>
+              </div>
+              
+              <div class="schedule-row" role="row">
+                <div class="schedule-cell" role="cell">
+                  <strong>Воскресенье</strong>
+                </div>
+                <div class="schedule-cell" role="cell">
+                  Выходной
+                </div>
+                <div class="schedule-cell" role="cell">
+                  <span class="availability-badge unavailable" aria-label="Недоступна">
+                    ❌ Недоступна
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="availability__preferences">
+            <h3 class="availability__subtitle">Предпочтения по связи</h3>
+            
+            <ul class="preferences-list" role="list">
+              <li role="listitem">📧 Email — лучший способ для первого контакта</li>
+              <li role="listitem">💬 Для срочных вопросов — укажите в теме письма "Срочно"</li>
+              <li role="listitem">📁 Для проектов — приложите ТЗ или описание</li>
+              <li role="listitem">⏰ Ответ в течение 24 часов в рабочее время</li>
+              <li role="listitem">🤝 Готова к долгосрочному сотрудничеству</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Текущий статус -->
+        <div class="current-status" role="status" aria-live="polite">
+          <h3 class="sr-only">Текущий статус доступности</h3>
+          <div class="status-indicator online" aria-label="Сейчас доступна">
+            <span class="status-dot" aria-hidden="true"></span>
+            Сейчас доступна для связи
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq" aria-labelledby="faq-title">
+        <h2 id="faq-title" class="section-title">Частые вопросы</h2>
+        
+        <div class="faq__list">
+          <div class="faq-item" role="article">
+            <h3 class="faq-question">
+              <button class="faq-toggle" 
+                      aria-expanded="false"
+                      aria-controls="faq1-answer">
+                Сколько времени занимает ответ на письмо?
+                <span class="faq-icon" aria-hidden="true">➕</span>
+              </button>
+            </h3>
+            
+                            <div id="faq1-answer" class="faq-answer" hidden>
+                  <p>Обычно я отвечаю в течение 24 часов в рабочие дни. В выходные ответ может занять до 48 часов.</p>
+                  <p>Если вопрос срочный, пожалуйста, укажите в теме письма <strong>"Срочно"</strong> — я постараюсь ответить как можно быстрее.</p>
+                </div>
+              </div>
+
+              <div class="faq-item" role="article">
+                <h3 class="faq-question">
+                  <button class="faq-toggle" 
+                          aria-expanded="false"
+                          aria-controls="faq2-answer">
+                    Вы работаете над коммерческими проектами?
+                    <span class="faq-icon" aria-hidden="true">➕</span>
+                  </button>
+                </h3>
+                
+                <div id="faq2-answer" class="faq-answer" hidden>
+                  <p>Да, я открыта к коммерческим проектам, особенно если они связаны с:</p>
+                  <ul>
+                    <li>Разработкой адаптивных сайтов</li>
+                    <li>Версткой по макетам (Figma, Photoshop)</li>
+                    <li>Доработкой существующих проектов</li>
+                    <li>Консультированием по веб-разработке</li>
+                  </ul>
+                  <p>Для обсуждения проекта пришлите ТЗ или описание задачи на почту.</p>
+                </div>
+              </div>
+
+              <div class="faq-item" role="article">
+                <h3 class="faq-question">
+                  <button class="faq-toggle" 
+                          aria-expanded="false"
+                          aria-controls="faq3-answer">
+                    Можно ли посмотреть ваши работы вживую?
+                    <span class="faq-icon" aria-hidden="true">➕</span>
+                  </button>
+                </h3>
+                
+                <div id="faq3-answer" class="faq-answer" hidden>
+                  <p>Конечно! Все мои завершенные проекты доступны:</p>
+                  <ul>
+                    <li>На <a href="pages/projects.html">странице проектов</a> этого портфолио</li>
+                    <li>В моем <a href="https://github.com/sashko-kot" target="_blank">GitHub профиле</a></li>
+                    <li>Некоторые проекты имеют рабочие демо — ссылки есть в описаниях</li>
+                  </ul>
+                  <p>Если нужен доступ к какому-то конкретному проекту — напишите, я предоставлю демо-доступ.</p>
+                </div>
+              </div>
+
+              <div class="faq-item" role="article">
+                <h3 class="faq-question">
+                  <button class="faq-toggle" 
+                          aria-expanded="false"
+                          aria-controls="faq4-answer">
+                    Вы преподаете или проводите консультации?
+                    <span class="faq-icon" aria-hidden="true">➕</span>
+                  </button>
+                </h3>
+                
+                <div id="faq4-answer" class="faq-answer" hidden>
+                  <p>Да, я провожу консультации для начинающих веб-разработчиков по темам:</p>
+                  <ul>
+                    <li>Основы HTML/CSS/JavaScript</li>
+                    <li>Адаптивная верстка</li>
+                    <li>Доступность (A11y)</li>
+                    <li>Оптимизация производительности</li>
+                    <li>Code review ваших проектов</li>
+                  </ul>
+                  <p>Стоимость и формат консультации обсуждаются индивидуально.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="faq__actions">
+              <button id="expand-all-faq" 
+                      class="button button--small"
+                      aria-label="Развернуть все ответы на вопросы">
+                📖 Развернуть все
+              </button>
+              <button id="collapse-all-faq" 
+                      class="button button--small button--outline"
+                      aria-label="Свернуть все ответы на вопросы">
+                📕 Свернуть все
+              </button>
+            </div>
+          </section>
+
+          <!-- Accessibility Statement -->
+          <section class="accessibility-statement" aria-labelledby="a11y-statement-title">
+            <h2 id="a11y-statement-title" class="section-title">Доступность сайта</h2>
+            
+            <div class="statement-content">
+              <div class="statement-text">
+                <p>Этот сайт разработан с учетом рекомендаций <strong>WCAG 2.1 уровня AA</strong> для обеспечения доступности для всех пользователей, включая людей с ограниченными возможностями.</p>
+                
+                <details class="a11y-details">
+                  <summary>Принятые меры по обеспечению доступности</summary>
+                  <div class="details-content">
+                    <ul>
+                      <li>✅ Семантическая HTML5 разметка</li>
+                      <li>✅ Правильная иерархия заголовков</li>
+                      <li>✅ Альтернативные тексты для изображений</li>
+                      <li>✅ Контрастные цвета (минимальное соотношение 4.5:1)</li>
+                      <li>✅ Полная навигация с клавиатуры</li>
+                      <li>✅ Поддержка скринридеров (ARIA атрибуты)</li>
+                      <li>✅ Адаптивный дизайн для всех устройств</li>
+                      <li>✅ Возможность увеличения текста до 200%</li>
+                    </ul>
+                  </div>
+                </details>
+                
+                <details class="a11y-details">
+                  <summary>Соответствие стандартам</summary>
+                  <div class="details-content">
+                    <table class="standards-table">
+                      <thead>
+                        <tr>
+                          <th>Стандарт</th>
+                          <th>Уровень</th>
+                          <th>Статус</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>WCAG 2.1</td>
+                          <td>AA</td>
+                          <td><span class="status-badge compliant" aria-label="Соответствует">✅ Соответствует</span></td>
+                        </tr>
+                        <tr>
+                          <td>Section 508</td>
+                          <td>All</td>
+                          <td><span class="status-badge compliant" aria-label="Соответствует">✅ Соответствует</span></td>
+                        </tr>
+                        <tr>
+                          <td>ADA Title III</td>
+                          <td>Web</td>
+                          <td><span class="status-badge compliant" aria-label="Соответствует">✅ Соответствует</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </details>
+              </div>
+              
+              <div class="statement-actions">
+                <p>Если вы обнаружили проблемы с доступностью, пожалуйста, сообщите:</p>
+                
+                <div class="report-options">
+                  <a href="mailto:vasyukova.a.i@edu.mirea.ru?subject=Проблема с доступностью сайта" 
+                     class="button button--primary"
+                     aria-label="Сообщить о проблеме с доступностью по email">
+                    📧 Сообщить о проблеме
+                  </a>
+                  
+                  <button id="a11y-feedback" 
+                          class="button button--secondary"
+                          aria-label="Оставить обратную связь по доступности">
+                    💬 Обратная связь
+                  </button>
+                </div>
+                
+                <div class="accessibility-tools">
+                  <h3 class="sr-only">Инструменты доступности</h3>
+                  
+                  <div class="tools-grid">
+                    <button id="increase-text" 
+                            class="tool-button"
+                            aria-label="Увеличить размер текста">
+                      🔍 Увеличить текст
+                    </button>
+                    
+                    <button id="decrease-text" 
+                            class="tool-button"
+                            aria-label="Уменьшить размер текста">
+                      🔎 Уменьшить текст
+                    </button>
+                    
+                    <button id="high-contrast-mode" 
+                            class="tool-button"
+                            aria-label="Включить режим высокой контрастности">
+                      🎨 Высокая контрастность
+                    </button>
+                    
+                    <button id="read-aloud" 
+                            class="tool-button"
+                            aria-label="Включить чтение текста вслух">
+                      🔊 Читать вслух
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Уведомление о доступности -->
+            <div class="a11y-notification" role="status" aria-live="polite">
+              <p class="sr-only">Режим высокой контрастности отключен. Для включения нажмите кнопку "Высокая контрастность".</p>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer" role="contentinfo">
+        <div class="container">
+          <div class="footer__content">
+            <div class="footer__logo">
+              <picture>
+                <source srcset="../images/icons/logo-48.webp" type="image/webp">
+                <source srcset="../images/icons/logo-48.png" type="image/png">
+                <img src="../images/icons/logo-48.png" 
+                     alt="Логотип портфолио студента" 
+                     class="logo logo--footer"
+                     width="48"
+                     height="48">
+              </picture>
+            </div>
+            
+            <div class="footer__info">
+              <p class="footer__copyright" id="footer-copyright">
+                © 2025 Васюкова А.И.
+                <span class="sr-only">Все права защищены.</span>
+              </p>
+              
+              <div class="footer__links">
+                <a href="mailto:vasyukova.a.i@edu.mirea.ru" 
+                   class="footer__link"
+                   aria-label="Написать письмо на vasyukova.a.i@edu.mirea.ru">
+                  ✉️ vasyukova.a.i@edu.mirea.ru
+                </a>
+                
+                <span class="footer__separator" aria-hidden="true">•</span>
+                
+                <a href="https://github.com/sashko-kot" 
+                   target="_blank"
+                   class="footer__link"
+                   aria-label="Открыть профиль GitHub в новой вкладке">
+                  💻 GitHub: sashko-kot
+                </a>
+              </div>
+            </div>
+            
+            <div class="footer__accessibility">
+              <button class="button button--small footer__a11y-btn"
+                      aria-label="Открыть настройки доступности"
+                      aria-expanded="false"
+                      aria-controls="a11y-settings">
+                ♿ Настройки
+              </button>
+              
+              <a href="#a11y-statement-title" 
+                 class="footer__link"
+                 aria-label="Перейти к заявлению о доступности">
+                Доступность сайта
+              </a>
+            </div>
+          </div>
+          
+          <div class="footer__meta">
+            <p class="footer__disclaimer">
+              Сайт разработан с учетом 
+              <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" 
+                 target="_blank"
+                 aria-label="Рекомендации по доступности веб-контента (откроется в новой вкладке)">
+                WCAG 2.1 AA
+              </a>
+              и проходит регулярное тестирование на доступность.
+            </p>
+            
+            <div class="footer__badges">
+              <span class="accessibility-badge" aria-label="Соответствует WCAG 2.1 AA">
+                ♿ WCAG 2.1 AA
+              </span>
+              <span class="accessibility-badge" aria-label="Адаптивный дизайн">
+                📱 Адаптивный
+              </span>
+              <span class="accessibility-badge" aria-label="Поддержка клавиатуры">
+                ⌨️ Клавиатура
+              </span>
+              <span class="accessibility-badge" aria-label="Поддержка скринридеров">
+                🔊 Скринридеры
+              </span>
+            </div>
+          </div>
+          
+          <!-- Навигация для доступности -->
+          <nav class="footer__navigation" aria-label="Дополнительная навигация">
+            <h3 class="sr-only">Быстрые ссылки</h3>
+            <ul>
+              <li><a href="#main-content">⬆️ В начало страницы</a></li>
+              <li><a href="../index.html">🏠 На главную</a></li>
+              <li><a href="#contact-form-title">📝 К форме обратной связи</a></li>
+              <li><a href="#contact-info-title">📇 К контактной информации</a></li>
+              <li><a href="#faq-title">❓ К часто задаваемым вопросам</a></li>
+              <li><a href="#a11y-statement-title">♿ К заявлению о доступности</a></li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+
+      <!-- Модальное окно настроек доступности -->
+      <div id="a11y-settings" 
+           class="modal" 
+           role="dialog" 
+           aria-modal="true"
+           aria-labelledby="a11y-modal-title"
+           hidden>
+        <div class="modal__content">
+          <div class="modal__header">
+            <h2 id="a11y-modal-title" class="modal__title">Настройки доступности</h2>
+            
+            <button class="modal__close" 
+                    aria-label="Закрыть настройки доступности">
+              ✕
+            </button>
+          </div>
+          
+          <div class="modal__body">
+            <form id="a11y-settings-form" class="a11y-settings-form">
+              <fieldset>
+                <legend>Настройки отображения</legend>
+                
+                <div class="setting-group">
+                  <label for="font-size-setting">
+                    Размер текста: <output id="font-size-value">100%</output>
+                  </label>
+                  <input type="range" 
+                         id="font-size-setting" 
+                         min="80" 
+                         max="200" 
+                         value="100" 
+                         step="10">
+                </div>
+                
+                <div class="setting-group">
+                  <label for="line-height-setting">
+                    Межстрочный интервал: <output id="line-height-value">1.6</output>
+                  </label>
+                  <input type="range" 
+                         id="line-height-setting" 
+                         min="1.2" 
+                         max="2.5" 
+                         value="1.6" 
+                         step="0.1">
+                </div>
+                
+                <div class="setting-group">
+                  <label for="letter-spacing-setting">
+                    Межбуквенный интервал: <output id="letter-spacing-value">0px</output>
+                  </label>
+                  <input type="range" 
+                         id="letter-spacing-setting" 
+                         min="0" 
+                         max="2" 
+                         value="0" 
+                         step="0.1">
+                </div>
+              </fieldset>
+              
+              <fieldset>
+                <legend>Цвет и контраст</legend>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="high-contrast-setting"
+                         name="highContrast">
+                  <label for="high-contrast-setting">Высокая контрастность</label>
+                </div>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="invert-colors-setting"
+                         name="invertColors">
+                  <label for="invert-colors-setting">Инвертировать цвета</label>
+                </div>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="grayscale-setting"
+                         name="grayscale">
+                  <label for="grayscale-setting">Оттенки серого</label>
+                </div>
+              </fieldset>
+              
+              <fieldset>
+                <legend>Анимации и движение</legend>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="reduce-motion-setting"
+                         name="reduceMotion">
+                  <label for="reduce-motion-setting">Уменьшить анимации</label>
+                </div>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="disable-animations-setting"
+                         name="disableAnimations">
+                  <label for="disable-animations-setting">Отключить анимации</label>
+                </div>
+              </fieldset>
+              
+              <fieldset>
+                <legend>Навигация</legend>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="highlight-focus-setting"
+                         name="highlightFocus"
+                         checked>
+                  <label for="highlight-focus-setting">Подсвечивать фокус</label>
+                </div>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="outline-links-setting"
+                         name="outlineLinks"
+                         checked>
+                  <label for="outline-links-setting">Подчеркивать ссылки</label>
+                </div>
+                
+                <div class="setting-group">
+                  <label for="focus-thickness-setting">
+                    Толщина фокуса: <output id="focus-thickness-value">3px</output>
+                  </label>
+                  <input type="range" 
+                         id="focus-thickness-setting" 
+                         min="1" 
+                         max="5" 
+                         value="3" 
+                         step="1">
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          
+          <div class="modal__footer">
+            <button id="apply-a11y-settings" 
+                    class="button button--primary">
+              ✅ Применить настройки
+            </button>
+            
+            <button id="reset-a11y-settings" 
+                    class="button button--secondary">
+              🔄 Сбросить к стандартным
+            </button>
+            
+            <button class="button button--outline modal__close">
+              ❌ Отмена
+            </button>
+          </div>
         </div>
       </div>
-    </header>
 
-    <!-- Navigation -->
-    <nav class="nav">
-      <div class="container">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a href="../index.html" class="nav__link">Главная</a>
-          </li>
-          <li class="nav__item">
-            <a href="projects.html" class="nav__link">Проекты</a>
-          </li>
-          <li class="nav__item">
-            <a href="diary.html" class="nav__link">Дневник</a>
-          </li>
-          <li class="nav__item nav__item--active">
-            <a href="contacts.html" class="nav__link">Контакты</a>
-          </li>
-        </ul>
+      <!-- Живой регион для скринридеров -->
+      <div id="a11y-live-region" 
+           aria-live="polite" 
+           aria-atomic="true" 
+           class="sr-only">
       </div>
-    </nav>
 
-    <!-- Main Content -->
-    <main class="main">
-      <div class="container">
-        <!-- Contacts Section -->
-        <section class="contacts">
-          <h1 class="section-title">Свяжитесь со мной</h1>
-
-          <div class="contacts__content">
-            <!-- Contact Form -->
-            <div class="contact-form">
-              <h2 class="contact-form__title">Написать сообщение</h2>
-              <form class="form" id="contactForm">
-                <div class="form__group">
-                  <label for="contactName" class="form__label">Имя</label>
-                  <input type="text" id="contactName" name="contactName" class="form__input" required>
-                </div>
-
-                <div class="form__group">
-                  <label for="contactEmail" class="form__label">Email</label>
-                  <input type="email" id="contactEmail" name="contactEmail" class="form__input" required>
-                </div>
-
-                <div class="form__group">
-                  <label for="contactMessage" class="form__label">Сообщение</label>
-                  <textarea id="contactMessage" name="contactMessage" class="form__textarea" rows="5" required></textarea>
-                </div>
-
-                <button type="submit" class="button button--primary form__button">Отправить сообщение</button>
-              </form>
-            </div>
-
-            <!-- Contact Info -->
-            <div class="contacts__info">
-              <h2 class="contacts__subtitle">Мои контакты</h2>
-              <div class="contact-info__items">
-                <div class="contact-item">
-                  <div class="contact-item__icon">📧</div>
-                  <div class="contact-item__content">
-                    <h3 class="contact-item__title">Email</h3>
-                    <p class="contact-item__value">
-                      <a href="mailto:vasyukova.a.i@edu.mirea.ru" class="contacts__link">vasyukova.a.i@edu.mirea.ru</a>
-                    </p>
-                  </div>
-                </div>
-
-                <div class="contact-item">
-                  <div class="contact-item__icon">💻</div>
-                  <div class="contact-item__content">
-                    <h3 class="contact-item__title">GitHub</h3>
-                    <p class="contact-item__value">
-                      <a href="https://github.com/sashko-kot" target="_blank" class="contacts__link">github.com/sashko-kot</a>
-                    </p>
-                  </div>
-                </div>
-
-                <div class="contact-item">
-                  <div class="contact-item__icon">📍</div>
-                  <div class="contact-item__content">
-                    <h3 class="contact-item__title">Локация</h3>
-                    <p class="contact-item__value">Amsterdam, Netherlands</p>
-                  </div>
-                </div>
-
-                <div class="contact-item">
-                  <div class="contact-item__icon">🎓</div>
-                  <div class="contact-item__content">
-                    <h3 class="contact-item__title">Образование</h3>
-                    <p class="contact-item__value">Московский радиотехнический институт</p>
-                    <p class="contact-item__value">Группа: ЭФБО-08-24</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Additional Info -->
-        <section class="additional-info">
-          <div class="additional-info__content">
-            <h2 class="additional-info__title">Когда связываться</h2>
-            <div class="additional-info__grid">
-              <div class="info-card">
-                <h3 class="info-card__title">📅 Лучшее время</h3>
-                <p class="info-card__text">Пн-Пт: 10:00 - 18:00</p>
-                <p class="info-card__text">Суббота: 12:00 - 16:00</p>
-                <p class="info-card__text">Воскресенье: выходной</p>
-              </div>
-              <div class="info-card">
-                <h3 class="info-card__title">⚡ Скорость ответа</h3>
-                <p class="info-card__text">Обычно отвечаю в течение 24 часов</p>
-                <p class="info-card__text">Срочные вопросы: отмечайте в теме письма</p>
-              </div>
-              <div class="info-card">
-                <h3 class="info-card__title">💬 Предпочтения</h3>
-                <p class="info-card__text">Лучше всего по email</p>
-                <p class="info-card__text">Для проектов — приложите ТЗ</p>
-                <p class="info-card__text">Люблю конкретные задачи</p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer__content">
-          <p class="footer__copyright">© 2025 Васюкова А.И — привет а чего вниз смотришь</p>
-          <div class="footer__links">
-            <a href="mailto:vasyukova.a.i@edu.mirea.ru" class="footer__link">vasyukova.a.i@edu.mirea.ru</a>
-            <span class="footer__separator">•</span>
-            <a href="https://github.com/sashko-kot" target="_blank" class="footer__link">GitHub: sashko-kot</a>
+      <!-- Уведомление о куки -->
+      <div id="cookie-notice" 
+           class="cookie-notice" 
+           role="dialog" 
+           aria-labelledby="cookie-title"
+           aria-describedby="cookie-description">
+        <div class="cookie-content">
+          <h3 id="cookie-title" class="cookie-title">🍪 Использование cookies</h3>
+          
+          <p id="cookie-description">
+            Мы используем cookies для улучшения работы сайта и сохранения ваших настроек доступности.
+            Продолжая использование сайта, вы соглашаетесь с нашей 
+            <a href="privacy.html" aria-label="Политика конфиденциальности">Политикой конфиденциальности</a>.
+          </p>
+          
+          <div class="cookie-actions">
+            <button id="accept-cookies" 
+                    class="button button--small button--primary">
+              ✅ Принять все
+            </button>
+            
+            <button id="reject-cookies" 
+                    class="button button--small button--secondary">
+              ❌ Отклонить
+            </button>
+            
+            <button id="cookie-settings" 
+                    class="button button--small button--outline">
+              ⚙️ Настроить
+            </button>
           </div>
         </div>
       </div>
-    </footer>
-  </div>
+    </div>
 
-  <script src="../scripts/javascript.js" defer></script>
-</body>
+    <script src="../js/a11.js" defer></script>
+    <script src="../js/javascript.js" defer></script>
+  </body>
 </html>

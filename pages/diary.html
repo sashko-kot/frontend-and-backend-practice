@@ -3,62 +3,777 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Дневник — Портфолио</title>
+  <title>Дневник — Портфолио студента Васюкова А.И.</title>
+  <meta name="description" content="Учебный дневник и прогресс студента Васюковой А.И.">
   <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
-  <div class="page">
-    <!-- Header -->
-    <header class="header">
-      <div class="container">
-        <div class="header__content">
-          <div class="header__logo">
-            <img src="../images/icons/logo-32.png" alt="logo" class="header__logo-image">
-            <span class="header__brand">coolsite</span>
+  <!-- Кнопка пропуска навигации -->
+  <a href="#main-content" class="skip-link sr-only-focusable">
+    Перейти к основному содержанию
+  </a>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header__content">
+        <div class="header__logo">
+          <picture>
+            <source srcset="../images/icons/logo-32.webp" type="image/webp">
+            <source srcset="../images/icons/logo-32.png" type="image/png">
+            <img src="../images/icons/logo-32.png" 
+                 alt="Логотип портфолио студента" 
+                 class="header__logo-image logo logo--header"
+                 width="32" 
+                 height="32">
+          </picture>
+          <span class="header__brand">coolsite</span>
+        </div>
+        
+        <button id="theme-toggle" 
+                class="button button--secondary header__theme-toggle scalable-button"
+                aria-label="Переключить на светлую тему"
+                aria-pressed="false"
+                role="switch"
+                aria-checked="false">
+          ☀️ Светлая тема
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Navigation -->
+  <nav class="nav" aria-label="Основная навигация" role="navigation">
+    <div class="container">
+      <ul class="nav__list" role="menubar">
+        <li class="nav__item" role="none">
+          <a href="../index.html" 
+             class="nav__link" 
+             role="menuitem">
+            Главная
+          </a>
+        </li>
+        <li class="nav__item" role="none">
+          <a href="projects.html" 
+             class="nav__link" 
+             role="menuitem">
+            Проекты
+          </a>
+        </li>
+        <li class="nav__item" role="none">
+          <a href="diary.html" 
+             class="nav__link" 
+             role="menuitem"
+             aria-current="page">
+            Дневник
+          </a>
+        </li>
+        <li class="nav__item" role="none">
+          <a href="contacts.html" 
+             class="nav__link" 
+             role="menuitem">
+            Контакты
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content" class="main" role="main">
+    <div class="container">
+      <!-- Page Header -->
+      <header class="page-header" aria-labelledby="page-title">
+        <h1 id="page-title" class="page-title">Учебный дневник</h1>
+        <p class="page-subtitle">Мой прогресс в обучении веб-разработке</p>
+      </header>
+
+      <!-- Timeline Section -->
+      <section class="timeline" aria-labelledby="timeline-title">
+        <h2 id="timeline-title" class="section-title">Хронология обучения</h2>
+        
+        <div class="timeline__container" role="list">
+          <!-- Entry 1 -->
+          <article class="timeline__item" role="listitem">
+            <div class="timeline__date">
+              <time datetime="2024-10-13" aria-label="13 октября 2024">
+                13 окт
+              </time>
+            </div>
+            
+            <div class="timeline__content">
+              <h3 class="timeline__title">Начало изучения HTML/CSS</h3>
+              
+              <div class="timeline__description">
+                <p>Первый день изучения основ веб-разработки. Разобралась с семантической разметкой и базовыми CSS свойствами.</p>
+                
+                <details class="timeline-details">
+                  <summary>Что изучила</summary>
+                  <div class="details-content">
+                    <ul>
+                      <li>Структура HTML документа</li>
+                      <li>Основные HTML теги</li>
+                      <li>CSS селекторы и свойства</li>
+                      <li>Блочная модель</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+              
+              <div class="timeline__status timeline__status--completed">
+                ✅ Завершено
+              </div>
+            </div>
+          </article>
+
+          <!-- Entry 2 -->
+          <article class="timeline__item" role="listitem">
+            <div class="timeline__date">
+              <time datetime="2024-10-15" aria-label="15 октября 2024">
+                15 окт
+              </time>
+            </div>
+            
+            <div class="timeline__content">
+              <h3 class="timeline__title">Адаптивная верстка</h3>
+              
+              <div class="timeline__description">
+                <p>Изучение медиа-запросов и адаптивного дизайна. Первая попытка сделать сайт, который работает на всех устройствах.</p>
+                
+                <details class="timeline-details">
+                  <summary>Материалы</summary>
+                  <div class="details-content">
+                    <ul>
+                      <li>Медиа-запросы (@media)</li>
+                      <li>Относительные единицы (rem, em, %)</li>
+                      <li>Flexbox для адаптивных макетов</li>
+                      <li>Mobile-first подход</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+              
+              <div class="timeline__status timeline__status--completed">
+                ✅ Завершено
+              </div>
+            </div>
+          </article>
+
+          <!-- Entry 3 -->
+          <article class="timeline__item" role="listitem">
+            <div class="timeline__date">
+              <time datetime="2024-10-20" aria-label="20 октября 2024">
+                20 окт
+              </time>
+            </div>
+            
+            <div class="timeline__content">
+              <h3 class="timeline__title">JavaScript основы</h3>
+              
+              <div class="timeline__description">
+                <p>Начало изучения JavaScript. Переменные, типы данных, операторы и функции. Первые интерактивные элементы на сайте.</p>
+                
+                <details class="timeline-details">
+                  <summary>Прогресс</summary>
+                  <div class="details-content">
+                    <p>Освоено около 10% материала. Основные сложности с пониманием асинхронности.</p>
+                  </div>
+                </details>
+              </div>
+              
+              <div class="timeline__status timeline__status--in-progress">
+                🔄 В процессе
+              </div>
+            </div>
+          </article>
+
+          <!-- Entry 4 -->
+          <article class="timeline__item" role="listitem">
+            <div class="timeline__date">
+              <time datetime="2024-11-01" aria-label="1 ноября 2024">
+                1 ноя
+              </time>
+            </div>
+            
+            <div class="timeline__content">
+              <h3 class="timeline__title">Todo приложение на JS</h3>
+              
+              <div class="timeline__description">
+                <p>Практический проект для закрепления знаний JavaScript. Приложение для управления задачами с LocalStorage.</p>
+                
+                <details class="timeline-details">
+                  <summary>Что планируется</summary>
+                  <div class="details-content">
+                    <ul>
+                      <li>Работа с DOM</li>
+                      <li>Обработка событий</li>
+                      <li>Работа с LocalStorage</li>
+                      <li>Валидация форм</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+              
+              <div class="timeline__status timeline__status--planned">
+                📅 Запланировано
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Courses Section -->
+      <section class="courses" aria-labelledby="courses-title">
+        <h2 id="courses-title" class="section-title">Текущие курсы</h2>
+        
+        <div class="courses__grid" role="list">
+          <!-- Course 1 -->
+          <div class="course" role="listitem" aria-labelledby="course1-title">
+            <div class="course__header">
+              <h3 id="course1-title" class="course__name">Веб-разработка с нуля</h3>
+              <span class="course__percent">20%</span>
+            </div>
+            
+            <div class="course__description">
+              <p>Комплексный курс по HTML, CSS и JavaScript. От основ до продвинутых тем.</p>
+            </div>
+            
+            <div class="course__progress">
+              <div class="course__bar" 
+                   style="width: 20%"
+                   role="progressbar" 
+                   aria-valuenow="20" 
+                   aria-valuemin="0" 
+                   aria-valuemax="100"
+                   aria-label="Прогресс курса Веб-разработка: 20 процентов">
+                <span class="sr-only">20% освоено</span>
+              </div>
+            </div>
+            
+            <div class="course__meta">
+              <span aria-label="Продолжительность: 3 месяца">⏱️ 3 месяца</span>
+              <span aria-label="Сложность: Средняя">⭐⭐ Средняя</span>
+            </div>
           </div>
-          <button id="theme-toggle" class="button button--secondary">Светлая тема</button>
+
+          <!-- Course 2 -->
+          <div class="course" role="listitem" aria-labelledby="course2-title">
+            <div class="course__header">
+              <h3 id="course2-title" class="course__name">JavaScript для начинающих</h3>
+              <span class="course__percent">10%</span>
+            </div>
+            
+            <div class="course__description">
+              <p>Основы JavaScript: синтаксис, функции, работа с DOM, события.</p>
+            </div>
+            
+            <div class="course__progress">
+              <div class="course__bar" 
+                   style="width: 10%"
+                   role="progressbar" 
+                   aria-valuenow="10" 
+                   aria-valuemin="0" 
+                   aria-valuemax="100"
+                   aria-label="Прогресс курса JavaScript: 10 процентов">
+                <span class="sr-only">10% освоено</span>
+              </div>
+            </div>
+            
+            <div class="course__meta">
+              <span aria-label="Продолжительность: 2 месяца">⏱️ 2 месяца</span>
+              <span aria-label="Сложность: Высокая">⭐⭐⭐ Высокая</span>
+            </div>
+          </div>
+
+          <!-- Course 3 -->
+          <div class="course" role="listitem" aria-labelledby="course3-title">
+            <div class="course__header">
+              <h3 id="course3-title" class="course__name">React - полный курс</h3>
+              <span class="course__percent">0%</span>
+            </div>
+            
+            <div class="course__description">
+              <p>Современный React с хуками, контекстом, маршрутизацией и управлением состоянием.</p>
+            </div>
+            
+            <div class="course__progress">
+              <div class="course__bar" 
+                   style="width: 0%"
+                   role="progressbar" 
+                   aria-valuenow="0" 
+                   aria-valuemin="0" 
+                   aria-valuemax="100"
+                   aria-label="Прогресс курса React: 0 процентов">
+                <span class="sr-only">0% освоено</span>
+              </div>
+            </div>
+            
+            <div class="course__meta">
+              <span aria-label="Планируемая дата начала: Январь 2025">📅 Янв 2025</span>
+              <span aria-label="Сложность: Очень высокая">⭐⭐⭐⭐ Очень высокая</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Add Entry Form -->
+      <section class="add-entry" aria-labelledby="add-entry-title">
+        <h2 id="add-entry-title" class="section-title">Добавить запись</h2>
+        
+        <form id="diaryForm" class="form-adaptive" aria-labelledby="add-entry-title">
+          <fieldset>
+            <legend class="sr-only">Форма добавления новой записи в дневник</legend>
+            
+            <div class="form-adaptive__group">
+              <label for="entryTitle" class="form-adaptive__label">
+                Заголовок записи
+                <span class="required-asterisk" aria-hidden="true">*</span>
+                <span class="sr-only">Обязательное поле</span>
+              </label>
+              
+              <input type="text" 
+                     id="entryTitle" 
+                     name="entryTitle" 
+                     class="form-adaptive__input"
+                     required
+                     aria-required="true"
+                     placeholder="Например: Изучение Flexbox"
+                     aria-describedby="title-help">
+              
+              <div id="title-help" class="form-adaptive__help">
+                Краткое описание того, что вы изучили или сделали
+              </div>
+            </div>
+            
+            <div class="form-adaptive__group">
+              <label for="entryDate" class="form-adaptive__label">
+                Дата
+                <span class="required-asterisk" aria-hidden="true">*</span>
+                <span class="sr-only">Обязательное поле</span>
+              </label>
+              
+              <input type="date" 
+                     id="entryDate" 
+                     name="entryDate" 
+                     class="form-adaptive__input"
+                     required
+                     aria-required="true"
+                     aria-describedby="date-help"
+                     value="<?php echo date('Y-m-d'); ?>">
+              
+              <div id="date-help" class="form-adaptive__help">
+                Дата, когда произошло событие
+              </div>
+            </div>
+            
+            <div class="form-adaptive__group">
+              <label for="entryType" class="form-adaptive__label">
+                Тип записи
+              </label>
+              
+              <select id="entryType" 
+                      name="entryType" 
+                      class="form-adaptive__select"
+                      aria-describedby="type-help">
+                <option value="study">🎓 Учёба</option>
+                <option value="project">💻 Проект</option>
+                <option value="practice">🔧 Практика</option>
+                <option value="other">📝 Другое</option>
+              </select>
+              
+              <div id="type-help" class="form-adaptive__help">
+                Категория записи
+              </div>
+            </div>
+            
+            <div class="form-adaptive__group">
+              <label for="entryText" class="form-adaptive__label">
+                Подробное описание
+                <span class="required-asterisk" aria-hidden="true">*</span>
+                <span class="sr-only">Обязательное поле</span>
+              </label>
+              
+              <textarea id="entryText" 
+                        name="entryText" 
+                        class="form-adaptive__textarea"
+                        required
+                        aria-required="true"
+                        placeholder="Опишите, что вы изучили, с какими сложностями столкнулись, что получилось..."
+                        rows="6"
+                        aria-describedby="text-help"></textarea>
+              
+              <div id="text-help" class="form-adaptive__help">
+                Подробное описание вашего прогресса или достижений
+              </div>
+            </div>
+            
+            <div class="form-adaptive__group">
+              <fieldset>
+                <legend class="form-adaptive__label">Статус</legend>
+                
+                <div class="radio-group">
+                  <input type="radio" 
+                         id="status-completed" 
+                         name="entryStatus" 
+                         value="completed"
+                         class="sr-only">
+                  <label for="status-completed" 
+                         class="radio-label"
+                         role="button"
+                         tabindex="0">
+                    <span class="radio-indicator"></span>
+                    ✅ Завершено
+                  </label>
+                  
+                  <input type="radio" 
+                         id="status-in-progress" 
+                         name="entryStatus" 
+                         value="in-progress"
+                         checked
+                         class="sr-only">
+                  <label for="status-in-progress" 
+                         class="radio-label"
+                         role="button"
+                         tabindex="0">
+                    <span class="radio-indicator"></span>
+                    🔄 В процессе
+                  </label>
+                  
+                  <input type="radio" 
+                         id="status-planned" 
+                         name="entryStatus" 
+                         value="planned"
+                         class="sr-only">
+                  <label for="status-planned" 
+                         class="radio-label"
+                         role="button"
+                         tabindex="0">
+                    <span class="radio-indicator"></span>
+                    📅 Запланировано
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+            
+            <div class="form-adaptive__group">
+              <label for="entryTags" class="form-adaptive__label">
+                Теги (через запятую)
+              </label>
+              
+              <input type="text" 
+                     id="entryTags" 
+                     name="entryTags" 
+                     class="form-adaptive__input"
+                     placeholder="HTML, CSS, JavaScript, адаптивность"
+                     aria-describedby="tags-help">
+              
+              <div id="tags-help" class="form-adaptive__help">
+                Ключевые слова для поиска и фильтрации
+              </div>
+            </div>
+          </fieldset>
+          
+          <div class="form-adaptive__actions">
+            <button type="submit" 
+                    class="form-adaptive__submit button button--primary">
+              📝 Добавить запись
+            </button>
+            
+            <button type="reset" 
+                    class="button button--secondary"
+                    aria-label="Очистить форму">
+              🗑️ Очистить
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Learning Statistics -->
+      <section class="learning-stats" aria-labelledby="learning-stats-title">
+        <h2 id="learning-stats-title" class="section-title">Статистика обучения</h2>
+        
+        <div class="stats-cards" role="list">
+          <div class="stat-card" role="listitem">
+            <div class="stat-card__icon" aria-hidden="true">📚</div>
+            <div class="stat-card__content">
+              <div class="stat-card__value" aria-label="15 часов">15ч</div>
+              <div class="stat-card__label">Общее время обучения</div>
+            </div>
+          </div>
+          
+          <div class="stat-card" role="listitem">
+            <div class="stat-card__icon" aria-hidden="true">✅</div>
+            <div class="stat-card__content">
+              <div class="stat-card__value" aria-label="8 завершенных тем">8</div>
+              <div class="stat-card__label">Завершено тем</div>
+            </div>
+          </div>
+          
+          <div class="stat-card" role="listitem">
+            <div class="stat-card__icon" aria-hidden="true">📝</div>
+            <div class="stat-card__content">
+              <div class="stat-card__value" aria-label="4 проекта">4</div>
+              <div class="stat-card__label">Выполнено проектов</div>
+            </div>
+          </div>
+          
+          <div class="stat-card" role="listitem">
+            <div class="stat-card__icon" aria-hidden="true">⏳</div>
+            <div class="stat-card__content">
+              <div class="stat-card__value" aria-label="30 дней">30д</div>
+              <div class="stat-card__label">Дней с начала обучения</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Таблица для скринридеров -->
+        <div class="sr-only">
+          <h3>Детальная статистика обучения</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Показатель</th>
+                <th>Значение</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Общее время обучения</td>
+                <td>15 часов</td>
+              </tr>
+              <tr>
+                <td>Завершено тем</td>
+                <td>8</td>
+              </tr>
+              <tr>
+                <td>Выполнено проектов</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>Дней с начала обучения</td>
+                <td>30 дней</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__logo">
+          <picture>
+            <source srcset="../images/icons/logo-48.webp" type="image/webp">
+            <source srcset="../images/icons/logo-48.png" type="image/png">
+            <img src="../images/icons/logo-48.png" 
+                 alt="Логотип портфолио студента" 
+                 class="logo logo--footer"
+                 width="48"
+                 height="48">
+          </picture>
+        </div>
+        
+        <div class="footer__info">
+          <p class="footer__copyright" id="footer-copyright">
+            © 2025 Васюкова А.И.
+            <span class="sr-only">Все права защищены.</span>
+          </p>
+          
+          <div class="footer__links">
+            <a href="mailto:vasyukova.a.i@edu.mirea.ru" 
+               class="footer__link"
+               aria-label="Написать письмо на vasyukova.a.i@edu.mirea.ru">
+              ✉️ vasyukova.a.i@edu.mirea.ru
+            </a>
+            
+            <span class="footer__separator" aria-hidden="true">•</span>
+            
+            <a href="https://github.com/sashko-kot" 
+               target="_blank"
+               class="footer__link"
+               aria-label="Открыть профиль GitHub в новой вкладке">
+              💻 GitHub: sashko-kot
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer__navigation" role="navigation" aria-label="Дополнительная навигация">
+          <h3 class="sr-only">Быстрые ссылки</h3>
+          <ul>
+            <li><a href="#main-content">В начало страницы</a></li>
+            <li><a href="../index.html">На главную</a></li>
+            <li><a href="#add-entry-title">Добавить запись</a></li>
+          </ul>
         </div>
       </div>
-    </header>
+    </div>
+  </footer>
 
-    <!-- Navigation -->
-    <nav class="nav">
-      <div class="container">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a href="../index.html" class="nav__link">Главная</a>
-          </li>
-          <li class="nav__item">
-            <a href="projects.html" class="nav__link">Проекты</a>
-          </li>
-          <li class="nav__item nav__item--active">
-            <a href="diary.html" class="nav__link">Дневник</a>
-          </li>
-          <li class="nav__item">
-            <a href="contacts.html" class="nav__link">Контакты</a>
-          </li>
-        </ul>
+      <!-- Модальное окно настроек доступности -->
+      <div id="a11y-settings" 
+           class="modal" 
+           role="dialog" 
+           aria-modal="true"
+           aria-labelledby="a11y-modal-title"
+           hidden>
+        <div class="modal__content">
+          <div class="modal__header">
+            <h2 id="a11y-modal-title" class="modal__title">Настройки доступности</h2>
+            
+            <button class="modal__close" 
+                    aria-label="Закрыть настройки доступности">
+              ✕
+            </button>
+          </div>
+          
+          <div class="modal__body">
+            <form id="a11y-settings-form" class="a11y-settings-form">
+              <fieldset>
+                <legend>Настройки отображения</legend>
+                
+                <div class="setting-group">
+                  <label for="font-size-setting">
+                    Размер текста: <output id="font-size-value">100%</output>
+                  </label>
+                  <input type="range" 
+                         id="font-size-setting" 
+                         min="80" 
+                         max="200" 
+                         value="100" 
+                         step="10">
+                </div>
+                
+                <div class="setting-group">
+                  <label for="line-height-setting">
+                    Межстрочный интервал: <output id="line-height-value">1.6</output>
+                  </label>
+                  <input type="range" 
+                         id="line-height-setting" 
+                         min="1.2" 
+                         max="2.5" 
+                         value="1.6" 
+                         step="0.1">
+                </div>
+                
+                <div class="setting-group">
+                  <label for="letter-spacing-setting">
+                    Межбуквенный интервал: <output id="letter-spacing-value">0px</output>
+                  </label>
+                  <input type="range" 
+                         id="letter-spacing-setting" 
+                         min="0" 
+                         max="2" 
+                         value="0" 
+                         step="0.1">
+                </div>
+              </fieldset>
+              
+              <fieldset>
+                <legend>Цвет и контраст</legend>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="high-contrast-setting"
+                         name="highContrast">
+                  <label for="high-contrast-setting">Высокая контрастность</label>
+                </div>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="invert-colors-setting"
+                         name="invertColors">
+                  <label for="invert-colors-setting">Инвертировать цвета</label>
+                </div>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="grayscale-setting"
+                         name="grayscale">
+                  <label for="grayscale-setting">Оттенки серого</label>
+                </div>
+              </fieldset>
+              
+              <fieldset>
+                <legend>Анимации и движение</legend>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="reduce-motion-setting"
+                         name="reduceMotion">
+                  <label for="reduce-motion-setting">Уменьшить анимации</label>
+                </div>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="disable-animations-setting"
+                         name="disableAnimations">
+                  <label for="disable-animations-setting">Отключить анимации</label>
+                </div>
+              </fieldset>
+              
+              <fieldset>
+                <legend>Навигация</legend>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="highlight-focus-setting"
+                         name="highlightFocus"
+                         checked>
+                  <label for="highlight-focus-setting">Подсвечивать фокус</label>
+                </div>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="outline-links-setting"
+                         name="outlineLinks"
+                         checked>
+                  <label for="outline-links-setting">Подчеркивать ссылки</label>
+                </div>
+                
+                <div class="setting-group">
+                  <label for="focus-thickness-setting">
+                    Толщина фокуса: <output id="focus-thickness-value">3px</output>
+                  </label>
+                  <input type="range" 
+                         id="focus-thickness-setting" 
+                         min="1" 
+                         max="5" 
+                         value="3" 
+                         step="1">
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          
+          <div class="modal__footer">
+            <button id="apply-a11y-settings" 
+                    class="button button--primary">
+              ✅ Применить настройки
+            </button>
+            
+            <button id="reset-a11y-settings" 
+                    class="button button--secondary">
+              🔄 Сбросить к стандартным
+            </button>
+            
+            <button class="button button--outline modal__close">
+              ❌ Отмена
+            </button>
+          </div>
+        </div>
       </div>
-    </nav>
 
-    <!-- Main Content -->
-    <main class="main">
-      <div class="container">
-        <!-- Diary Section -->
-        <section class="diary">
-          <h1 class="section-title">Мой учебный прогресс</h1>
+  <!-- Живой регион для скринридеров -->
+  <div id="a11y-live-region" 
+       aria-live="polite" 
+       aria-atomic="true" 
+       class="sr-only">
+  </div>
 
-          <div class="timeline">
-            <!-- Entry 1 -->
-            <article class="timeline__item">
-              <div class="timeline__date">13 окт 2024</div>
-              <div class="timeline__content">
-                <h3 class="timeline__title">Проснуться</h3>
-                <p class="timeline__description">Первая и самая важная задача дня. Кофе обязателен.</p>
-              </div>
-              <span class="timeline__status timeline__status--completed">Выполнено</span>
-            </article>
-
-            <!-- Entry 2 -->
-            <article class="timeline__item">
-              <div class="timeline__
+  <script src="../js/a11.js" defer></script>
+  <script src="../js/javascript.js" defer></script>
+</body>
+</html>

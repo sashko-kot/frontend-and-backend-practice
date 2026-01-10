@@ -3,138 +3,757 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Проекты — Портфолио</title>
+  <title>Проекты — Портфолио студента Васюкова А.И.</title>
+  <meta name="description" content="Проекты студента Васюковой А.И. в веб-разработке">
   <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
-  <div class="page">
-    <!-- Header -->
-    <header class="header">
-      <div class="container">
-        <div class="header__content">
-          <div class="header__logo">
-            <img src="../images/icons/logo-32.png" alt="logo" class="header__logo-image">
-            <span class="header__brand">coolsite</span>
+  <!-- Кнопка пропуска навигации -->
+  <a href="#main-content" class="skip-link sr-only-focusable">
+    Перейти к основному содержанию
+  </a>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header__content">
+        <div class="header__logo">
+          <picture>
+            <source srcset="../images/icons/logo-32.webp" type="image/webp">
+            <source srcset="../images/icons/logo-32.png" type="image/png">
+            <img src="../images/icons/logo-32.png" 
+                 alt="Логотип портфолио студента" 
+                 class="header__logo-image logo logo--header"
+                 width="32" 
+                 height="32">
+          </picture>
+          <span class="header__brand">coolsite</span>
+        </div>
+        
+        <button id="theme-toggle" 
+                class="button button--secondary header__theme-toggle scalable-button"
+                aria-label="Переключить на светлую тему"
+                aria-pressed="false"
+                role="switch"
+                aria-checked="false">
+          ☀️ Светлая тема
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Navigation -->
+  <nav class="nav" aria-label="Основная навигация" role="navigation">
+    <div class="container">
+      <ul class="nav__list" role="menubar">
+        <li class="nav__item" role="none">
+          <a href="../index.html" 
+             class="nav__link" 
+             role="menuitem">
+            Главная
+          </a>
+        </li>
+        <li class="nav__item" role="none">
+          <a href="projects.html" 
+             class="nav__link" 
+             role="menuitem"
+             aria-current="page">
+            Проекты
+          </a>
+        </li>
+        <li class="nav__item" role="none">
+          <a href="diary.html" 
+             class="nav__link" 
+             role="menuitem">
+            Дневник
+          </a>
+        </li>
+        <li class="nav__item" role="none">
+          <a href="contacts.html" 
+             class="nav__link" 
+             role="menuitem">
+            Контакты
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content" class="main" role="main">
+    <div class="container">
+      <!-- Page Header -->
+      <header class="page-header" aria-labelledby="page-title">
+        <h1 id="page-title" class="page-title">Мои проекты</h1>
+        <p class="page-subtitle">Здесь собраны все мои работы по веб-разработке</p>
+        
+        <!-- Фильтры проектов -->
+        <div class="projects-filters" role="search" aria-label="Фильтрация проектов">
+          <fieldset>
+            <legend class="sr-only">Выберите технологии для фильтрации</legend>
+            
+            <div class="filters-group" role="group" aria-labelledby="filters-title">
+              <h2 id="filters-title" class="sr-only">Фильтры по технологиям</h2>
+              
+              <div class="filter-options">
+                <input type="checkbox" 
+                       id="filter-all" 
+                       name="filter" 
+                       value="all" 
+                       checked
+                       class="sr-only">
+                <label for="filter-all" 
+                       class="projects__filter projects__filter--active"
+                       role="button"
+                       tabindex="0"
+                       aria-pressed="true"
+                       data-filter="all">
+                  Все
+                </label>
+                
+                <input type="checkbox" 
+                       id="filter-html" 
+                       name="filter" 
+                       value="html" 
+                       class="sr-only">
+                <label for="filter-html" 
+                       class="projects__filter"
+                       role="button"
+                       tabindex="0"
+                       aria-pressed="false"
+                       data-filter="html">
+                  HTML/CSS
+                </label>
+                
+                <input type="checkbox" 
+                       id="filter-js" 
+                       name="filter" 
+                       value="js" 
+                       class="sr-only">
+                <label for="filter-js" 
+                       class="projects__filter"
+                       role="button"
+                       tabindex="0"
+                       aria-pressed="false"
+                       data-filter="js">
+                  JavaScript
+                </label>
+                
+                <input type="checkbox" 
+                       id="filter-react" 
+                       name="filter" 
+                       value="react" 
+                       class="sr-only">
+                <label for="filter-react" 
+                       class="projects__filter"
+                       role="button"
+                       tabindex="0"
+                       aria-pressed="false"
+                       data-filter="react">
+                  React
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </header>
+
+      <!-- Projects Grid -->
+      <section class="projects-grid" aria-labelledby="projects-grid-title">
+        <h2 id="projects-grid-title" class="sr-only">Список проектов</h2>
+        
+        <!-- Project 1 -->
+        <article id="project1" 
+                 class="project-card scalable-element" 
+                 data-tags="html css"
+                 aria-labelledby="project1-title">
+          <div class="project-card__header">
+            <div class="project-card__image">
+              <picture>
+                <source srcset="../images/projects/p1-1.webp" type="image/webp">
+                <source srcset="../images/projects/p1-1.jpg" type="image/jpeg">
+                <img src="../images/projects/p1-1.jpg" 
+                     alt="Главная страница личного сайта с адаптивным дизайном" 
+                     class="project-card__img img-cover"
+                     loading="lazy"
+                     width="400"
+                     height="225">
+              </picture>
+              
+              <div class="project-card__badges">
+                <span class="project-badge" aria-label="Статус: Завершен">✅ Завершен</span>
+                <span class="project-badge" aria-label="Сложность: Легкая">⭐ Легкая</span>
+              </div>
+            </div>
+            
+            <div class="project-card__content">
+              <h3 id="project1-title" class="project-card__title">
+                Личный сайт-портфолио
+              </h3>
+              
+              <div class="project-card__meta">
+                <time datetime="2024-10-01" aria-label="Дата создания: Октябрь 2024">
+                  🗓️ Окт 2024
+                </time>
+                <span aria-label="Время на разработку: 2 недели">
+                  ⏱️ 2 недели
+                </span>
+              </div>
+              
+              <div class="project-card__description">
+                <p>Адаптивный сайт-портфолио с использованием HTML5 и CSS3. Полностью валидная верстка с учетом семантики и доступности.</p>
+                
+                <details class="project-details">
+                  <summary>Подробное описание</summary>
+                  <div class="details-content">
+                    <p>Проект включает:</p>
+                    <ul>
+                      <li>Адаптивную верстку для всех устройств</li>
+                      <li>Семантическую HTML5 разметку</li>
+                      <li>CSS Grid и Flexbox для макетов</li>
+                      <li>Оптимизированные изображения</li>
+                      <li>Полную доступность (WCAG 2.1 AA)</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+              
+              <div class="project-card__tags" role="list" aria-label="Использованные технологии">
+                <span class="tag" role="listitem">HTML5</span>
+                <span class="tag" role="listitem">CSS3</span>
+                <span class="tag" role="listitem">Адаптивность</span>
+                <span class="tag" role="listitem">Доступность</span>
+              </div>
+              
+              <div class="project-card__actions">
+                <a href="#" 
+                   class="button button--primary"
+                   aria-label="Посмотреть демо проекта Личный сайт">
+                  🚀 Демо
+                </a>
+                
+                <a href="#" 
+                   class="button button--outline"
+                   aria-label="Посмотреть исходный код на GitHub">
+                  💻 Код
+                </a>
+                
+                <button class="button button--text"
+                        aria-label="Подробнее о проекте Личный сайт"
+                        aria-expanded="false"
+                        aria-controls="project1-details">
+                  📖 Подробнее
+                </button>
+              </div>
+            </div>
           </div>
-          <button id="theme-toggle" class="button button--secondary">Светлая тема</button>
-        </div>
-      </div>
-    </header>
+          
+          <!-- Дополнительные детали (скрыты по умолчанию) -->
+          <div id="project1-details" class="project-details__expand" hidden>
+            <div class="details-content">
+              <h4>Технические детали</h4>
+              <ul>
+                <li>Валидный HTML5</li>
+                <li>CSS3 с CSS Custom Properties</li>
+                <li>Mobile-first подход</li>
+                <li>Оптимизация производительности</li>
+              </ul>
+              
+              <h4>Что я узнал</h4>
+              <ul>
+                <li>Основы семантической верстки</li>
+                <li>Принципы адаптивного дизайна</li>
+                <li>Основы доступности веб-сайтов</li>
+                <li>Оптимизация изображений</li>
+              </ul>
+            </div>
+          </div>
+        </article>
 
-    <!-- Navigation -->
-    <nav class="nav">
-      <div class="container">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a href="../index.html" class="nav__link">Главная</a>
-          </li>
-          <li class="nav__item nav__item--active">
-            <a href="projects.html" class="nav__link">Проекты</a>
-          </li>
-          <li class="nav__item">
-            <a href="diary.html" class="nav__link">Дневник</a>
-          </li>
-          <li class="nav__item">
-            <a href="contacts.html" class="nav__link">Контакты</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+        <!-- Project 2 -->
+        <article id="project2" 
+                 class="project-card scalable-element" 
+                 data-tags="js"
+                 aria-labelledby="project2-title">
+          <div class="project-card__header">
+            <div class="project-card__image">
+              <picture>
+                <source srcset="../images/projects/p2-1.webp" type="image/webp">
+                <source srcset="../images/projects/p2-1.jpg" type="image/jpeg">
+                <img src="../images/projects/p2-1.jpg" 
+                     alt="Интерфейс Todo приложения с списком задач" 
+                     class="project-card__img img-cover"
+                     loading="lazy"
+                     width="400"
+                     height="225">
+              </picture>
+              
+              <div class="project-card__badges">
+                <span class="project-badge" aria-label="Статус: В разработке">🔄 В процессе</span>
+                <span class="project-badge" aria-label="Сложность: Средняя">⭐⭐ Средняя</span>
+              </div>
+            </div>
+            
+            <div class="project-card__content">
+              <h3 id="project2-title" class="project-card__title">
+                Todo приложение
+              </h3>
+              
+              <div class="project-card__meta">
+                <time datetime="2024-11-01" aria-label="Дата начала: Ноябрь 2024">
+                  🗓️ Ноя 2024
+                </time>
+                <span aria-label="Время на разработку: 3 недели">
+                  ⏱️ 3 недели
+                </span>
+              </div>
+              
+              <div class="project-card__description">
+                <p>Приложение для управления задачами с сохранением в LocalStorage. Реализованы фильтры, поиск и сортировка.</p>
+                
+                <details class="project-details">
+                  <summary>Подробное описание</summary>
+                  <div class="details-content">
+                    <p>Функциональность:</p>
+                    <ul>
+                      <li>Добавление, редактирование, удаление задач</li>
+                      <li>Отметка задач как выполненных</li>
+                      <li>Фильтрация по статусу (все/активные/выполненные)</li>
+                      <li>Сохранение в LocalStorage</li>
+                      <li>Адаптивный интерфейс</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+              
+              <div class="project-card__tags" role="list" aria-label="Использованные технологии">
+                <span class="tag" role="listitem">JavaScript</span>
+                <span class="tag" role="listitem">LocalStorage</span>
+                <span class="tag" role="listitem">DOM API</span>
+                <span class="tag" role="listitem">UI/UX</span>
+              </div>
+              
+              <div class="project-card__actions">
+                <a href="#" 
+                   class="button button--primary"
+                   aria-label="Посмотреть демо проекта Todo приложение">
+                  🚀 Демо
+                </a>
+                
+                <a href="#" 
+                   class="button button--outline"
+                   aria-label="Посмотреть исходный код на GitHub">
+                  💻 Код
+                </a>
+                
+                <button class="button button--text"
+                        aria-label="Подробнее о проекте Todo приложение"
+                        aria-expanded="false"
+                        aria-controls="project2-details">
+                  📖 Подробнее
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div id="project2-details" class="project-details__expand" hidden>
+            <div class="details-content">
+              <h4>Особенности реализации</h4>
+              <ul>
+                <li>Чистый JavaScript без фреймворков</li>
+                <li>Модульная архитектура</li>
+                <li>Обработка ошибок</li>
+                <li>Валидация ввода</li>
+              </ul>
+              
+              <h4>Сложности и решения</h4>
+              <ul>
+                <li>Работа с LocalStorage и JSON</li>
+                <li>Синхронизация данных</li>
+                <li>Управление состоянием приложения</li>
+                <li>Оптимизация производительности</li>
+              </ul>
+            </div>
+          </div>
+        </article>
 
-    <!-- Main Content -->
-    <main class="main">
-      <div class="container">
-        <!-- Projects Header -->
-        <div class="projects__header">
-          <h1 class="section-title">Мои проекты</h1>
-          <div class="projects__filters">
-            <button class="projects__filter projects__filter--active" data-filter="all">Все</button>
-            <button class="projects__filter" data-filter="html">HTML</button>
-            <button class="projects__filter" data-filter="js">JavaScript</button>
-            <button class="projects__filter" data-filter="react">React</button>
+        <!-- Project 3 -->
+        <article id="project3" 
+                 class="project-card scalable-element" 
+                 data-tags="react"
+                 aria-labelledby="project3-title">
+          <div class="project-card__header">
+            <div class="project-card__image">
+              <picture>
+                <source srcset="../images/projects/p3-1.webp" type="image/webp">
+                <source srcset="../images/projects/p3-1.jpg" type="image/jpeg">
+                <img src="../images/projects/p3-1.jpg" 
+                     alt="Интерфейс React портфолио с компонентами" 
+                     class="project-card__img img-cover"
+                     loading="lazy"
+                     width="400"
+                     height="225">
+              </picture>
+              
+              <div class="project-card__badges">
+                <span class="project-badge" aria-label="Статус: Планируется">📅 Планируется</span>
+                <span class="project-badge" aria-label="Сложность: Сложная">⭐⭐⭐ Сложная</span>
+              </div>
+            </div>
+            
+            <div class="project-card__content">
+              <h3 id="project3-title" class="project-card__title">
+                Портфолио на React
+              </h3>
+              
+              <div class="project-card__meta">
+                <time datetime="2025-01-01" aria-label="Планируемая дата начала: Январь 2025">
+                  🗓️ Янв 2025
+                </time>
+                <span aria-label="Планируемое время: 1 месяц">
+                  ⏱️ 1 месяц
+                </span>
+              </div>
+              
+              <div class="project-card__description">
+                <p>Одностраничное приложение на React с современным стеком технологий. Анимации, маршрутизация, состояние.</p>
+                
+                <details class="project-details">
+                  <summary>Планируемый функционал</summary>
+                  <div class="details-content">
+                    <ul>
+                      <li>Компонентная архитектура</li>
+                      <li>Маршрутизация с React Router</li>
+                      <li>Управление состоянием (Redux/Context)</li>
+                      <li>Анимации с Framer Motion</li>
+                      <li>Интеграция с API</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+              
+              <div class="project-card__tags" role="list" aria-label="Планируемые технологии">
+                <span class="tag" role="listitem">React</span>
+                <span class="tag" role="listitem">Bootstrap</span>
+                <span class="tag" role="listitem">React Router</span>
+                <span class="tag" role="listitem">SPA</span>
+              </div>
+              
+              <div class="project-card__actions">
+                <button class="button button--primary"
+                        disabled
+                        aria-label="Демо проекта пока недоступно">
+                  🚀 Демо (скоро)
+                </button>
+                
+                <button class="button button--outline"
+                        disabled
+                        aria-label="Исходный код пока недоступен">
+                  💻 Код (скоро)
+                </button>
+                
+                <button class="button button--text"
+                        aria-label="Подробнее о планах проекта"
+                        aria-expanded="false"
+                        aria-controls="project3-details">
+                  📖 Подробнее
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div id="project3-details" class="project-details__expand" hidden>
+            <div class="details-content">
+              <h4>Цели проекта</h4>
+              <ul>
+                <li>Изучение React на практике</li>
+                <li>Освоение современных инструментов разработки</li>
+                <li>Создание полноценного SPA</li>
+                <li>Работа с внешними API</li>
+              </ul>
+              
+              <h4>Что планируется изучить</h4>
+              <ul>
+                <li>React Hooks и Context API</li>
+                <li>Маршрутизация в SPA</li>
+                <li>Оптимизация производительности React</li>
+                <li>Тестирование React компонентов</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- Projects Statistics -->
+      <section class="projects-stats" aria-labelledby="stats-title">
+        <h2 id="stats-title" class="section-title">Статистика проектов</h2>
+        
+        <div class="stats-grid" role="list">
+          <div class="stat-card" role="listitem">
+            <div class="stat-card__value" aria-label="3 проекта">3</div>
+            <div class="stat-card__label">Всего проектов</div>
+          </div>
+          
+          <div class="stat-card" role="listitem">
+            <div class="stat-card__value" aria-label="1 завершенный проект">1</div>
+            <div class="stat-card__label">Завершено</div>
+          </div>
+          
+          <div class="stat-card" role="listitem">
+            <div class="stat-card__value" aria-label="1 проект в разработке">1</div>
+            <div class="stat-card__label">В процессе</div>
+          </div>
+          
+          <div class="stat-card" role="listitem">
+            <div class="stat-card__value" aria-label="1 запланированный проект">1</div>
+            <div class="stat-card__label">Запланировано</div>
           </div>
         </div>
-
-        <!-- Projects Grid -->
-        <div class="projects__grid">
-          <!-- Project 1 -->
-          <article class="project-card" data-tags="html">
-            <div class="project-card__image">
-              <img src="../images/projects/p1-1.jpg" alt="Личный сайт">
-            </div>
-            <div class="project-card__content">
-              <h3 class="project-card__title">Личный сайт</h3>
-              <p class="project-card__text">HTML, CSS — адаптивный шаблон с использованием современных технологий веб-разработки.</p>
-              <div class="project-card__tags">
-                <span class="tag">HTML</span>
-                <span class="tag">CSS</span>
-                <span class="tag">Адаптивность</span>
-              </div>
-              <div class="project-card__actions">
-                <button class="button button--primary project-card__btn">Подробнее</button>
-                <a href="#" class="button button--outline project-card__link">Исходники</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 2 -->
-          <article class="project-card" data-tags="js">
-            <div class="project-card__image">
-              <img src="../images/projects/p2-1.jpg" alt="Todo приложение">
-            </div>
-            <div class="project-card__content">
-              <h3 class="project-card__title">Todo приложение</h3>
-              <p class="project-card__text">Vanilla JS — приложение для управления задачами с сохранением в LocalStorage.</p>
-              <div class="project-card__tags">
-                <span class="tag">JavaScript</span>
-                <span class="tag">LocalStorage</span>
-                <span class="tag">UI/UX</span>
-              </div>
-              <div class="project-card__actions">
-                <button class="button button--primary project-card__btn">Подробнее</button>
-                <a href="#" class="button button--outline project-card__link">Демо</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 3 -->
-          <article class="project-card" data-tags="react">
-            <div class="project-card__image">
-              <img src="../images/projects/p3-1.jpg" alt="React Портфолио">
-            </div>
-            <div class="project-card__content">
-              <h3 class="project-card__title">Портфолио (React)</h3>
-              <p class="project-card__text">React + Bootstrap — одностраничное приложение с анимациями и адаптивным дизайном.</p>
-              <div class="project-card__tags">
-                <span class="tag">React</span>
-                <span class="tag">Bootstrap</span>
-                <span class="tag">SPA</span>
-              </div>
-              <div class="project-card__actions">
-                <button class="button button--primary project-card__btn">Подробнее</button>
-                <a href="#" class="button button--outline project-card__link">Живая версия</a>
-              </div>
-            </div>
-          </article>
+        
+        <!-- Прогресс в виде таблицы для скринридеров -->
+        <div class="sr-only">
+          <h3>Детальная статистика проектов</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Категория</th>
+                <th>Количество</th>
+                <th>Процент</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Все проекты</td>
+                <td>3</td>
+                <td>100%</td>
+              </tr>
+              <tr>
+                <td>Завершенные</td>
+                <td>1</td>
+                <td>33%</td>
+              </tr>
+              <tr>
+                <td>В процессе</td>
+                <td>1</td>
+                <td>33%</td>
+              </tr>
+              <tr>
+                <td>Запланированные</td>
+                <td>1</td>
+                <td>33%</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </div>
-    </main>
+      </section>
+    </div>
+  </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer__content">
-          <p class="footer__copyright">© 2025 Васюкова А.И</p>
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__logo">
+          <picture>
+            <source srcset="../images/icons/logo-48.webp" type="image/webp">
+            <source srcset="../images/icons/logo-48.png" type="image/png">
+            <img src="../images/icons/logo-48.png" 
+                 alt="Логотип портфолио студента" 
+                 class="logo logo--footer"
+                 width="48"
+                 height="48">
+          </picture>
+        </div>
+        
+        <div class="footer__info">
+          <p class="footer__copyright" id="footer-copyright">
+            © 2025 Васюкова А.И.
+            <span class="sr-only">Все права защищены.</span>
+          </p>
+          
           <div class="footer__links">
-            <a href="mailto:student@edu.ru" class="footer__link">student@edu.ru</a>
-            <span class="footer__separator">•</span>
-            <a href="https://github.com/username" target="_blank" class="footer__link">GitHub: username</a>
+            <a href="mailto:vasyukova.a.i@edu.mirea.ru" 
+               class="footer__link"
+               aria-label="Написать письмо на vasyukova.a.i@edu.mirea.ru">
+              ✉️ vasyukova.a.i@edu.mirea.ru
+            </a>
+            
+            <span class="footer__separator" aria-hidden="true">•</span>
+            
+            <a href="https://github.com/sashko-kot" 
+               target="_blank"
+               class="footer__link"
+               aria-label="Открыть профиль GitHub в новой вкладке">
+              💻 GitHub: sashko-kot
+            </a>
           </div>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
+
+      <!-- Модальное окно настроек доступности -->
+      <div id="a11y-settings" 
+           class="modal" 
+           role="dialog" 
+           aria-modal="true"
+           aria-labelledby="a11y-modal-title"
+           hidden>
+        <div class="modal__content">
+          <div class="modal__header">
+            <h2 id="a11y-modal-title" class="modal__title">Настройки доступности</h2>
+            
+            <button class="modal__close" 
+                    aria-label="Закрыть настройки доступности">
+              ✕
+            </button>
+          </div>
+          
+          <div class="modal__body">
+            <form id="a11y-settings-form" class="a11y-settings-form">
+              <fieldset>
+                <legend>Настройки отображения</legend>
+                
+                <div class="setting-group">
+                  <label for="font-size-setting">
+                    Размер текста: <output id="font-size-value">100%</output>
+                  </label>
+                  <input type="range" 
+                         id="font-size-setting" 
+                         min="80" 
+                         max="200" 
+                         value="100" 
+                         step="10">
+                </div>
+                
+                <div class="setting-group">
+                  <label for="line-height-setting">
+                    Межстрочный интервал: <output id="line-height-value">1.6</output>
+                  </label>
+                  <input type="range" 
+                         id="line-height-setting" 
+                         min="1.2" 
+                         max="2.5" 
+                         value="1.6" 
+                         step="0.1">
+                </div>
+                
+                <div class="setting-group">
+                  <label for="letter-spacing-setting">
+                    Межбуквенный интервал: <output id="letter-spacing-value">0px</output>
+                  </label>
+                  <input type="range" 
+                         id="letter-spacing-setting" 
+                         min="0" 
+                         max="2" 
+                         value="0" 
+                         step="0.1">
+                </div>
+              </fieldset>
+              
+              <fieldset>
+                <legend>Цвет и контраст</legend>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="high-contrast-setting"
+                         name="highContrast">
+                  <label for="high-contrast-setting">Высокая контрастность</label>
+                </div>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="invert-colors-setting"
+                         name="invertColors">
+                  <label for="invert-colors-setting">Инвертировать цвета</label>
+                </div>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="grayscale-setting"
+                         name="grayscale">
+                  <label for="grayscale-setting">Оттенки серого</label>
+                </div>
+              </fieldset>
+              
+              <fieldset>
+                <legend>Анимации и движение</legend>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="reduce-motion-setting"
+                         name="reduceMotion">
+                  <label for="reduce-motion-setting">Уменьшить анимации</label>
+                </div>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="disable-animations-setting"
+                         name="disableAnimations">
+                  <label for="disable-animations-setting">Отключить анимации</label>
+                </div>
+              </fieldset>
+              
+              <fieldset>
+                <legend>Навигация</legend>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="highlight-focus-setting"
+                         name="highlightFocus"
+                         checked>
+                  <label for="highlight-focus-setting">Подсвечивать фокус</label>
+                </div>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="outline-links-setting"
+                         name="outlineLinks"
+                         checked>
+                  <label for="outline-links-setting">Подчеркивать ссылки</label>
+                </div>
+                
+                <div class="setting-group">
+                  <label for="focus-thickness-setting">
+                    Толщина фокуса: <output id="focus-thickness-value">3px</output>
+                  </label>
+                  <input type="range" 
+                         id="focus-thickness-setting" 
+                         min="1" 
+                         max="5" 
+                         value="3" 
+                         step="1">
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          
+          <div class="modal__footer">
+            <button id="apply-a11y-settings" 
+                    class="button button--primary">
+              ✅ Применить настройки
+            </button>
+            
+            <button id="reset-a11y-settings" 
+                    class="button button--secondary">
+              🔄 Сбросить к стандартным
+            </button>
+            
+            <button class="button button--outline modal__close">
+              ❌ Отмена
+            </button>
+          </div>
+        </div>
+      </div>
+
+  <!-- Живой регион для скринридеров -->
+  <div id="a11y-live-region" 
+       aria-live="polite" 
+       aria-atomic="true" 
+       class="sr-only">
   </div>
 
-  <script src="../scripts/javascript.js" defer></script>
+  <script src="../js/a11.js" defer></script>
+  <script src="../js/javascript.js" defer></script>
 </body>
 </html>

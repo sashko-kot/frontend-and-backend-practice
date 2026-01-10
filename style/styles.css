@@ -1635,9 +1635,7 @@ img[loading="lazy"].loaded {
 }
 
 /* ====== АДАПТИВНЫЕ ИЗОБРАЖЕНИЯ С ПОДДЕРЖКОЙ WEBP ====== */
-picture source {
-    display: none; /* Скрываем source элементы */
-}
+/* Ensure <picture> <source> elements remain functional for responsive images */
 
 /* ====== ОПТИМИЗАЦИЯ ДЛЯ МЕДЛЕННЫХ СОЕДИНЕНИЙ ====== */
 @media (prefers-reduced-data: reduce) {
@@ -1757,3 +1755,948 @@ picture source {
     transform: none !important;
 }
 
+/* ====== A11Y БАЗОВЫЕ СТИЛИ ====== */
+
+/* 1. Сброс для доступности */
+*:focus {
+    outline: 3px solid var(--primary-light);
+    outline-offset: 2px;
+}
+
+/* 2. Скрытые элементы для скринридеров */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}
+
+/* 3. Улучшенные индикаторы фокуса */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 8px 16px;
+    z-index: 1001;
+    text-decoration: none;
+    border-radius: 0 0 4px 0;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 3px solid var(--primary-light);
+}
+
+/* 4. Контрастные состояния */
+.high-contrast {
+    --primary-color: #ff4444;
+    --primary-light: #ff6666;
+    --text-primary: #000000;
+    --bg-body: #ffffff;
+    --bg-card: #f0f0f0;
+}
+
+/* 5. Улучшенные стили для инвалидных состояний */
+[aria-disabled="true"],
+[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+[aria-invalid="true"] {
+    border-color: var(--error-color) !important;
+    box-shadow: 0 0 0 3px rgba(194, 44, 29, 0.2) !important;
+}
+
+[aria-required="true"]::after {
+    content: " *";
+    color: var(--error-color);
+}
+
+/* 6. Стили для живых регионов */
+[aria-live] {
+    border: 1px solid transparent;
+    padding: var(--space-sm);
+}
+
+[aria-live="polite"] {
+    background-color: rgba(213, 141, 59, 0.1);
+}
+
+[aria-live="assertive"] {
+    background-color: rgba(194, 44, 29, 0.1);
+}
+
+/* 7. Улучшенные таблицы для скринридеров */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    text-align: left;
+    background-color: rgba(194, 44, 29, 0.1);
+}
+
+th,
+td {
+    padding: var(--space-sm);
+    border: 1px solid rgba(194, 44, 29, 0.2);
+}
+
+caption {
+    caption-side: bottom;
+    text-align: left;
+    padding: var(--space-sm);
+    font-style: italic;
+}
+
+/* 8. Стили для навигации с клавиатуры */
+.nav__link:focus,
+.button:focus,
+[role="button"]:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid var(--primary-light);
+    outline-offset: 2px;
+}
+
+/* 9. Улучшенные индикаторы состояния */
+[aria-current="page"] {
+    background-color: var(--primary-color) !important;
+    color: var(--text-light) !important;
+    font-weight: 700;
+}
+
+[aria-pressed="true"] {
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+}
+
+/* 10. Стили для уменьшения движения */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* 11. Стили для увеличения текста */
+@media (prefers-contrast: high) {
+    body {
+        --primary-color: #ff0000;
+        --text-primary: #000000;
+        --bg-body: #ffffff;
+    }
+}
+
+@media (prefers-contrast: more) {
+    body {
+        --primary-color: #000000;
+        --text-primary: #000000;
+        --bg-body: #ffffff;
+        --bg-card: #ffffff;
+    }
+}
+
+/* 12. Стили для когнитивной доступности */
+.cognitive-friendly {
+    font-size: 1.2em;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+}
+
+.cognitive-friendly p {
+    margin-bottom: 1.5em;
+}
+
+.cognitive-friendly .section-title {
+    margin-bottom: 1.5em;
+}
+
+/* 13. Индикаторы для ориентации экрана */
+@media (orientation: portrait) {
+    .orientation-warning {
+        display: none;
+    }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+    .orientation-warning {
+        display: block;
+        background-color: var(--warning-color);
+        color: var(--text-dark);
+        padding: var(--space-sm);
+        text-align: center;
+        font-weight: bold;
+    }
+}
+
+/* 14. Стили для печати с доступностью */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    
+    .sr-only {
+        display: none !important;
+    }
+}
+
+.cookie-content p {
+    margin: 0;
+    flex: 1;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.cookie-content a {
+    color: var(--primary-light);
+    text-decoration: none;
+}
+
+.cookie-content a:hover {
+    text-decoration: underline;
+}
+
+.cookie-actions {
+    display: flex;
+    gap: var(--space-sm);
+    flex-shrink: 0;
+}
+
+/* Стили для форм */
+.form-section {
+    margin-bottom: var(--space-xl);
+}
+
+.form-section__title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid rgba(194, 44, 29, 0.3);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+}
+
+.form-adaptive__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--space-xs);
+}
+
+.char-counter {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-align: right;
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.875rem;
+    margin-top: var(--space-xs);
+    display: none;
+}
+
+.error-message[role="alert"] {
+    display: block;
+}
+
+.success-message {
+    background-color: rgba(16, 185, 129, 0.1);
+    border: 1px solid var(--success-color);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    margin-top: var(--space-xl);
+    position: relative;
+}
+
+.success-message h4 {
+    color: var(--success-color);
+    margin-bottom: var(--space-sm);
+    font-size: 1.2rem;
+}
+
+.success-message p {
+    margin-bottom: var(--space-md);
+    color: var(--text-secondary);
+}
+
+.success-message .close-message {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+}
+
+/* CAPTCHA стили */
+.captcha {
+    background-color: rgba(91, 68, 68, 0.1);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(194, 44, 29, 0.2);
+}
+
+#captcha-question {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin: 0 var(--space-xs);
+}
+
+#refresh-captcha {
+    margin-top: var(--space-sm);
+}
+
+/* Радио кнопки и чекбоксы */
+.radio-group,
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-top: var(--space-sm);
+}
+
+.radio-label,
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    cursor: pointer;
+    padding: var(--space-xs);
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.radio-label:hover,
+.checkbox-label:hover {
+    background-color: rgba(194, 44, 29, 0.05);
+}
+
+.radio-indicator,
+.checkbox-indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.checkbox-indicator {
+    border-radius: var(--radius-sm);
+}
+
+input:checked + .radio-label .radio-indicator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+}
+
+input:checked + .checkbox-label .checkbox-indicator::before {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+/* Стили для настроек доступности */
+:root {
+    --font-size-multiplier: 1;
+    --line-height: 1.6;
+    --letter-spacing: 0px;
+    --focus-thickness: 3px;
+}
+
+body.high-contrast {
+    --primary-color: #ff4444;
+    --primary-light: #ff6666;
+    --text-primary: #000000;
+    --text-secondary: #333333;
+    --bg-body: #ffffff;
+    --bg-card: #f0f0f0;
+    --border-color: #000000;
+}
+
+body.invert-colors {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+body.grayscale {
+    filter: grayscale(1);
+}
+
+body.reduce-motion *,
+body.reduce-motion *::before,
+body.reduce-motion *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+}
+
+body.no-animations *,
+body.no-animations *::before,
+body.no-animations *::after {
+    animation: none !important;
+    transition: none !important;
+}
+
+body.highlight-focus *:focus {
+    outline: var(--focus-thickness) solid var(--primary-color) !important;
+    outline-offset: 2px !important;
+}
+
+body.outline-links a:not(.button) {
+    text-decoration: underline !important;
+    text-decoration-thickness: 2px !important;
+    text-underline-offset: 2px !important;
+}
+
+/* Применение динамических настроек */
+html {
+    font-size: calc(100% * var(--font-size-multiplier, 1));
+}
+
+body {
+    line-height: var(--line-height, 1.6);
+    letter-spacing: var(--letter-spacing, 0px);
+}
+
+*:focus {
+    outline-width: var(--focus-thickness, 3px);
+}
+
+/* Баджи доступности в футере */
+.footer__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    justify-content: center;
+    margin-top: var(--space-md);
+}
+
+.accessibility-badge {
+    padding: var(--space-xs) var(--space-sm);
+    background-color: rgba(194, 44, 29, 0.1);
+    color: var(--text-primary);
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(194, 44, 29, 0.3);
+}
+
+/* Навигация в футере */
+.footer__navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-md) 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-sm);
+}
+
+.footer__navigation li {
+    display: inline;
+}
+
+.footer__navigation a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.footer__navigation a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .statement-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+    
+    .availability__content {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-info__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cookie-content {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-md);
+    }
+    
+    .cookie-actions {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .modal__content {
+        max-height: 90vh;
+    }
+    
+    .modal__footer {
+        flex-direction: column;
+    }
+    
+    .modal__footer .button {
+        width: 100%;
+    }
+    
+    .faq-toggle {
+        font-size: 1rem;
+        padding: var(--space-sm);
+    }
+    
+    .contact-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-card__icon {
+        margin-bottom: var(--space-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .accessibility-statement {
+        padding: var(--space-lg);
+    }
+    
+    .a11y-details summary {
+        padding: var(--space-sm);
+        font-size: 0.9rem;
+    }
+    
+    .schedule-table {
+        font-size: 0.9rem;
+    }
+    
+    .schedule-cell {
+        padding: var(--space-xs);
+    }
+    
+    .form-adaptive__actions {
+        flex-direction: column;
+    }
+    
+    .form-adaptive__actions .button {
+        width: 100%;
+    }
+    
+    .radio-group,
+    .checkbox-group {
+        font-size: 0.9rem;
+    }
+}
+
+/* Печать */
+@media print {
+    .cookie-notice,
+    .modal,
+    .footer__navigation,
+    .tool-button,
+    .faq-toggle,
+    .contact-form-section,
+    .current-status {
+        display: none !important;
+    }
+    
+    .contact-card {
+        break-inside: avoid;
+        border: 1px solid #ccc;
+    }
+    
+    .availability__content {
+        break-inside: avoid;
+    }
+    
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        font-weight: normal;
+    }
+}
+
+/* Анимации */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.faq-answer {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal__content {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Поддержка темной темы */
+@media (prefers-color-scheme: dark) {
+    .contact-card {
+        background-color: rgba(91, 68, 68, 0.3);
+    }
+    
+    .faq-toggle {
+        background-color: rgba(91, 68, 68, 0.3);
+    }
+    
+    .faq-answer {
+        background-color: rgba(91, 68, 68, 0.2);
+    }
+    
+    .tool-button {
+        background-color: rgba(91, 68, 68, 0.3);
+    }
+    
+    .captcha {
+        background-color: rgba(91, 68, 68, 0.2);
+    }
+}
+
+/* Специальные стили для когнитивной доступности */
+.cognitive-mode {
+    --line-height: 1.8;
+    --letter-spacing: 0.5px;
+    font-size: 1.1em;
+}
+
+.cognitive-mode p {
+    margin-bottom: 1.5em;
+}
+
+.cognitive-mode .section-title {
+    margin-bottom: 1.5em;
+}
+
+/* Улучшенные стили для скринридеров */
+.sr-improved:focus {
+    clip: auto;
+    height: auto;
+    width: auto;
+    position: static;
+    margin: 0;
+    overflow: visible;
+}
+
+/* Стили для пользователей, предпочитающих уменьшенное движение */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .status-dot {
+        animation: none !important;
+    }
+    
+    .faq-answer,
+    .modal__content {
+        animation: none !important;
+    }
+}
+
+/* Высокая контрастность */
+@media (prefers-contrast: high) {
+    .contact-card {
+        border: 2px solid var(--primary-color);
+    }
+    
+    .faq-item {
+        border: 2px solid var(--primary-color);
+    }
+    
+    .a11y-details {
+        border: 2px solid var(--primary-color);
+    }
+    
+    .tool-button {
+        border: 2px solid var(--primary-color);
+    }
+    
+    .availability-badge {
+        border: 1px solid #000;
+    }
+}
+
+/* Ориентация экрана */
+@media (orientation: landscape) and (max-height: 500px) {
+    .cookie-content {
+        flex-direction: row;
+    }
+    
+    .contact-info__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Стили для конкретных браузеров */
+@supports (-webkit-touch-callout: none) {
+    /* iOS специфичные стили */
+    .faq-toggle,
+    .tool-button,
+    .button {
+        min-height: 44px; /* Минимальный размер тапа для iOS */
+    }
+    
+    input,
+    textarea,
+    select {
+        font-size: 16px; /* Предотвращает масштабирование на iOS */
+    }
+}
+
+@supports (not (-webkit-touch-callout: none)) {
+    /* Стили для не-iOS устройств */
+    .faq-toggle:hover,
+    .tool-button:hover,
+    .contact-card:hover {
+        transform: translateY(-3px);
+    }
+}
+
+/* Поддержка старых браузеров */
+@supports not (display: grid) {
+    .contact-info__grid,
+    .tools-grid,
+    .form-row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .contact-card {
+        width: calc(50% - var(--space-lg));
+        margin-bottom: var(--space-lg);
+    }
+    
+    .tool-button {
+        width: calc(50% - var(--space-sm));
+    }
+}
+
+/* Стили для печати с улучшенной доступностью */
+@media print {
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+        background: #fff;
+    }
+    
+    .contact-card {
+        border: 1pt solid #000;
+        margin-bottom: 0.5cm;
+        page-break-inside: avoid;
+    }
+    
+    .contact-card__link::after {
+        content: " (" attr(href) ")";
+        font-size: 10pt;
+        font-weight: normal;
+    }
+    
+    .availability__content {
+        page-break-inside: avoid;
+    }
+    
+    .faq-item {
+        page-break-inside: avoid;
+    }
+    
+    .a11y-details {
+        border: 1pt solid #000;
+    }
+    
+    /* Скрываем ненужные для печати элементы */
+    .no-print,
+    .cookie-notice,
+    .modal,
+    .tool-button,
+    .button,
+    .faq-toggle,
+    .current-status,
+    .status-indicator,
+    .availability-badge,
+    .footer__navigation,
+    .footer__badges {
+        display: none !important;
+    }
+}
+
+/* Улучшенные стили для очень маленьких экранов */
+@media (max-width: 320px) {
+    .contact-card {
+        padding: var(--space-md);
+    }
+    
+    .contact-card__icon {
+        font-size: 1.5rem;
+    }
+    
+    .contact-card__title {
+        font-size: 1.1rem;
+    }
+    
+    .contact-card__link,
+    .contact-card__text {
+        font-size: 1rem;
+    }
+    
+    .faq-toggle {
+        font-size: 0.9rem;
+        padding: var(--space-xs) var(--space-sm);
+    }
+    
+    .availability__content {
+        font-size: 0.9rem;
+    }
+}
+
+/* Стили для очень больших экранов */
+@media (min-width: 1600px) {
+    .contact-info__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .tools-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .availability__content {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Поддержка режима чтения */
+.reading-mode {
+    --bg-body: #f5f2e9;
+    --bg-card: #ffffff;
+    --text-primary: #2c3e50;
+    --text-secondary: #546e7a;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.8;
+}
+
+.reading-mode .container {
+    max-width: 800px;
+}
+
+.reading-mode .contact-card,
+.reading-mode .faq-item,
+.reading-mode .accessibility-statement {
+    background-color: var(--bg-card);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Стили для пользователей с дислексией */
+.dyslexia-friendly {
+    font-family: 'OpenDyslexic', 'Comic Sans MS', sans-serif;
+    letter-spacing: 0.1em;
+    line-height: 1.8;
+    font-weight: 400;
+}
+
+.dyslexia-friendly p {
+    margin-bottom: 1.5em;
+}
+
+.dyslexia-friendly b,
+.dyslexia-friendly strong {
+    font-weight: 600;
+}
+
+/* Завершение стилей для контактной страницы */

@@ -3,324 +3,762 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Главная — Портфолио студента</title>
+  <title>Главная — Портфолио студента Васюкова А.И.</title>
+  <meta name="description" content="Портфолио студента Васюковой А.И. с проектами и достижениями в веб-разработке">
   <link rel="stylesheet" href="style/styles.css">
 </head>
 <body>
-  <div class="page">
-    <!-- Header с адаптивным фоновым изображением -->
-    <header class="header bg-image" style="background-image: url('images/eyes.jpg'); height: 250px;">
-      <div class="container bg-image-content">
-        <div class="header__content">
-          <div class="header__logo">
-            <!-- Picture element для разных форматов логотипа -->
-            <picture>
-              <source srcset="images/icons/logo-32.webp" type="image/webp">
-              <source srcset="images/icons/logo-32.png" type="image/png">
-              <img src="images/icons/logo-32.png" alt="logo" class="header__logo-image logo logo--header">
-            </picture>
-            <span class="header__brand">coolsite</span>
-          </div>
-          <button id="theme-toggle" class="button button--secondary header__theme-toggle scalable-button">
-            Светлая тема
-          </button>
+  <!-- Кнопка пропуска навигации для скринридеров -->
+  <a href="#main-content" class="skip-link sr-only-focusable">
+    Перейти к основному содержанию
+  </a>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header__content">
+        <div class="header__logo">
+          <picture>
+            <source srcset="images/icons/logo-32.webp" type="image/webp">
+            <source srcset="images/icons/logo-32.png" type="image/png">
+            <img src="images/icons/logo-32.png" 
+                 alt="Логотип портфолио студента" 
+                 class="header__logo-image logo logo--header"
+                 width="32" 
+                 height="32">
+          </picture>
+          <span class="header__brand">coolsite</span>
         </div>
+        
+        <button id="theme-toggle" 
+                class="button button--secondary header__theme-toggle scalable-button"
+                aria-label="Переключить на светлую тему"
+                aria-pressed="false"
+                role="switch"
+                aria-checked="false">
+          ☀️ Светлая тема
+        </button>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <!-- Navigation -->
-    <nav class="nav">
-      <div class="container">
-        <ul class="nav__list">
-          <li class="nav__item nav__item--active">
-            <a href="index.html" class="nav__link">Главная</a>
-          </li>
-          <li class="nav__item">
-            <a href="pages/projects.html" class="nav__link">Проекты</a>
-          </li>
-          <li class="nav__item">
-            <a href="pages/diary.html" class="nav__link">Дневник</a>
-          </li>
-          <li class="nav__item">
-            <a href="pages/contacts.html" class="nav__link">Контакты</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+  <!-- Main Navigation -->
+  <nav class="nav" aria-label="Основная навигация" role="navigation">
+    <div class="container">
+      <ul class="nav__list" role="menubar">
+        <li class="nav__item" role="none">
+          <a href="index.html" 
+             class="nav__link" 
+             role="menuitem"
+             aria-current="page">
+            Главная
+          </a>
+        </li>
+        <li class="nav__item" role="none">
+          <a href="pages/projects.html" 
+             class="nav__link" 
+             role="menuitem">
+            Проекты
+          </a>
+        </li>
+        <li class="nav__item" role="none">
+          <a href="pages/diary.html" 
+             class="nav__link" 
+             role="menuitem">
+            Дневник
+          </a>
+        </li>
+        <li class="nav__item" role="none">
+          <a href="pages/contacts.html" 
+             class="nav__link" 
+             role="menuitem">
+            Контакты
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-    <!-- Main Content -->
-    <main class="main">
-      <div class="container">
-        <!-- Hero Section -->
-        <section class="hero card-scalable">
-          <div class="hero__content">
-            <div class="hero__image">
-              <!-- Адаптивное изображение с поддержкой разных форматов и размеров -->
-              <picture>
-                <!-- Разные размеры для разных экранов -->
-                <source media="(min-width: 1200px)" 
-                        srcset="images/photo-large.webp 1200w,
-                                images/photo-large.jpg 1200w"
-                        sizes="200px"
-                        type="image/webp">
-                
-                <source media="(min-width: 768px)" 
-                        srcset="images/photo-medium.webp 800w,
-                                images/photo-medium.jpg 800w"
-                        sizes="180px"
-                        type="image/webp">
-                
-                <source srcset="images/photo-small.webp 400w,
-                                images/photo-small.jpg 400w"
-                        sizes="150px"
-                        type="image/webp">
-                
-                <!-- Fallback с поддержкой Retina -->
-                <img src="images/photo.jpg" 
-                     srcset="images/photo.jpg 1x,
-                             images/photo@2x.jpg 2x"
-                     alt="Фото студента" 
-                     class="hero__photo avatar"
-                     loading="lazy"
-                     width="200"
-                     height="200">
-              </picture>
-            </div>
-            <div class="hero__info">
-              <h2 class="hero__greeting">Привет! Я — <strong>Васюкова А.И</strong></h2>
-              <p class="hero__description">
-                Студент, группа <strong>ЭФБО-08-24</strong>.<br>
-                Увлекаюсь веб-разработкой, создаю БИТЫ, чищу клетку своих морских свинок ёу.
-              </p>
-              <div class="hero__buttons">
-                <a href="assets/resume.pdf" class="button button--primary scalable-button" download>
-                  📄 Скачать резюме
-                </a>
-                <a href="pages/projects.html" class="button button--secondary scalable-button">
-                  🚀 Мои проекты
-                </a>
-              </div>
-            </div>
+  <!-- Main Content -->
+  <main id="main-content" class="main" role="main">
+    <div class="container">
+      <!-- Hero Section -->
+      <section class="hero card-scalable" aria-labelledby="hero-title">
+        <div class="hero__content">
+          <div class="hero__image">
+            <picture>
+              <source media="(min-width: 1200px)" 
+                      srcset="images/photo-large.webp 1200w,
+                              images/photo-large.jpg 1200w"
+                      sizes="200px"
+                      type="image/webp">
+              
+              <source media="(min-width: 768px)" 
+                      srcset="images/photo-medium.webp 800w,
+                              images/photo-medium.jpg 800w"
+                      sizes="180px"
+                      type="image/webp">
+              
+              <source srcset="images/photo-small.webp 400w,
+                              images/photo-small.jpg 400w"
+                      sizes="150px"
+                      type="image/webp">
+              
+              <img src="images/photo.jpg" 
+                   srcset="images/photo.jpg 1x,
+                           images/photo@2x.jpg 2x"
+                   alt="Фотография Васюковой А.И. - студентки и веб-разработчицы" 
+                   class="hero__photo avatar"
+                   loading="lazy"
+                   width="200"
+                   height="200">
+            </picture>
           </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section class="skills">
-          <h2 class="section-title">Мои навыки</h2>
           
-          <!-- Таблица навыков с адаптивным дизайном -->
-          <div class="table-responsive">
-            <table class="adaptive-table">
-              <thead>
-                <tr>
-                  <th>Навык</th>
-                  <th>Уровень</th>
-                  <th>Прогресс</th>
-                  <th>Иконка</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td data-label="Навык">HTML / CSS</td>
-                  <td data-label="Уровень">Начальный</td>
-                  <td data-label="Прогресс">
-                    <div class="skill__progress">
-                      <div class="skill__progress-bar" style="width: 20%"></div>
-                    </div>
-                  </td>
-                  <td data-label="Иконка">
-                    <img src="images/icons/html.svg" alt="HTML5" class="icon" loading="lazy">
-                  </td>
-                </tr>
-                <tr>
-                  <td data-label="Навык">JavaScript</td>
-                  <td data-label="Уровень">Начальный</td>
-                  <td data-label="Прогресс">
-                    <div class="skill__progress">
-                      <div class="skill__progress-bar" style="width: 10%"></div>
-                    </div>
-                  </td>
-                  <td data-label="Иконка">
-                    <img src="images/icons/js.svg" alt="JavaScript" class="icon" loading="lazy">
-                  </td>
-                </tr>
-                <tr>
-                  <td data-label="Навык">Bootstrap</td>
-                  <td data-label="Уровень">Начальный</td>
-                  <td data-label="Прогресс">
-                    <div class="skill__progress">
-                      <div class="skill__progress-bar" style="width: 15%"></div>
-                    </div>
-                  </td>
-                  <td data-label="Иконка">
-                    <img src="images/icons/bootstrap.svg" alt="Bootstrap" class="icon" loading="lazy">
-                  </td>
-                </tr>
-                <tr>
-                  <td data-label="Навык">Думание</td>
-                  <td data-label="Уровень">Затруднительный</td>
-                  <td data-label="Прогресс">
-                    <div class="skill__progress">
-                      <div class="skill__progress-bar" style="width: 1%"></div>
-                    </div>
-                  </td>
-                  <td data-label="Иконка">
-                    <img src="images/icons/brain.svg" alt="Мозг" class="icon" loading="lazy">
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="hero__info">
+            <h1 id="hero-title" class="hero__greeting">
+              Привет! Я — <strong>Васюкова А.И</strong>
+            </h1>
+            
+            <div class="hero__description" aria-live="polite">
+              <p>Студент, группа <strong>ЭФБО-08-24</strong>.</p>
+              <p>Увлекаюсь веб-разработкой, создаю БИТЫ, чищу клетку своих морских свинок ёу.</p>
+            </div>
+            
+            <div class="hero__buttons">
+              <a href="assets/resume.pdf" 
+                 class="button button--primary scalable-button" 
+                 download="Резюме_Васюкова_А.И.pdf"
+                 aria-label="Скачать резюме Васюковой А.И. в формате PDF">
+                📄 Скачать резюме
+              </a>
+              <a href="pages/projects.html" 
+                 class="button button--secondary scalable-button"
+                 aria-label="Перейти к моим проектам">
+                🚀 Мои проекты
+              </a>
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- Projects Preview -->
-        <section class="projects-preview">
-          <h2 class="section-title">Лучшие проекты</h2>
-          
-          <!-- Адаптивная галерея проектов -->
-          <div class="projects-gallery">
-            <!-- Project 1 -->
-            <article class="project-gallery-item scalable-element">
-              <picture>
-                <source srcset="images/projects/p1-1.webp" type="image/webp">
-                <source srcset="images/projects/p1-1.jpg" type="image/jpeg">
-                <img src="images/projects/p1-1.jpg" 
-                     alt="Проект 1" 
-                     class="project-gallery-image img-cover"
-                     loading="lazy">
-              </picture>
-              <div class="project-gallery-caption">
-                <h3>Проект 1</h3>
-                <p>Короткое описание проекта</p>
-              </div>
-            </article>
-
-            <!-- Project 2 -->
-            <article class="project-gallery-item scalable-element">
-              <picture>
-                <source srcset="images/projects/p2-1.webp" type="image/webp">
-                <source srcset="images/projects/p2-1.jpg" type="image/jpeg">
-                <img src="images/projects/p2-1.jpg" 
-                     alt="Проект 2" 
-                     class="project-gallery-image img-cover"
-                     loading="lazy">
-              </picture>
-              <div class="project-gallery-caption">
-                <h3>Проект 2</h3>
-                <p>Короткое описание проекта</p>
-              </div>
-            </article>
-
-            <!-- Project 3 -->
-            <article class="project-gallery-item scalable-element">
-              <picture>
-                <source srcset="images/projects/p3-1.webp" type="image/webp">
-                <source srcset="images/projects/p3-1.jpg" type="image/jpeg">
-                <img src="images/projects/p3-1.jpg" 
-                     alt="Проект 3" 
-                     class="project-gallery-image img-cover"
-                     loading="lazy">
-              </picture>
-              <div class="project-gallery-caption">
-                <h3>Проект 3</h3>
-                <p>Короткое описание проекта</p>
-              </div>
-            </article>
-          </div>
-
-          <!-- Подробная таблица проектов -->
-          <div class="table-responsive" style="margin-top: var(--space-xl);">
-            <table class="adaptive-table">
-              <thead>
-                <tr>
-                  <th>Проект</th>
-                  <th>Технологии</th>
-                  <th>Статус</th>
-                  <th>Сложность</th>
-                  <th>Ссылка</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td data-label="Проект">Личный сайт</td>
-                  <td data-label="Технологии">
-                    <div class="project-card__tags">
-                      <span class="tag">HTML</span>
-                      <span class="tag">CSS</span>
+      <!-- Skills Section -->
+      <section class="skills" aria-labelledby="skills-title">
+        <h2 id="skills-title" class="section-title">Мои навыки</h2>
+        
+        <div class="table-responsive">
+          <table class="adaptive-table" summary="Таблица навыков с уровнем владения и прогрессом">
+            <caption class="sr-only">Уровень владения навыками в процентах</caption>
+            <thead>
+              <tr>
+                <th scope="col">Навык</th>
+                <th scope="col">Уровень</th>
+                <th scope="col">Прогресс</th>
+                <th scope="col">Иконка</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">HTML / CSS</th>
+                <td>Начальный</td>
+                <td>
+                  <div class="skill__progress">
+                    <div class="skill__progress-bar" 
+                         style="width: 20%"
+                         aria-label="Прогресс 20 процентов"
+                         role="progressbar" 
+                         aria-valuenow="20" 
+                         aria-valuemin="0" 
+                         aria-valuemax="100">
+                      <span class="sr-only">20% освоено</span>
                     </div>
-                  </td>
-                  <td data-label="Статус">
-                    <span class="tag" style="background-color: var(--success-color);">Завершен</span>
-                  </td>
-                  <td data-label="Сложность">⭐☆☆☆☆</td>
-                  <td data-label="Ссылка">
-                    <a href="#" class="button button--small">Посмотреть</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td data-label="Проект">Todo приложение</td>
-                  <td data-label="Технологии">
-                    <div class="project-card__tags">
-                      <span class="tag">JavaScript</span>
+                  </div>
+                </td>
+                <td>
+                  <img src="images/icons/html.svg" 
+                       alt="Иконка HTML5" 
+                       class="icon" 
+                       loading="lazy"
+                       width="24"
+                       height="24">
+                </td>
+              </tr>
+              
+              <tr>
+                <th scope="row">JavaScript</th>
+                <td>Начальный</td>
+                <td>
+                  <div class="skill__progress">
+                    <div class="skill__progress-bar" 
+                         style="width: 10%"
+                         aria-label="Прогресс 10 процентов"
+                         role="progressbar" 
+                         aria-valuenow="10" 
+                         aria-valuemin="0" 
+                         aria-valuemax="100">
+                      <span class="sr-only">10% освоено</span>
                     </div>
-                  </td>
-                  <td data-label="Статус">
-                    <span class="tag" style="background-color: var(--warning-color);">В процессе</span>
-                  </td>
-                  <td data-label="Сложность">⭐⭐☆☆☆</td>
-                  <td data-label="Ссылка">
-                    <a href="#" class="button button--small">Посмотреть</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td data-label="Проект">React портфолио</td>
-                  <td data-label="Технологии">
-                    <div class="project-card__tags">
-                      <span class="tag">React</span>
-                      <span class="tag">Bootstrap</span>
+                  </div>
+                </td>
+                <td>
+                  <img src="images/icons/js.svg" 
+                       alt="Иконка JavaScript" 
+                       class="icon" 
+                       loading="lazy"
+                       width="24"
+                       height="24">
+                </td>
+              </tr>
+              
+              <tr>
+                <th scope="row">Bootstrap</th>
+                <td>Начальный</td>
+                <td>
+                  <div class="skill__progress">
+                    <div class="skill__progress-bar" 
+                         style="width: 15%"
+                         aria-label="Прогресс 15 процентов"
+                         role="progressbar" 
+                         aria-valuenow="15" 
+                         aria-valuemin="0" 
+                         aria-valuemax="100">
+                      <span class="sr-only">15% освоено</span>
                     </div>
-                  </td>
-                  <td data-label="Статус">
-                    <span class="tag" style="background-color: var(--error-color);">Планируется</span>
-                  </td>
-                  <td data-label="Сложность">⭐⭐⭐☆☆</td>
-                  <td data-label="Ссылка">
-                    <a href="#" class="button button--small">Посмотреть</a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                  </div>
+                </td>
+                <td>
+                  <img src="images/icons/bootstrap.svg" 
+                       alt="Иконка Bootstrap" 
+                       class="icon" 
+                       loading="lazy"
+                       width="24"
+                       height="24">
+                </td>
+              </tr>
+              
+              <tr>
+                <th scope="row">Думание</th>
+                <td>Затруднительный</td>
+                <td>
+                  <div class="skill__progress">
+                    <div class="skill__progress-bar" 
+                         style="width: 1%"
+                         aria-label="Прогресс 1 процент"
+                         role="progressbar" 
+                         aria-valuenow="1" 
+                         aria-valuemin="0" 
+                         aria-valuemax="100">
+                      <span class="sr-only">1% освоено</span>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <img src="images/icons/brain.svg" 
+                       alt="Иконка мозга для навыка думания" 
+                       class="icon" 
+                       loading="lazy"
+                       width="24"
+                       height="24">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Projects Preview -->
+      <section class="projects-preview" aria-labelledby="projects-title">
+        <h2 id="projects-title" class="section-title">Лучшие проекты</h2>
+        
+        <!-- Адаптивная галерея проектов -->
+        <div class="projects-gallery" role="list">
+          <!-- Project 1 -->
+          <article class="project-gallery-item scalable-element" role="listitem">
+            <picture>
+              <source srcset="images/projects/p1-1.webp" type="image/webp">
+              <source srcset="images/projects/p1-1.jpg" type="image/jpeg">
+              <img src="images/projects/p1-1.jpg" 
+                   alt="Скриншот проекта 1 - Личный сайт" 
+                   class="project-gallery-image img-cover"
+                   loading="lazy"
+                   width="400"
+                   height="225">
+            </picture>
+            <div class="project-gallery-caption">
+              <h3>Проект 1</h3>
+              <p>Короткое описание проекта</p>
+            </div>
+            
+            <div class="project-card__actions">
+              <button class="button button--primary project-card__btn"
+                      data-title="Проект 1"
+                      data-desc="Полное описание Проекта 1"
+                      data-img="images/projects/p1-1.jpg"
+                      aria-label="Подробнее о проекте 1 - Личный сайт">
+                Подробнее
+              </button>
+              <a href="pages/projects.html#project1" 
+                 class="button button--outline project-card__link"
+                 aria-label="Перейти к деталям проекта 1">
+                Все детали
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-gallery-item scalable-element" role="listitem">
+            <picture>
+              <source srcset="images/projects/p2-1.webp" type="image/webp">
+              <source srcset="images/projects/p2-1.jpg" type="image/jpeg">
+              <img src="images/projects/p2-1.jpg" 
+                   alt="Скриншот проекта 2 - Todo приложение" 
+                   class="project-gallery-image img-cover"
+                   loading="lazy"
+                   width="400"
+                   height="225">
+            </picture>
+            <div class="project-gallery-caption">
+              <h3>Проект 2</h3>
+              <p>Короткое описание проекта</p>
+            </div>
+            
+            <div class="project-card__actions">
+              <button class="button button--primary project-card__btn"
+                      data-title="Проект 2"
+                      data-desc="Полное описание Проекта 2"
+                      data-img="images/projects/p2-1.jpg"
+                      aria-label="Подробнее о проекте 2 - Todo приложение">
+                Подробнее
+              </button>
+              <a href="pages/projects.html#project2" 
+                 class="button button--outline project-card__link"
+                 aria-label="Перейти к деталям проекта 2">
+                Все детали
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-gallery-item scalable-element" role="listitem">
+            <picture>
+              <source srcset="images/projects/p3-1.webp" type="image/webp">
+              <source srcset="images/projects/p3-1.jpg" type="image/jpeg">
+              <img src="images/projects/p3-1.jpg" 
+                   alt="Скриншот проекта 3 - Портфолио на React" 
+                   class="project-gallery-image img-cover"
+                   loading="lazy"
+                   width="400"
+                   height="225">
+            </picture>
+            <div class="project-gallery-caption">
+              <h3>Проект 3</h3>
+              <p>Короткое описание проекта</p>
+            </div>
+            
+            <div class="project-card__actions">
+              <button class="button button--primary project-card__btn"
+                      data-title="Проект 3"
+                      data-desc="Полное описание Проекта 3"
+                      data-img="images/projects/p3-1.jpg"
+                      aria-label="Подробнее о проекте 3 - Портфолио на React">
+                Подробнее
+              </button>
+              <a href="pages/projects.html#project3" 
+                 class="button button--outline project-card__link"
+                 aria-label="Перейти к деталям проекта 3">
+                Все детали
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Таблица проектов -->
+        <div class="table-responsive" aria-labelledby="projects-table-title">
+          <h3 id="projects-table-title" class="sr-only">Детальная информация о проектах</h3>
+          <table class="adaptive-table" summary="Детальная таблица проектов с технологиями, статусами и сложностью">
+            <caption class="sr-only">Подробная информация о текущих и завершенных проектах</caption>
+            <thead>
+              <tr>
+                <th scope="col">Проект</th>
+                <th scope="col">Технологии</th>
+                <th scope="col">Статус</th>
+                <th scope="col">Сложность</th>
+                <th scope="col">Ссылка</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Личный сайт</th>
+                <td>
+                  <div class="project-card__tags" role="list" aria-label="Технологии проекта">
+                    <span class="tag" role="listitem">HTML</span>
+                    <span class="tag" role="listitem">CSS</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="tag" 
+                        style="background-color: var(--success-color);"
+                        aria-label="Статус: Завершен">
+                    Завершен
+                  </span>
+                </td>
+                <td>
+                  <span aria-hidden="true">⭐☆☆☆☆</span>
+                  <span class="sr-only">Сложность: 1 звезда из 5</span>
+                </td>
+                <td>
+                  <a href="pages/projects.html#project1" 
+                     class="button button--small"
+                     aria-label="Посмотреть проект Личный сайт">
+                    Посмотреть
+                  </a>
+                </td>
+              </tr>
+              
+              <tr>
+                <th scope="row">Todo приложение</th>
+                <td>
+                  <div class="project-card__tags" role="list" aria-label="Технологии проекта">
+                    <span class="tag" role="listitem">JavaScript</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="tag" 
+                        style="background-color: var(--warning-color);"
+                        aria-label="Статус: В процессе">
+                    В процессе
+                  </span>
+                </td>
+                <td>
+                  <span aria-hidden="true">⭐⭐☆☆☆</span>
+                  <span class="sr-only">Сложность: 2 звезды из 5</span>
+                </td>
+                <td>
+                  <a href="pages/projects.html#project2" 
+                     class="button button--small"
+                     aria-label="Посмотреть проект Todo приложение">
+                    Посмотреть
+                  </a>
+                </td>
+              </tr>
+              
+              <tr>
+                <th scope="row">React портфолио</th>
+                <td>
+                  <div class="project-card__tags" role="list" aria-label="Технологии проекта">
+                    <span class="tag" role="listitem">React</span>
+                    <span class="tag" role="listitem">Bootstrap</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="tag" 
+                        style="background-color: var(--error-color);"
+                        aria-label="Статус: Планируется">
+                    Планируется
+                  </span>
+                </td>
+                <td>
+                  <span aria-hidden="true">⭐⭐⭐☆☆</span>
+                  <span class="sr-only">Сложность: 3 звезды из 5</span>
+                </td>
+                <td>
+                  <a href="pages/projects.html#project3" 
+                     class="button button--small"
+                     aria-label="Посмотреть проект React портфолио">
+                    Посмотреть
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Accessibility Controls -->
+      <section class="accessibility-controls" aria-labelledby="a11y-title">
+        <h2 id="a11y-title" class="sr-only">Настройки доступности</h2>
+        
+        <div class="accessibility-controls__content">
+          <fieldset>
+            <legend>Настройки доступности</legend>
+            
+            <div class="control-group">
+              <label for="font-size">
+                Размер текста:
+                <output id="font-size-output" for="font-size">100%</output>
+              </label>
+              <input type="range" 
+                     id="font-size" 
+                     min="80" 
+                     max="200" 
+                     value="100" 
+                     step="10"
+                     aria-label="Изменение размера текста в процентах">
+            </div>
+            
+                          <div class="control-group">
+                <input type="checkbox" 
+                       id="high-contrast"
+                       aria-label="Включить высокую контрастность">
+                <label for="high-contrast">Высокая контрастность</label>
+              </div>
+              
+              <div class="control-group">
+                <input type="checkbox" 
+                       id="reduce-motion"
+                       aria-label="Уменьшить анимации">
+                <label for="reduce-motion">Уменьшить анимации</label>
+              </div>
+              
+              <div class="control-group">
+                <input type="checkbox" 
+                       id="simple-layout"
+                       aria-label="Упрощенный макет">
+                <label for="simple-layout">Упрощенный макет</label>
+              </div>
+            </fieldset>
           </div>
         </section>
       </div>
     </main>
 
     <!-- Footer -->
-    <footer class="footer bg-image" style="background-image: url('images/eyes.jpg');">
-      <div class="container bg-image-content">
+    <footer class="footer" role="contentinfo">
+      <div class="container">
         <div class="footer__content">
           <div class="footer__logo">
             <picture>
               <source srcset="images/icons/logo-48.webp" type="image/webp">
               <source srcset="images/icons/logo-48.png" type="image/png">
-              <img src="images/icons/logo-48.png" alt="logo" class="logo logo--footer">
+              <img src="images/icons/logo-48.png" 
+                   alt="Логотип портфолио студента" 
+                   class="logo logo--footer"
+                   width="48"
+                   height="48">
             </picture>
           </div>
-          <p class="footer__copyright">© 2025 Васюкова А.И</p>
-          <div class="footer__links">
-            <a href="mailto:vasyukova.a.i@edu.mirea.ru" class="footer__link">
-              ✉️ vasyukova.a.i@edu.mirea.ru
-            </a>
-            <span class="footer__separator">•</span>
-            <a href="https://github.com/username" target="_blank" class="footer__link">
-              💻 GitHub: username
+          
+          <div class="footer__info">
+            <p class="footer__copyright" id="footer-copyright">
+              © 2025 Васюкова А.И.
+              <span class="sr-only">Все права защищены.</span>
+            </p>
+            
+            <div class="footer__links">
+              <a href="mailto:vasyukova.a.i@edu.mirea.ru" 
+                 class="footer__link"
+                 aria-label="Написать письмо на vasyukova.a.i@edu.mirea.ru">
+                ✉️ vasyukova.a.i@edu.mirea.ru
+              </a>
+              
+              <span class="footer__separator" aria-hidden="true">•</span>
+              
+              <a href="https://github.com/sashko-kot" 
+                 target="_blank"
+                 class="footer__link"
+                 aria-label="Открыть профиль GitHub в новой вкладке">
+                💻 GitHub: sashko-kot
+              </a>
+            </div>
+          </div>
+          
+          <div class="footer__accessibility">
+            <button class="button button--small footer__a11y-btn"
+                    aria-label="Открыть настройки доступности"
+                    aria-expanded="false"
+                    aria-controls="a11y-settings">
+              ♿ Настройки
+            </button>
+            
+            <a href="pages/accessibility.html" 
+               class="footer__link"
+               aria-label="Информация о доступности сайта">
+              Доступность сайта
             </a>
           </div>
+        </div>
+        
+        <div class="footer__meta">
+          <p class="footer__disclaimer">
+            Сайт разработан с учетом 
+            <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" 
+               target="_blank"
+               aria-label="Рекомендации по доступности веб-контента (откроется в новой вкладке)">
+              WCAG 2.1 AA
+            </a>
+          </p>
+          
+          <p class="footer__tech">
+            <span class="sr-only">Технологии:</span>
+            HTML5, CSS3, JavaScript
+          </p>
         </div>
       </div>
     </footer>
   </div>
 
-  <script src="scripts/javascript.js" defer></script>
+      <!-- Модальное окно настроек доступности -->
+      <div id="a11y-settings" 
+           class="modal" 
+           role="dialog" 
+           aria-modal="true"
+           aria-labelledby="a11y-modal-title"
+           hidden>
+        <div class="modal__content">
+          <div class="modal__header">
+            <h2 id="a11y-modal-title" class="modal__title">Настройки доступности</h2>
+            
+            <button class="modal__close" 
+                    aria-label="Закрыть настройки доступности">
+              ✕
+            </button>
+          </div>
+          
+          <div class="modal__body">
+            <form id="a11y-settings-form" class="a11y-settings-form">
+              <fieldset>
+                <legend>Настройки отображения</legend>
+                
+                <div class="setting-group">
+                  <label for="font-size-setting">
+                    Размер текста: <output id="font-size-value">100%</output>
+                  </label>
+                  <input type="range" 
+                         id="font-size-setting" 
+                         min="80" 
+                         max="200" 
+                         value="100" 
+                         step="10">
+                </div>
+                
+                <div class="setting-group">
+                  <label for="line-height-setting">
+                    Межстрочный интервал: <output id="line-height-value">1.6</output>
+                  </label>
+                  <input type="range" 
+                         id="line-height-setting" 
+                         min="1.2" 
+                         max="2.5" 
+                         value="1.6" 
+                         step="0.1">
+                </div>
+                
+                <div class="setting-group">
+                  <label for="letter-spacing-setting">
+                    Межбуквенный интервал: <output id="letter-spacing-value">0px</output>
+                  </label>
+                  <input type="range" 
+                         id="letter-spacing-setting" 
+                         min="0" 
+                         max="2" 
+                         value="0" 
+                         step="0.1">
+                </div>
+              </fieldset>
+              
+              <fieldset>
+                <legend>Цвет и контраст</legend>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="high-contrast-setting"
+                         name="highContrast">
+                  <label for="high-contrast-setting">Высокая контрастность</label>
+                </div>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="invert-colors-setting"
+                         name="invertColors">
+                  <label for="invert-colors-setting">Инвертировать цвета</label>
+                </div>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="grayscale-setting"
+                         name="grayscale">
+                  <label for="grayscale-setting">Оттенки серого</label>
+                </div>
+              </fieldset>
+              
+              <fieldset>
+                <legend>Анимации и движение</legend>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="reduce-motion-setting"
+                         name="reduceMotion">
+                  <label for="reduce-motion-setting">Уменьшить анимации</label>
+                </div>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="disable-animations-setting"
+                         name="disableAnimations">
+                  <label for="disable-animations-setting">Отключить анимации</label>
+                </div>
+              </fieldset>
+              
+              <fieldset>
+                <legend>Навигация</legend>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="highlight-focus-setting"
+                         name="highlightFocus"
+                         checked>
+                  <label for="highlight-focus-setting">Подсвечивать фокус</label>
+                </div>
+                
+                <div class="setting-group">
+                  <input type="checkbox" 
+                         id="outline-links-setting"
+                         name="outlineLinks"
+                         checked>
+                  <label for="outline-links-setting">Подчеркивать ссылки</label>
+                </div>
+                
+                <div class="setting-group">
+                  <label for="focus-thickness-setting">
+                    Толщина фокуса: <output id="focus-thickness-value">3px</output>
+                  </label>
+                  <input type="range" 
+                         id="focus-thickness-setting" 
+                         min="1" 
+                         max="5" 
+                         value="3" 
+                         step="1">
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          
+          <div class="modal__footer">
+            <button id="apply-a11y-settings" 
+                    class="button button--primary">
+              ✅ Применить настройки
+            </button>
+            
+            <button id="reset-a11y-settings" 
+                    class="button button--secondary">
+              🔄 Сбросить к стандартным
+            </button>
+            
+            <button class="button button--outline modal__close">
+              ❌ Отмена
+            </button>
+          </div>
+        </div>
+      </div>
+
+    <!-- Живой регион для скринридеров -->
+  <div id="a11y-live-region" 
+       aria-live="polite" 
+       aria-atomic="true" 
+       class="sr-only">
+  </div>
+
+  <script src="js/a11.js" defer></script>
+  <script src="js/javascript.js" defer></script>
 </body>
 </html>
