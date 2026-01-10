@@ -154,7 +154,6 @@
                 <th scope="col">Навык</th>
                 <th scope="col">Уровень</th>
                 <th scope="col">Прогресс</th>
-                <th scope="col">Иконка</th>
               </tr>
             </thead>
             <tbody>
@@ -174,14 +173,6 @@
                     </div>
                   </div>
                 </td>
-                <td>
-                  <img src="images/icons/html.svg" 
-                       alt="Иконка HTML5" 
-                       class="icon" 
-                       loading="lazy"
-                       width="24"
-                       height="24">
-                </td>
               </tr>
               
               <tr>
@@ -199,14 +190,6 @@
                       <span class="sr-only">10% освоено</span>
                     </div>
                   </div>
-                </td>
-                <td>
-                  <img src="images/icons/js.svg" 
-                       alt="Иконка JavaScript" 
-                       class="icon" 
-                       loading="lazy"
-                       width="24"
-                       height="24">
                 </td>
               </tr>
               
@@ -226,14 +209,6 @@
                     </div>
                   </div>
                 </td>
-                <td>
-                  <img src="images/icons/bootstrap.svg" 
-                       alt="Иконка Bootstrap" 
-                       class="icon" 
-                       loading="lazy"
-                       width="24"
-                       height="24">
-                </td>
               </tr>
               
               <tr>
@@ -251,14 +226,6 @@
                       <span class="sr-only">1% освоено</span>
                     </div>
                   </div>
-                </td>
-                <td>
-                  <img src="images/icons/brain.svg" 
-                       alt="Иконка мозга для навыка думания" 
-                       class="icon" 
-                       loading="lazy"
-                       width="24"
-                       height="24">
                 </td>
               </tr>
             </tbody>
@@ -474,51 +441,6 @@
         </div>
       </section>
 
-      <!-- Accessibility Controls -->
-      <section class="accessibility-controls" aria-labelledby="a11y-title">
-        <h2 id="a11y-title" class="sr-only">Настройки доступности</h2>
-        
-        <div class="accessibility-controls__content">
-          <fieldset>
-            <legend>Настройки доступности</legend>
-            
-            <div class="control-group">
-              <label for="font-size">
-                Размер текста:
-                <output id="font-size-output" for="font-size">100%</output>
-              </label>
-              <input type="range" 
-                     id="font-size" 
-                     min="80" 
-                     max="200" 
-                     value="100" 
-                     step="10"
-                     aria-label="Изменение размера текста в процентах">
-            </div>
-            
-                          <div class="control-group">
-                <input type="checkbox" 
-                       id="high-contrast"
-                       aria-label="Включить высокую контрастность">
-                <label for="high-contrast">Высокая контрастность</label>
-              </div>
-              
-              <div class="control-group">
-                <input type="checkbox" 
-                       id="reduce-motion"
-                       aria-label="Уменьшить анимации">
-                <label for="reduce-motion">Уменьшить анимации</label>
-              </div>
-              
-              <div class="control-group">
-                <input type="checkbox" 
-                       id="simple-layout"
-                       aria-label="Упрощенный макет">
-                <label for="simple-layout">Упрощенный макет</label>
-              </div>
-            </fieldset>
-          </div>
-        </section>
       </div>
     </main>
 
@@ -528,9 +450,9 @@
         <div class="footer__content">
           <div class="footer__logo">
             <picture>
-              <source srcset="images/icons/logo-48.webp" type="image/webp">
-              <source srcset="images/icons/logo-48.png" type="image/png">
-              <img src="images/icons/logo-48.png" 
+              <source srcset="images/icons/logo-32.webp" type="image/webp">
+              <source srcset="images/icons/logo-32.png" type="image/png">
+              <img src="images/icons/logo-32.png" 
                    alt="Логотип портфолио студента" 
                    class="logo logo--footer"
                    width="48"
@@ -569,12 +491,6 @@
                     aria-controls="a11y-settings">
               ♿ Настройки
             </button>
-            
-            <a href="pages/accessibility.html" 
-               class="footer__link"
-               aria-label="Информация о доступности сайта">
-              Доступность сайта
-            </a>
           </div>
         </div>
         

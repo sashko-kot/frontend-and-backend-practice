@@ -221,7 +221,7 @@ body {
   text-align: center;
 }
 
-.hero__photo {
+hero__photo {
   width: 220px;
   height: 220px;
   border-radius: 50%;
@@ -452,7 +452,7 @@ body {
   display: inline-block;
   padding: var(--space-xs) var(--space-sm);
   background-color: rgba(213, 141, 59, 0.2);
-  color: var(--primary-light);
+  color: var(--text-light);
   border-radius: var(--radius-sm);
   font-size: 0.8rem;
   font-weight: 500;
@@ -1247,11 +1247,8 @@ img[loading="lazy"].loaded {
 
 /* Адаптивные аватарки */
 .avatar {
-    width: 150px;
     height: 150px;
-    border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--primary-color);
 }
 
 .avatar--small {
@@ -1635,7 +1632,9 @@ img[loading="lazy"].loaded {
 }
 
 /* ====== АДАПТИВНЫЕ ИЗОБРАЖЕНИЯ С ПОДДЕРЖКОЙ WEBP ====== */
-/* Ensure <picture> <source> elements remain functional for responsive images */
+picture source {
+    display: none; /* Скрываем source элементы */
+}
 
 /* ====== ОПТИМИЗАЦИЯ ДЛЯ МЕДЛЕННЫХ СОЕДИНЕНИЙ ====== */
 @media (prefers-reduced-data: reduce) {
@@ -1870,7 +1869,7 @@ caption {
 }
 
 /* 8. Стили для навигации с клавиатуры */
-.nav__link:focus,
+.nav-link:focus,
 .button:focus,
 [role="button"]:focus,
 input:focus,

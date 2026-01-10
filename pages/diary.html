@@ -487,130 +487,77 @@
           </div>
         </form>
       </section>
-
-      <!-- Learning Statistics -->
-      <section class="learning-stats" aria-labelledby="learning-stats-title">
-        <h2 id="learning-stats-title" class="section-title">Статистика обучения</h2>
-        
-        <div class="stats-cards" role="list">
-          <div class="stat-card" role="listitem">
-            <div class="stat-card__icon" aria-hidden="true">📚</div>
-            <div class="stat-card__content">
-              <div class="stat-card__value" aria-label="15 часов">15ч</div>
-              <div class="stat-card__label">Общее время обучения</div>
-            </div>
-          </div>
-          
-          <div class="stat-card" role="listitem">
-            <div class="stat-card__icon" aria-hidden="true">✅</div>
-            <div class="stat-card__content">
-              <div class="stat-card__value" aria-label="8 завершенных тем">8</div>
-              <div class="stat-card__label">Завершено тем</div>
-            </div>
-          </div>
-          
-          <div class="stat-card" role="listitem">
-            <div class="stat-card__icon" aria-hidden="true">📝</div>
-            <div class="stat-card__content">
-              <div class="stat-card__value" aria-label="4 проекта">4</div>
-              <div class="stat-card__label">Выполнено проектов</div>
-            </div>
-          </div>
-          
-          <div class="stat-card" role="listitem">
-            <div class="stat-card__icon" aria-hidden="true">⏳</div>
-            <div class="stat-card__content">
-              <div class="stat-card__value" aria-label="30 дней">30д</div>
-              <div class="stat-card__label">Дней с начала обучения</div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Таблица для скринридеров -->
-        <div class="sr-only">
-          <h3>Детальная статистика обучения</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Показатель</th>
-                <th>Значение</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Общее время обучения</td>
-                <td>15 часов</td>
-              </tr>
-              <tr>
-                <td>Завершено тем</td>
-                <td>8</td>
-              </tr>
-              <tr>
-                <td>Выполнено проектов</td>
-                <td>4</td>
-              </tr>
-              <tr>
-                <td>Дней с начала обучения</td>
-                <td>30 дней</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
     </div>
   </main>
 
   <!-- Footer -->
   <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__content">
-        <div class="footer__logo">
-          <picture>
-            <source srcset="../images/icons/logo-48.webp" type="image/webp">
-            <source srcset="../images/icons/logo-48.png" type="image/png">
-            <img src="../images/icons/logo-48.png" 
-                 alt="Логотип портфолио студента" 
-                 class="logo logo--footer"
-                 width="48"
-                 height="48">
-          </picture>
-        </div>
-        
-        <div class="footer__info">
-          <p class="footer__copyright" id="footer-copyright">
-            © 2025 Васюкова А.И.
-            <span class="sr-only">Все права защищены.</span>
-          </p>
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__logo">
+            <picture>
+              <source srcset="/images/icons/logo-32.webp" type="image/webp">
+              <source srcset="/images/icons/logo-32.png" type="image/png">
+              <img src="/images/icons/logo-32.png" 
+                   alt="Логотип портфолио студента" 
+                   class="logo logo--footer"
+                   width="48"
+                   height="48">
+            </picture>
+          </div>
           
-          <div class="footer__links">
-            <a href="mailto:vasyukova.a.i@edu.mirea.ru" 
-               class="footer__link"
-               aria-label="Написать письмо на vasyukova.a.i@edu.mirea.ru">
-              ✉️ vasyukova.a.i@edu.mirea.ru
-            </a>
+          <div class="footer__info">
+            <p class="footer__copyright" id="footer-copyright">
+              © 2025 Васюкова А.И.
+              <span class="sr-only">Все права защищены.</span>
+            </p>
             
-            <span class="footer__separator" aria-hidden="true">•</span>
-            
-            <a href="https://github.com/sashko-kot" 
-               target="_blank"
-               class="footer__link"
-               aria-label="Открыть профиль GitHub в новой вкладке">
-              💻 GitHub: sashko-kot
-            </a>
+            <div class="footer__links">
+              <a href="mailto:vasyukova.a.i@edu.mirea.ru" 
+                 class="footer__link"
+                 aria-label="Написать письмо на vasyukova.a.i@edu.mirea.ru">
+                ✉️ vasyukova.a.i@edu.mirea.ru
+              </a>
+              
+              <span class="footer__separator" aria-hidden="true">•</span>
+              
+              <a href="https://github.com/sashko-kot" 
+                 target="_blank"
+                 class="footer__link"
+                 aria-label="Открыть профиль GitHub в новой вкладке">
+                💻 GitHub: sashko-kot
+              </a>
+            </div>
+          </div>
+          
+          <div class="footer__accessibility">
+            <button class="button button--small footer__a11y-btn"
+                    aria-label="Открыть настройки доступности"
+                    aria-expanded="false"
+                    aria-controls="a11y-settings">
+              ♿ Настройки
+            </button>
           </div>
         </div>
         
-        <div class="footer__navigation" role="navigation" aria-label="Дополнительная навигация">
-          <h3 class="sr-only">Быстрые ссылки</h3>
-          <ul>
-            <li><a href="#main-content">В начало страницы</a></li>
-            <li><a href="../index.html">На главную</a></li>
-            <li><a href="#add-entry-title">Добавить запись</a></li>
-          </ul>
+        <div class="footer__meta">
+          <p class="footer__disclaimer">
+            Сайт разработан с учетом 
+            <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" 
+               target="_blank"
+               aria-label="Рекомендации по доступности веб-контента (откроется в новой вкладке)">
+              WCAG 2.1 AA
+            </a>
+          </p>
+          
+          <p class="footer__tech">
+            <span class="sr-only">Технологии:</span>
+            HTML5, CSS3, JavaScript
+          </p>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
       <!-- Модальное окно настроек доступности -->
       <div id="a11y-settings" 
@@ -766,7 +713,7 @@
         </div>
       </div>
 
-  <!-- Живой регион для скринридеров -->
+    <!-- Живой регион для скринридеров -->
   <div id="a11y-live-region" 
        aria-live="polite" 
        aria-atomic="true" 

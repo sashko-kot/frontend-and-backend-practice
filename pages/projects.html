@@ -84,79 +84,7 @@
     <div class="container">
       <!-- Page Header -->
       <header class="page-header" aria-labelledby="page-title">
-        <h1 id="page-title" class="page-title">Мои проекты</h1>
-        <p class="page-subtitle">Здесь собраны все мои работы по веб-разработке</p>
         
-        <!-- Фильтры проектов -->
-        <div class="projects-filters" role="search" aria-label="Фильтрация проектов">
-          <fieldset>
-            <legend class="sr-only">Выберите технологии для фильтрации</legend>
-            
-            <div class="filters-group" role="group" aria-labelledby="filters-title">
-              <h2 id="filters-title" class="sr-only">Фильтры по технологиям</h2>
-              
-              <div class="filter-options">
-                <input type="checkbox" 
-                       id="filter-all" 
-                       name="filter" 
-                       value="all" 
-                       checked
-                       class="sr-only">
-                <label for="filter-all" 
-                       class="projects__filter projects__filter--active"
-                       role="button"
-                       tabindex="0"
-                       aria-pressed="true"
-                       data-filter="all">
-                  Все
-                </label>
-                
-                <input type="checkbox" 
-                       id="filter-html" 
-                       name="filter" 
-                       value="html" 
-                       class="sr-only">
-                <label for="filter-html" 
-                       class="projects__filter"
-                       role="button"
-                       tabindex="0"
-                       aria-pressed="false"
-                       data-filter="html">
-                  HTML/CSS
-                </label>
-                
-                <input type="checkbox" 
-                       id="filter-js" 
-                       name="filter" 
-                       value="js" 
-                       class="sr-only">
-                <label for="filter-js" 
-                       class="projects__filter"
-                       role="button"
-                       tabindex="0"
-                       aria-pressed="false"
-                       data-filter="js">
-                  JavaScript
-                </label>
-                
-                <input type="checkbox" 
-                       id="filter-react" 
-                       name="filter" 
-                       value="react" 
-                       class="sr-only">
-                <label for="filter-react" 
-                       class="projects__filter"
-                       role="button"
-                       tabindex="0"
-                       aria-pressed="false"
-                       data-filter="react">
-                  React
-                </label>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-      </header>
 
       <!-- Projects Grid -->
       <section class="projects-grid" aria-labelledby="projects-grid-title">
@@ -483,69 +411,6 @@
           </div>
         </article>
       </section>
-
-      <!-- Projects Statistics -->
-      <section class="projects-stats" aria-labelledby="stats-title">
-        <h2 id="stats-title" class="section-title">Статистика проектов</h2>
-        
-        <div class="stats-grid" role="list">
-          <div class="stat-card" role="listitem">
-            <div class="stat-card__value" aria-label="3 проекта">3</div>
-            <div class="stat-card__label">Всего проектов</div>
-          </div>
-          
-          <div class="stat-card" role="listitem">
-            <div class="stat-card__value" aria-label="1 завершенный проект">1</div>
-            <div class="stat-card__label">Завершено</div>
-          </div>
-          
-          <div class="stat-card" role="listitem">
-            <div class="stat-card__value" aria-label="1 проект в разработке">1</div>
-            <div class="stat-card__label">В процессе</div>
-          </div>
-          
-          <div class="stat-card" role="listitem">
-            <div class="stat-card__value" aria-label="1 запланированный проект">1</div>
-            <div class="stat-card__label">Запланировано</div>
-          </div>
-        </div>
-        
-        <!-- Прогресс в виде таблицы для скринридеров -->
-        <div class="sr-only">
-          <h3>Детальная статистика проектов</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Категория</th>
-                <th>Количество</th>
-                <th>Процент</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Все проекты</td>
-                <td>3</td>
-                <td>100%</td>
-              </tr>
-              <tr>
-                <td>Завершенные</td>
-                <td>1</td>
-                <td>33%</td>
-              </tr>
-              <tr>
-                <td>В процессе</td>
-                <td>1</td>
-                <td>33%</td>
-              </tr>
-              <tr>
-                <td>Запланированные</td>
-                <td>1</td>
-                <td>33%</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
     </div>
   </main>
 
@@ -555,9 +420,9 @@
       <div class="footer__content">
         <div class="footer__logo">
           <picture>
-            <source srcset="../images/icons/logo-48.webp" type="image/webp">
-            <source srcset="../images/icons/logo-48.png" type="image/png">
-            <img src="../images/icons/logo-48.png" 
+            <source srcset="../images/icons/logo-32.webp" type="image/webp">
+            <source srcset="../images/icons/logo-32.png" type="image/png">
+            <img src="../images/icons/logo-32.png" 
                  alt="Логотип портфолио студента" 
                  class="logo logo--footer"
                  width="48"
