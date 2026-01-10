@@ -28,11 +28,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Адаптивная таблица - добавляем data-label атрибуты
     function setupResponsiveTables() {
         const tables = document.querySelectorAll('.adaptive-table');
-        
+
         tables.forEach(table => {
             const headers = Array.from(table.querySelectorAll('th'));
             const rows = table.querySelectorAll('tbody tr');
-            
+
             rows.forEach(row => {
                 const cells = row.querySelectorAll('td');
                 cells.forEach((cell, index) => {
@@ -441,6 +441,88 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert('Ваш браузер не поддерживает чтение текста вслух.');
             }
         });
+    }
+    
+    // Управление фильтрами проектов (доступная клавиатурная поддержка)
+    const projectFilterLabels = document.querySelectorAll('.projects__filter');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    if (projectFilterLabels.length > 0 && projectCards.length > 0) {
+        function applyProjectFilters() {
+            const activeFilters = Array.from(projectFilterLabels).filter(l => l.getAttribute('aria-pressed') === 'true').map(l => l.dataset.filter);
+
+            // If 'all' is active or no filters selected, show all
+            if (activeFilters.length === 0 || activeFilters.includes('all')) {
+                projectCards.forEach(card => card.hidden = false);
+                return;
+            }
+
+            projectCards.forEach(card => {
+                const tags = (card.dataset.tags || '').split(/\s+/);
+                const matches = tags.some(t => activeFilters.includes(t));
+                card.hidden = !matches;
+            });
+        }
+
+        projectFilterLabels.forEach(label => {
+            // Initialize state from associated input if present
+            const inputId = label.getAttribute('for');
+            const input = inputId ? document.getElementById(inputId) : null;
+            if (input) {
+                const pressed = input.checked;
+                label.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+                label.classList.toggle('projects__filter--active', pressed);
+            }
+
+            label.addEventListener('click', function() {
+                // Toggle aria-pressed and synced input
+                const isPressed = this.getAttribute('aria-pressed') === 'true';
+                const newState = !isPressed;
+                this.setAttribute('aria-pressed', newState ? 'true' : 'false');
+                this.classList.toggle('projects__filter--active', newState);
+                if (input) input.checked = newState;
+
+                // If 'all' selected, clear others
+                if (this.dataset.filter === 'all' && newState) {
+                    projectFilterLabels.forEach(l => {
+                        if (l !== this) {
+                            l.setAttribute('aria-pressed', 'false');
+                            l.classList.remove('projects__filter--active');
+                            const otherInputId = l.getAttribute('for');
+                            if (otherInputId) {
+                                const otherInput = document.getElementById(otherInputId);
+                                if (otherInput) otherInput.checked = false;
+                            }
+                        }
+                    });
+                } else if (this.dataset.filter !== 'all' && newState) {
+                    // If any other selected, unselect 'all'
+                    projectFilterLabels.forEach(l => {
+                        if (l.dataset.filter === 'all') {
+                            l.setAttribute('aria-pressed', 'false');
+                            l.classList.remove('projects__filter--active');
+                            const allInputId = l.getAttribute('for');
+                            if (allInputId) {
+                                const allInput = document.getElementById(allInputId);
+                                if (allInput) allInput.checked = false;
+                            }
+                        }
+                    });
+                }
+
+                applyProjectFilters();
+            });
+
+            label.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
+        });
+
+        // Apply initial filter state
+        applyProjectFilters();
     }
     
     // 8. Управление модальным окном настроек
@@ -970,4 +1052,4 @@ document.addEventListener('keydown', function(e) {
         }
     }
 });
-})
+});
